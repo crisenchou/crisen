@@ -1,18 +1,19 @@
-#include <stdio.h>
+#include "stdio.h"
+#include "stdlib.h"
 typedef int ElemType;
 
 typedef struct node{
     ElemType data;
-    struct node *nect;
+    struct node *next;
 }LNode,*LinkList;
 
 LinkList CreateLinkList(int n){
     LinkList p,r,list=NULL;
     ElemType e;
     int i;
-    for(i=1;i<n;i++){
+    for(i=1;i<=n;i++){
         scanf("%d",&e);
-        p=(LinkList)malloc(sizeof(LNode));
+        p=(LinkList) malloc (sizeof(LNode));
         p->data=e;
         p->next=NULL;
         if(!list){
@@ -22,11 +23,11 @@ LinkList CreateLinkList(int n){
         }
         r=p;
     }
-    return LinkList;
+    return list;
 }
 
 
-void insertList(LinkList *LinkList,LinkList q,ElemType e){
+void insertList(LinkList *list,LinkList q,ElemType e){
     LinkList p;
     p=(LinkList)malloc(sizeof(LNode));
     p->data=e;

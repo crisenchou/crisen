@@ -13,35 +13,21 @@ class RSA{
     
     //chr() ASCII->char   ord()   char->ASCII
 
-    private function encode($m){
-        return pow($m,$this->__E)%$this->__N;
+    public  function encrypt($m){
+        return pow($m, $this->__E)%$this->__N;
     }
     
-    private function decode($c){
-        return pow($c,$this->__D)%$this->__N;
+    public function decrypt($c){
+        return pow($c, $this->__D)%$this->__N;
     }
     
-    public function encrypt($message){
-        for($i=0;$i<strlen($message);$i++){
-            $encrypt .= chr($this->encode(ord($message{$i})));
-        }
-        return $encrypt;
-    }
-    
-    public function decrypt($encrypt){
-        $message = "";
-        for($i=0;$i<strlen($encrypt);$i++){
-            $message .= chr($this->encode(ord($encrypt{$i})));
-        }
-        return $message;
-    }
 }
 
 
-//p=7 q=11
-$rsa = new RSA(7,5,24);
-$message = "abc";
+$rsa = new RSA(3,3,15);
+$message = 7;
 $encrypt = $rsa->encrypt($message);
-echo "the encrypt is ".$encrypt;
 $message = $rsa->decrypt($encrypt);
+echo "the encrypt is ".$encrypt;
+echo PHP_EOL;
 echo "the message is ".$message;

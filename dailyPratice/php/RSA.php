@@ -1,5 +1,7 @@
 <?php
 
+//should use bigint class
+
 class RSA{
     private $__E;
     private $__D;

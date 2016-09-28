@@ -14,7 +14,7 @@ void printUser(User *user){
     printf("the %dth user is %s,and the status is %d",user->id,user->name,user->status);
 }
 
-
+//线性查找
 int search(User user[], int n, int key){
     int i;
     for(i=0; i<n; i++){

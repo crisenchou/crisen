@@ -3,8 +3,8 @@ error_reporting(E_ALL);
 set_time_limit(0);
 echo "<h2>TCP/IP Connection</h2>\n";
 
-$port = 1935;
-$ip = "127.0.0.1";
+$port = 23456;
+$ip = "121.40.150.93";
 
 /*
  +-------------------------------

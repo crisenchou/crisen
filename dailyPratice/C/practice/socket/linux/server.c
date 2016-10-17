@@ -4,7 +4,7 @@
 #include <sys/socket.h>   
 #include <linux/in.h>   
 #include <string.h>   
-  
+
 int main()  
 {  
     int sfp,nfp; /* 定义两个描述符 */  

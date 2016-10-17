@@ -12,14 +12,11 @@ typedef int bool;
 
 struct settings settings;
 
-
 struct settings {
     int type;
     int pwd;
     char *filename;
 };
-
-
 
 static void settings_init(void) {
     settings.type = ENCRYPT; 
@@ -69,15 +66,14 @@ void decrypt(const char *filename, const int e){
 }
 
 
-
 int main(int argc,char *argv[]){
 
     int c;
     settings_init();
     /* process arguments */
     while (-1 != (c = getopt(argc, argv,
-        "e"  /* encrypt*/
-        "d"  /* decrypt*/
+        "e"  /* encrypt */
+        "d"  /* decrypt */
         "f:" /* set the file */
         "p:"  /* the encrypt password */
     ))) {

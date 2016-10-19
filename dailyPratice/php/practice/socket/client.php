@@ -3,7 +3,11 @@ error_reporting(E_ALL);
 set_time_limit(0);
 echo "<h2>TCP/IP Connection</h2>\n";
 
+<<<<<<< HEAD
 $port = 23456;
+=======
+$port = 8080;
+>>>>>>> d617c56b0910ef3aceeba77ea4ca320cf8afaa2e
 $ip = "121.40.150.93";
 
 /*
@@ -44,13 +48,13 @@ if(!socket_write($socket, $in, strlen($in))) {
     echo "content:<font color='red'>$in</font> <br>";
 }
 
-while($out = socket_read($socket, 8192)) {
-    echo "recieve message successful\n";
-    echo "the back content:",$out;
-}
+// while($out = socket_read($socket, 8192)) {
+    // echo "recieve message successful\n";
+    // echo "the back content:",$out;
+// }
 
 
-echo "closing SOCKET...\n";
+// echo "closing SOCKET...\n";
 socket_close($socket);
-echo "closed\n";
+// echo "closed\n";
 ?>

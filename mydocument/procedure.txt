@@ -1,0 +1,39 @@
+BEGIN
+DECLARE n INT;
+DECLARE flag int;
+DECLARE where_item varchar(255);
+DECLARE temp VARCHAR(60);
+DECLARE i INT;
+#DECLARE statement text;
+SET i=1;
+SET n=INSTR(params,",");
+SET where_item="";
+SET temp = SUBSTRING_INDEX(params,",",-1);
+SET where_item=concat("where slot",params_count," = ",temp);
+WHILE(n>0)
+DO
+	SET temp = SUBSTRING_INDEX(params,",",1);
+	SET params = SUBSTRING(params,n+1);
+	SET where_item=concat(where_item," and slot",i," = ", temp);
+	SET n=INSTR(params,",");
+	SET i=i+1;
+END WHILE;
+set @statement=CONCAT("select count(*) from absulote_baned  ",where_item,";");
+#select @statement;
+PREPARE statement FROM @statement;
+EXECUTE statement;
+DEALLOCATE PREPARE statement;
+#SELECT SUBSTRING_INDEX(params,",",1);
+#SELECT SUBSTRING(params,n+1);
+#SELECT SUBSTRING_INDEX(params,",",1);
+#select params_count;
+#select SUBSTRING_INDEX(params,",",20);
+#select SUBSTRING_INDEX(params,",",1);
+END
+
+
+
+²ÎÊý
+
+
+IN `params` varchar(255), `params_count` int

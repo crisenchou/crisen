@@ -3,7 +3,11 @@ error_reporting(E_ALL);
 set_time_limit(0);
 echo "<h2>TCP/IP Connection</h2>\n";
 
+<<<<<<< HEAD
+$port = 23456;
+=======
 $port = 8080;
+>>>>>>> d617c56b0910ef3aceeba77ea4ca320cf8afaa2e
 $ip = "121.40.150.93";
 
 /*

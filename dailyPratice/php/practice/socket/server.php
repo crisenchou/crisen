@@ -30,13 +30,11 @@ if(($ret = socket_listen($sock,4)) < 0) {
 }
 
 $count = 0;
-
 do {
     if (($msgsock = socket_accept($sock)) < 0) {
         echo "socket_accept() failed: reason: " . socket_strerror($msgsock) . "\n";
         break;
     } else {
-        
         $msg ="success\n";
         socket_write($msgsock, $msg, strlen($msg));
         
@@ -49,8 +47,6 @@ do {
         if(++$count >= 5){
             break;
         };
-        
-    
     }
     socket_close($msgsock);
 

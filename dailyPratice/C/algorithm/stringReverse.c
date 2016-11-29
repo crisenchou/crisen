@@ -11,7 +11,7 @@ void LeftRotateString(char *s, int n, int m);
 
 int main(){
     char s[] = "crisen";
-    LeftRotateString(s, 4, 2);
+    LeftRotateString(s, 6, 3);
     
     printf("the string is %s",s);
 }

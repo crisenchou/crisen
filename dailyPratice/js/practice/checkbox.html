@@ -1,0 +1,113 @@
+<html>
+<head>
+<title>复选框</title>
+<meta charset="utf-8">
+</head>
+<body>
+<table id="members" class="table table-bordered table-striped">
+                                <thead>
+                                <tr>
+                                    <th><input id="all" type="checkbox" onclick="checkall(this)">全选</th>
+                                    <th>用户名</th>
+                                    <th>手机</th>
+                                    <th>注册ip</th>
+                                    <th>注册时间</th>
+                                    <th>绑定推广员</th>
+                                    <th>操作</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td><input name="userid[]" type="checkbox" value="0"></td>
+                                        <td>crisen</td>
+                                        <td></td>
+                                        <td>10.0.2.2</td>
+                                        <td>2017-02-23 07:24:43</td>
+                                        <td>0</td>
+                                        <td>
+                                            <a class="btn btn-info" href="http://fuli.175pt.com/admin">更改绑定推广员</a>
+                                            <a class="btn btn-success" href="http://fuli.175pt.com/admin">绑定推广员</a>
+                                            <a class="btn btn-success" href="http://fuli.175pt.com/admin">解除绑定</a>
+                                        </td>
+                                    </tr>
+                                                                    <tr>
+                                        <td><input name="userid[]" type="checkbox" value="0"></td>
+                                        <td>crisenchou</td>
+                                        <td></td>
+                                        <td>10.0.2.2</td>
+                                        <td>2017-02-23 07:27:17</td>
+                                        <td>0</td>
+                                        <td>
+                                            <a class="btn btn-info" href="http://fuli.175pt.com/admin">更改绑定推广员</a>
+                                            <a class="btn btn-success" href="http://fuli.175pt.com/admin">绑定推广员</a>
+                                            <a class="btn btn-success" href="http://fuli.175pt.com/admin">解除绑定</a>
+                                        </td>
+                                    </tr>
+                                                                    <tr>
+                                        <td><input name="userid[]" type="checkbox" value="0"></td>
+                                        <td>crisen123456</td>
+                                        <td></td>
+                                        <td>10.0.2.2</td>
+                                        <td>2017-02-23 07:35:42</td>
+                                        <td>0</td>
+                                        <td>
+                                            <a class="btn btn-info" href="http://fuli.175pt.com/admin">更改绑定推广员</a>
+                                            <a class="btn btn-success" href="http://fuli.175pt.com/admin">绑定推广员</a>
+                                            <a class="btn btn-success" href="http://fuli.175pt.com/admin">解除绑定</a>
+                                        </td>
+                                    </tr>
+                                                                    <tr>
+                                        <td><input name="userid[]" type="checkbox" value="0"></td>
+                                        <td>crisen123123</td>
+                                        <td></td>
+                                        <td>10.0.2.2</td>
+                                        <td>2017-02-23 07:37:48</td>
+                                        <td>0</td>
+                                        <td>
+                                            <a class="btn btn-info" href="http://fuli.175pt.com/admin">更改绑定推广员</a>
+                                            <a class="btn btn-success" href="http://fuli.175pt.com/admin">绑定推广员</a>
+                                            <a class="btn btn-success" href="http://fuli.175pt.com/admin">解除绑定</a>
+                                        </td>
+                                    </tr>
+                                                                    <tr>
+                                        <td><input name="userid[]" type="checkbox" value="0"></td>
+                                        <td>cccc</td>
+                                        <td></td>
+                                        <td>10.0.2.2</td>
+                                        <td>2017-02-23 07:38:43</td>
+                                        <td>0</td>
+                                        <td>
+                                            <a class="btn btn-info" href="http://fuli.175pt.com/admin">更改绑定推广员</a>
+                                            <a class="btn btn-success" href="http://fuli.175pt.com/admin">绑定推广员</a>
+                                            <a class="btn btn-success" href="http://fuli.175pt.com/admin">解除绑定</a>
+                                        </td>
+                                    </tr>
+                                                                    <tr>
+                                        <td><input name="userid[]" type="checkbox" value="0"></td>
+                                        <td>1111111</td>
+                                        <td></td>
+                                        <td>10.0.2.2</td>
+                                        <td>2017-02-23 07:42:47</td>
+                                        <td>1</td>
+                                        <td>
+                                            <a class="btn btn-info" href="http://fuli.175pt.com/admin">更改绑定推广员</a>
+                                            <a class="btn btn-success" href="http://fuli.175pt.com/admin">绑定推广员</a>
+                                            <a class="btn btn-success" href="http://fuli.175pt.com/admin">解除绑定</a>
+                                        </td>
+                                    </tr>
+                                                                </tbody>
+                            </table>
+
+</body>
+<script>
+
+function checkall(obj) {
+    $("input[name='userid[]']").each(function () {
+        this.checked = obj.checked;
+    })
+}
+</script>
+</html>
+
+
+

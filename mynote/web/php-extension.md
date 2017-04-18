@@ -1,27 +1,27 @@
-³õÊ¼À©Õ¹£¬³õÊ¼À©Õ¹Ö¸µÄÊÇphp.iniÖĞ×Ô´øµÄÀ©Õ¹
-php_bz2.dll   bz2ÊÇÒ»ÖÖlinuxÏÂÒ»ÖÖÑ¹Ëõ·½Ê½
-php_curl.dll  ×¥È¡Êı¾İ 
-php_fileinfo.dll   »ñÈ¡ÎÄ¼şÀàĞÍ
-php_gd2.dll   Í¼ĞÎÀ©Õ¹ gd¿â
-php_gettext.dll   Ö§³Ö¹ú¼Ê»¯¶àÓïÑÔ
-php_gmp.dll    ÊıÑ§ÔËËãÀ©Õ¹¿â
-php_intl.dll    Ó¦ÓÃ³ÌĞò¹ú¼Ê»¯
-php_imap.dll    ÓÊ¼şÀ©Õ¹
-php_interbase.dll   InterBaseÊı¾İ¿âÀ©Õ¹
-php_ldap.dll   Ä¿Â¼·ÃÎÊĞ­ÒéÀ©Õ¹
-php_mbstring.dll  mbº¯Êı ×Ö·û´®½ØÈ¡
-php_exif.dll     ÏÔÊ¾Í¼Æ¬exifÀ©Õ¹
-php_mysql.dll   phpmysqlº¯ÊıÀ©Õ¹  5.5Ö®ºó·ÏÆú
-php_mysqli.dll   mysqliÀ©Õ¹
-php_oci8.dll     oracleÊı¾İ¿âÀ©Õ¹
-php_oci8_11g.dll   oracleÊı¾İ¿âÀ©Õ¹
-php_openssl.dll     °²È«Ì×½Ó×ÖÃÜÂë¿â
-php_pdo_firebird.dll   firebirdÊı¾İ¿âÀ©Õ¹
-php_pdo_mysql.dll     mysqlµÄpdoÀ©Õ¹
-php_pdo_oci.dll  oracleÊı¾İ¿âÀ©Õ¹
-php_pdo_odbc.dll   odbcÊı¾İ¿âÀ©Õ¹
-php_pdo_pgsql.dll   pgsqlÊı¾İ¿âµÄpdoÀ©Õ¹
-php_pdo_sqlite.dll   sqliteÊı¾İ¿âpdoÀ©Õ¹
-php_pgsql.dll  pgsqlÊı¾İ¿âµÄÀ©Õ¹
-php_pspell.dll    Æ´Ğ´¼ì²é
-php_shmop.dll     ÔÊĞíphp¶ÁÈ¡unix¹²ÏíÄÚ´æ¶Î
+åˆå§‹æ‰©å±•ï¼Œåˆå§‹æ‰©å±•æŒ‡çš„æ˜¯php.iniä¸­è‡ªå¸¦çš„æ‰©å±•
+php_bz2.dll   bz2æ˜¯ä¸€ç§linuxä¸‹ä¸€ç§å‹ç¼©æ–¹å¼
+php_curl.dll  æŠ“å–æ•°æ® 
+php_fileinfo.dll   è·å–æ–‡ä»¶ç±»å‹
+php_gd2.dll   å›¾å½¢æ‰©å±• gdåº“
+php_gettext.dll   æ”¯æŒå›½é™…åŒ–å¤šè¯­è¨€
+php_gmp.dll    æ•°å­¦è¿ç®—æ‰©å±•åº“
+php_intl.dll    åº”ç”¨ç¨‹åºå›½é™…åŒ–
+php_imap.dll    é‚®ä»¶æ‰©å±•
+php_interbase.dll   InterBaseæ•°æ®åº“æ‰©å±•
+php_ldap.dll   ç›®å½•è®¿é—®åè®®æ‰©å±•
+php_mbstring.dll  mbå‡½æ•° å­—ç¬¦ä¸²æˆªå–
+php_exif.dll     æ˜¾ç¤ºå›¾ç‰‡exifæ‰©å±•
+php_mysql.dll   phpmysqlå‡½æ•°æ‰©å±•  5.5ä¹‹ååºŸå¼ƒ
+php_mysqli.dll   mysqliæ‰©å±•
+php_oci8.dll     oracleæ•°æ®åº“æ‰©å±•
+php_oci8_11g.dll   oracleæ•°æ®åº“æ‰©å±•
+php_openssl.dll     å®‰å…¨å¥—æ¥å­—å¯†ç åº“
+php_pdo_firebird.dll   firebirdæ•°æ®åº“æ‰©å±•
+php_pdo_mysql.dll     mysqlçš„pdoæ‰©å±•
+php_pdo_oci.dll  oracleæ•°æ®åº“æ‰©å±•
+php_pdo_odbc.dll   odbcæ•°æ®åº“æ‰©å±•
+php_pdo_pgsql.dll   pgsqlæ•°æ®åº“çš„pdoæ‰©å±•
+php_pdo_sqlite.dll   sqliteæ•°æ®åº“pdoæ‰©å±•
+php_pgsql.dll  pgsqlæ•°æ®åº“çš„æ‰©å±•
+php_pspell.dll    æ‹¼å†™æ£€æŸ¥
+php_shmop.dll     å…è®¸phpè¯»å–unixå…±äº«å†…å­˜æ®µ

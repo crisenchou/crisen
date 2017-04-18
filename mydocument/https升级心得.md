@@ -1,31 +1,31 @@
-Òı×Ó£º×î½üÔÚÒ»ÆªÎÄÕÂÖĞÁË½âµ½EFF(µç×ÓÇ°ÉÚ»ù½ğ»á)ÎªÁËÍÆ¹ãhttpsĞ­Òé£¬³ÉÁ¢ÁËÒ»¸ölet'sencryptÏîÄ¿£¬¿ÉÒÔ·¢·ÅÃâ·ÑµÄÖ¤Êé£¬´ËÖ¤Êé¿ÉÒÔ±»´ó¶àÊıÖ÷Á÷ä¯ÀÀÆ÷ËùĞÅÈÎ£¬Õâ¸öĞ°¶ñµÄÄîÍ·Ò»±¬·¢£¬¾ÍÈÃÎÒ×ßÉÏÁËÒ»Ìõ¿²¿ÀµÄ²»¹éÂ·
+å¼•å­ï¼šæœ€è¿‘åœ¨ä¸€ç¯‡æ–‡ç« ä¸­äº†è§£åˆ°EFF(ç”µå­å‰å“¨åŸºé‡‘ä¼š)ä¸ºäº†æ¨å¹¿httpsåè®®ï¼Œæˆç«‹äº†ä¸€ä¸ªlet'sencrypté¡¹ç›®ï¼Œå¯ä»¥å‘æ”¾å…è´¹çš„è¯ä¹¦ï¼Œæ­¤è¯ä¹¦å¯ä»¥è¢«å¤§å¤šæ•°ä¸»æµæµè§ˆå™¨æ‰€ä¿¡ä»»ï¼Œè¿™ä¸ªé‚ªæ¶çš„å¿µå¤´ä¸€çˆ†å‘ï¼Œå°±è®©æˆ‘èµ°ä¸Šäº†ä¸€æ¡åå·çš„ä¸å½’è·¯
 
-×¼±¸£º
-¹¤¾ß:certbot
-»·¾³:centOS7
+å‡†å¤‡ï¼š
+å·¥å…·:certbot
+ç¯å¢ƒ:centOS7
 
-»ñÈ¡Certbot¹¤¾ß£º
-¸ù¾İÎÒÔÚÍøÉÏÁË½âµ½µÄĞÅÏ¢£¬»ñÈ¡certbot¹¤¾ßÓĞÈıÖÖ·½·¨
-µÚÒ»ÖÖÊÇÍ¨¹ıgitÔÚgithubÖĞÏÂÔØ
+è·å–Certbotå·¥å…·ï¼š
+æ ¹æ®æˆ‘åœ¨ç½‘ä¸Šäº†è§£åˆ°çš„ä¿¡æ¯ï¼Œè·å–certbotå·¥å…·æœ‰ä¸‰ç§æ–¹æ³•
+ç¬¬ä¸€ç§æ˜¯é€šè¿‡gitåœ¨githubä¸­ä¸‹è½½
 git clone https://github.com/certbot/certbot.git
-µÚ¶şÖÖÊÇÍ¨¹ıepel-releaseÈí¼şÔ´£¬Õâ¸öÈí¼şÔ´ÓĞĞí¶àyumÖĞÃ»ÓĞµÄÈí¼ş°ü,°üÀ¨certbot
+ç¬¬äºŒç§æ˜¯é€šè¿‡epel-releaseè½¯ä»¶æºï¼Œè¿™ä¸ªè½¯ä»¶æºæœ‰è®¸å¤šyumä¸­æ²¡æœ‰çš„è½¯ä»¶åŒ…,åŒ…æ‹¬certbot
 yum install epel-release
 yum install certbot
-µÚÈıÖÖÊÇÍ¨¹ıwgetÀ´½øĞĞÏÂÔØ
+ç¬¬ä¸‰ç§æ˜¯é€šè¿‡wgetæ¥è¿›è¡Œä¸‹è½½
 wget https://dl.eff.org/certbot-auto
 
 
-ÓÉÓÚÖÓ°®github£¬ÊìÏ¤gitËùÓĞÖ±½ÓÊ¹ÓÃgitÏÂÔØºÃÁË
-Ö´ĞĞÃüÁî
+ç”±äºé’Ÿçˆ±githubï¼Œç†Ÿæ‚‰gitæ‰€æœ‰ç›´æ¥ä½¿ç”¨gitä¸‹è½½å¥½äº†
+æ‰§è¡Œå‘½ä»¤
 git clone https://github.com/certbot/certbot.git
 
 
-Éú³ÉÖ¤Êé£º
-ÏÂÔØÍêÁËÖ®ºó£¬»á´´½¨Ò»¸öcertbotµÄÄ¿Â¼
+ç”Ÿæˆè¯ä¹¦ï¼š
+ä¸‹è½½å®Œäº†ä¹‹åï¼Œä¼šåˆ›å»ºä¸€ä¸ªcertbotçš„ç›®å½•
 cd certbot
 certbot-auto certonly --standalone --email crisen@crisen.org  -d www.crisen.org
-È»ºóagreeĞ­Òé ¾²¾²µÈ´ıÉú³ÉÖ¤Êé¼´¿É
-³öÏÖÏÂÃæÌáÊ¾¾ÍËµÃ÷°²×°ºÃÁË
+ç„¶åagreeåè®® é™é™ç­‰å¾…ç”Ÿæˆè¯ä¹¦å³å¯
+å‡ºç°ä¸‹é¢æç¤ºå°±è¯´æ˜å®‰è£…å¥½äº†
 IMPORTANT NOTES:
  - Congratulations! Your certificate and chain have been saved at
    /etc/letsencrypt/live/your.domain.com/fullchain.pem. Your cert
@@ -38,26 +38,26 @@ IMPORTANT NOTES:
    Donating to ISRG / Let's Encrypt:   https://letsencrypt.org/donate
    Donating to EFF:                    https://eff.org/donate-le
 
-Ö¤Êé»áÉú³ÉÔÚ/etc/letsencrypt/liveÄ¿Â¼ÏÂ
+è¯ä¹¦ä¼šç”Ÿæˆåœ¨/etc/letsencrypt/liveç›®å½•ä¸‹
 
-²¿ÊğÖ¤Êé£º
-½Ó×Å°ÑÖ¤ÊéµÄ¹«Ô¿ºÍË½Ô¿ÅäÖÃµ½nginxµÄsslÄ¿Â¼ÏÂ£¬´´½¨ÈíÁ´½Ó
+éƒ¨ç½²è¯ä¹¦ï¼š
+æ¥ç€æŠŠè¯ä¹¦çš„å…¬é’¥å’Œç§é’¥é…ç½®åˆ°nginxçš„sslç›®å½•ä¸‹ï¼Œåˆ›å»ºè½¯é“¾æ¥
 ln  www.crisen.org.crt  /etc/letsencrypt/live/www.crisen.org/fullchain.pem
 ln  www.crisen.org.key  /etc/letsencrypt/live/www.crisen.org/privkey.pem 
-µ±È»Ö±½Ó¸´ÖÆ¹ıÈ¥Ò²ÊÇ¿ÉĞĞµÄ
+å½“ç„¶ç›´æ¥å¤åˆ¶è¿‡å»ä¹Ÿæ˜¯å¯è¡Œçš„
 cp -i  www.crisen.org.crt  /etc/letsencrypt/live/www.crisen.org/fullchain.pem
 cp -i  www.crisen.org.key  /etc/letsencrypt/live/www.crisen.org/privkey.pem
 
 
-½ÓÏÂÀ´Ö»ÒªÅäÖÃ nginx µÄhttps·şÎñ¾Í¿ÉÒÔÁË
+æ¥ä¸‹æ¥åªè¦é…ç½® nginx çš„httpsæœåŠ¡å°±å¯ä»¥äº†
 
-Ğ§¹û²âÊÔ£º
-È»ºó½øÈëµ½www.crisen.org²âÊÔÒ»ÏÂ
+æ•ˆæœæµ‹è¯•ï¼š
+ç„¶åè¿›å…¥åˆ°www.crisen.orgæµ‹è¯•ä¸€ä¸‹
 
-³öÏÖÁË¿ÉĞÅÈÎµÄÖ¤Êé µ½´ËÅäÖÃÍê±Ï
+å‡ºç°äº†å¯ä¿¡ä»»çš„è¯ä¹¦ åˆ°æ­¤é…ç½®å®Œæ¯•
 
-²È¹ıµÄ¿Ó£º
-·şÎñÆ÷²Ù×÷ÏµÍ³°æ±¾¹ıµÍ£º
-Ö®Ç°ÎÒµÄ²Ù×÷ÏµÍ³ÊÇcentOS5.1°æ±¾µÄ£¬ÄÚÖÃµÄpythonÖ»ÓĞ2.4£¬½á¹ûÃ»ÓĞ°ì·¨Æô¶¯certbot³öÏÖ£¬ÍøÉÏ²é¿´ÁËĞí¶àÎÄµµ£¬½á¹ûËûÃÇÖ»¸æËßÎÒcertbotÖ»Ö§³Ö¸ü¼ÓÏÖ´úµÄ²Ù×÷ÏµÍ³
-½â¾ö°ì·¨£º±¸·İÍøÕ¾Êı¾İ£¬Éı¼¶·şÎñÆ÷²Ù×÷ÏµÍ³
+è¸©è¿‡çš„å‘ï¼š
+æœåŠ¡å™¨æ“ä½œç³»ç»Ÿç‰ˆæœ¬è¿‡ä½ï¼š
+ä¹‹å‰æˆ‘çš„æ“ä½œç³»ç»Ÿæ˜¯centOS5.1ç‰ˆæœ¬çš„ï¼Œå†…ç½®çš„pythonåªæœ‰2.4ï¼Œç»“æœæ²¡æœ‰åŠæ³•å¯åŠ¨certbotå‡ºç°ï¼Œç½‘ä¸ŠæŸ¥çœ‹äº†è®¸å¤šæ–‡æ¡£ï¼Œç»“æœä»–ä»¬åªå‘Šè¯‰æˆ‘certbotåªæ”¯æŒæ›´åŠ ç°ä»£çš„æ“ä½œç³»ç»Ÿ
+è§£å†³åŠæ³•ï¼šå¤‡ä»½ç½‘ç«™æ•°æ®ï¼Œå‡çº§æœåŠ¡å™¨æ“ä½œç³»ç»Ÿ
    

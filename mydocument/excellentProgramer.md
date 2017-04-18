@@ -1,71 +1,71 @@
-Ç¿´óµÄ³ÌĞòÔ±²»Ò»¶¨ÓÅĞã£¬µ«ÓÅĞãµÄ³ÌĞòÔ±×îÖÕ»á±äµÃÇ¿´ó
-1.Care about your craft  ¹ØĞÄÄãµÄ¼¼ÒÕ
-2.Think about your work  Ë¼¿¼£¡ÄãµÄ¹¤×÷
-3.Provide options,don't make lame excuses  Ìá³ö¸÷ÖÖÑ¡Ôñ£¬²»ÒªÕÒõ¿½ÅµÄ½è¿Ú
-4.don't live with broken wendows ²»ÒªÈİÈÌÆÆ´°»§
-5.be a catalyst for change ×ö±ä»¯µÄ´ß»¯¼Á
-6.remember the big picture ¼Ç×¡´óÍ¼¾°
-7.make quality a requirements issue Ê¹ÖÊÁ¿³ÉÎªĞèÇóÎÊÌâ
-8.invest Regularly in your knowledge portfolio ¶¨ÆÚÎªÄãµÄÖªÊ¶×Ê²úÍ¶×Ê
-9.critically analyze what you read and hear ÅúÅĞĞÔµÄ·ÖÎöÄã¶Áµ½µÄºÍÌıµ½µÄ
-10.it's both what you say and the way you speak it ÄãËµÊ²Ã´ºÍÄãÔõÃ´ËµÍ¬ÑùÖØÒª
-11.Don't repeat yourself ²»ÒªÖØ¸´×Ô¼º
-12.make it easy to reuse ÈÃ¸´ÓÃ±äµÄÈİÒ×
-13.eliminate effects between unrelated things Ïû³ıÎŞ¹ØÊÂÎïÖ®¼äµÄÓ°Ïì
-14.there no final decisions ²»´æÔÚ×îÖÕ¾ö²ß
-15.use tracer bullets to find the target Ö»ÓÃÒ·¹âµ¯ÕÒµ½Ä¿±ê
-16.prototype to learn ÎªÁËÑ§Ï°¶øÖÆ×÷Ô­ĞÍ
-17.program close to the problem domain ¿¿½üÎÊÌâÁìÓò±à³Ì
-18.estimate to avoid surprice ¹ÀËã£¬±ÜÃâ·¢ÉúÒâÍâ
-19.iterate the schedule with the code Í¨¹ı´úÂë¶Ô½ø¶È±í½øĞĞµü´ú
-20.keep knowledge in plain text Ê¹ÓÃ´¿ÎÄ±¾±£´æÄãµÄÖªÊ¶
-21.use the power of command shells ÀûÓÃshellÃüÁîÁ¦Á¿
-22.use a single editor well ÓÃºÃÒ»ÖÖ±à¼­Æ÷
-23.always use source code controll ×ÜÊÇÊ¹ÓÃÔ´Âë¿ØÖÆ
-24.fix the problem not to blame ÒªĞŞÕıÎÊÌâ£¬¶ø²»ÊÇ·¢³öÖ¸Ôğ
-25.don not panic when debuging ²»Òª¿Ö»Å
-26.'select' isn't broken ¡®select¡¯Ã»ÓĞÎÊÌâ £¨ÎÒÒıÈëµÄÕâ¸ö¿â¾ø¶ÔÃ»ÓĞÎÊÌâ£¬´Ë´¦ÊÇ·´Òå£©
-27.don't assume it,prove it ²»Òª¼Ù¶¨ ÒªÖ¤Ã÷
-28.learn a text manipulation language Ñ§Ï°Ò»ÖÖÎÄ±¾²Ù×÷ÓïÑÔ
-29.write code that write code ±àĞ´ÄÜĞ´´úÂëµÄ´úÂë
-30.you can't write perfect software Äã²»¿ÉÄÜĞ´³öÍêÃÀµÄÈí¼ş
-31.design with contracts Í¨¹ıºÏÔ¼½øĞĞÉè¼Æ
-32.crash earlt Ôç±ÀÀ£
-33.if it can't happen,use assertions to ensure that it won't Èç¹ûËü²»¿ÉÄÜ·¢Éú£¬ÓÃ¶ÏÑÔÈ·±£Ëü²»»á·¢Éú
-34.use exceptions for exceptional problems ½«Òì³£ÓÃÓÚÒì³£µÄÎÊÌâ
-35.finish what you start ÓĞÊ¼ÓĞÖÕ
-36.minimize coupling between modules Ê¹Ä£¿éÖ®¼äµÄñîºÏ¼õÖÁ×îÉÙ
-37.configure,don't integrate ÒªÅäÖÃ ²»Òª¼¯³É
-38.put abstractions in code,details in metadata ½«³éÏó·Å½ø´úÂë£¬Ï¸½Ú·Å½øÔªÊı¾İ
-39.analyze workflow to improve concurrency ·ÖÎö¹¤×÷Á÷ÒÔ¸ÄÉÆ²¢·¢ĞÔ
-40.design useing service ÓÃ·şÎñ½øĞĞÉè¼Æ
-41.always design for concurrency ×ÜÊÇÎª²¢·¢ĞÔ½øĞĞÉè¼Æ
-42.separate views for modules Ê¹ÊÓÍ¼ºÍÄ£ĞÍ·ÖÀë
-43.use blackboards to coordinate workflow ÓÃºÚ°åĞ­µ÷¹¤×÷Á÷
-44.don't program by coincidence ²»Òª¿¿ÇÉºÏ±à³Ì
-45.estimate the order of your algorithms ¹ÀËãËã·¨µÄ½×
-46.test your estimates ²âÊÔÄãµÄ¹ÀËã
-47.refactor early,refactor often ÔçÖØ¹¹£¬³£ÖØ¹¹ 
-48.design to test Îª²âÊÔ¶øÉè¼Æ
-49.test your software,or your users will ²âÊÔÄãµÄÈí¼ş£¬·ñÔòÄãµÄÓÃ»§¾ÍµÃ²âÊÔ
-50.don't use wizard code you don't understand ²»ÒªÊ¹ÓÃÄã²»Àí½âµÄÏòµ¼´úÂë
-51.don't gather requirements - dig for them ²»ÒªËÑ¼¯ĞèÇó£¬ÍÚ¾òËüÃÇ
-52.work with a user to think like a user ÓëÓÃ»§Ò»Í¬¹¤×÷£¬ÏñÓÃ»§Ò»ÑùË¼¿¼
-53.abstracts live longer than details ³éÏó±ÈÏ¸½Ú»îµÄ¸ü³¤¾Ã
-54.use a project glossary Ê¹ÓÃÏîÄ¿´Ê»ã±í
-55.don't think outside the box - find the box ²»ÒªÔÚºĞ×ÓÍâÃæË¼¿¼£¬ÕÒµ½Õâ¸öºĞ×Ó
-56.listen to nagging doubts - start when you're ready ÇãÌı·´¸´³öÏÖµÄÒÉÂÇ£¬µÈÄã×¼±¸ºÃÔÙ¿ªÊ¼
-57.some things are better done than described ÓĞĞ©ÊÂÇéÊµ¼ù±ÈÀíÂÛÀ´µÄ¸üºÃ
-58.don't be a slave to formal methods ²»Òª×öĞÎÊ½·½·¨µÄÅ«Á¥
-59.exoensive tools don't produce better designs °º¹óµÄ¹¤¾ß²»Ò»¶¨ÄÜ×ö³ö¸üºÃµÄÉè¼Æ
-60.organize around functionality,bot job functions Î§ÈÆ¹¦ÄÜ½øĞĞ×éÖ¯£¬¶ø²»ÊÇÎ§ÈÆ¹¤×÷Ö°Îñ
-61.don't use manual procedures ²»ÒªÊ¹ÓÃÊÖ¹¤Á÷³Ì
-62.test early,test often,test automatically Ôç²âÊÔ ³£²âÊÔ ×Ô¶¯»¯²âÊÔ
-63.codeing ain't done till all the test run ÒªÍ¨¹ıÈ«²¿²âÊÔ£¬±àÂë²ÅËãÍê³É 
-64.use saboteurs to test your testing Í¨¹ıĞîÒâÆÆ»µÀ´²âÊÔÄãµÄ²âÊÔ
-65.test state coverage,not codeing coverage ²âÊÔ×´Ì¬¸²¸Ç ¶ø²»ÊÇ´úÂë¸²¸Ç 
-66.find bug once Ò»¸öbugÖ»×¥Ò»´Î
-67.treat English as just another programming language °ÑÓ¢Óïµ±×÷ÓÖÒ»ÖÖ±à³ÌÓïÑÔ
-68.build document in,don't bolt it once °ÑÎÄµµ½¨ÔÚ°æ±¾ÖĞ£¬²»ÒªË©ÔÚÍâÃæ
-69.gently exceed your users' exceptations  ÎÂºÍµÄ³¬³öÓÃ»§µÄÆÚÍû
-70.sign your work ÔÚÄãµÄ×÷Æ·ÉÏÇ©Ãû
+å¼ºå¤§çš„ç¨‹åºå‘˜ä¸ä¸€å®šä¼˜ç§€ï¼Œä½†ä¼˜ç§€çš„ç¨‹åºå‘˜æœ€ç»ˆä¼šå˜å¾—å¼ºå¤§
+1.Care about your craft  å…³å¿ƒä½ çš„æŠ€è‰º
+2.Think about your work  æ€è€ƒï¼ä½ çš„å·¥ä½œ
+3.Provide options,don't make lame excuses  æå‡ºå„ç§é€‰æ‹©ï¼Œä¸è¦æ‰¾è¹©è„šçš„å€Ÿå£
+4.don't live with broken wendows ä¸è¦å®¹å¿ç ´çª—æˆ·
+5.be a catalyst for change åšå˜åŒ–çš„å‚¬åŒ–å‰‚
+6.remember the big picture è®°ä½å¤§å›¾æ™¯
+7.make quality a requirements issue ä½¿è´¨é‡æˆä¸ºéœ€æ±‚é—®é¢˜
+8.invest Regularly in your knowledge portfolio å®šæœŸä¸ºä½ çš„çŸ¥è¯†èµ„äº§æŠ•èµ„
+9.critically analyze what you read and hear æ‰¹åˆ¤æ€§çš„åˆ†æä½ è¯»åˆ°çš„å’Œå¬åˆ°çš„
+10.it's both what you say and the way you speak it ä½ è¯´ä»€ä¹ˆå’Œä½ æ€ä¹ˆè¯´åŒæ ·é‡è¦
+11.Don't repeat yourself ä¸è¦é‡å¤è‡ªå·±
+12.make it easy to reuse è®©å¤ç”¨å˜çš„å®¹æ˜“
+13.eliminate effects between unrelated things æ¶ˆé™¤æ— å…³äº‹ç‰©ä¹‹é—´çš„å½±å“
+14.there no final decisions ä¸å­˜åœ¨æœ€ç»ˆå†³ç­–
+15.use tracer bullets to find the target åªç”¨æ›³å…‰å¼¹æ‰¾åˆ°ç›®æ ‡
+16.prototype to learn ä¸ºäº†å­¦ä¹ è€Œåˆ¶ä½œåŸå‹
+17.program close to the problem domain é è¿‘é—®é¢˜é¢†åŸŸç¼–ç¨‹
+18.estimate to avoid surprice ä¼°ç®—ï¼Œé¿å…å‘ç”Ÿæ„å¤–
+19.iterate the schedule with the code é€šè¿‡ä»£ç å¯¹è¿›åº¦è¡¨è¿›è¡Œè¿­ä»£
+20.keep knowledge in plain text ä½¿ç”¨çº¯æ–‡æœ¬ä¿å­˜ä½ çš„çŸ¥è¯†
+21.use the power of command shells åˆ©ç”¨shellå‘½ä»¤åŠ›é‡
+22.use a single editor well ç”¨å¥½ä¸€ç§ç¼–è¾‘å™¨
+23.always use source code controll æ€»æ˜¯ä½¿ç”¨æºç æ§åˆ¶
+24.fix the problem not to blame è¦ä¿®æ­£é—®é¢˜ï¼Œè€Œä¸æ˜¯å‘å‡ºæŒ‡è´£
+25.don not panic when debuging ä¸è¦ææ…Œ
+26.'select' isn't broken â€˜selectâ€™æ²¡æœ‰é—®é¢˜ ï¼ˆæˆ‘å¼•å…¥çš„è¿™ä¸ªåº“ç»å¯¹æ²¡æœ‰é—®é¢˜ï¼Œæ­¤å¤„æ˜¯åä¹‰ï¼‰
+27.don't assume it,prove it ä¸è¦å‡å®š è¦è¯æ˜
+28.learn a text manipulation language å­¦ä¹ ä¸€ç§æ–‡æœ¬æ“ä½œè¯­è¨€
+29.write code that write code ç¼–å†™èƒ½å†™ä»£ç çš„ä»£ç 
+30.you can't write perfect software ä½ ä¸å¯èƒ½å†™å‡ºå®Œç¾çš„è½¯ä»¶
+31.design with contracts é€šè¿‡åˆçº¦è¿›è¡Œè®¾è®¡
+32.crash earlt æ—©å´©æºƒ
+33.if it can't happen,use assertions to ensure that it won't å¦‚æœå®ƒä¸å¯èƒ½å‘ç”Ÿï¼Œç”¨æ–­è¨€ç¡®ä¿å®ƒä¸ä¼šå‘ç”Ÿ
+34.use exceptions for exceptional problems å°†å¼‚å¸¸ç”¨äºå¼‚å¸¸çš„é—®é¢˜
+35.finish what you start æœ‰å§‹æœ‰ç»ˆ
+36.minimize coupling between modules ä½¿æ¨¡å—ä¹‹é—´çš„è€¦åˆå‡è‡³æœ€å°‘
+37.configure,don't integrate è¦é…ç½® ä¸è¦é›†æˆ
+38.put abstractions in code,details in metadata å°†æŠ½è±¡æ”¾è¿›ä»£ç ï¼Œç»†èŠ‚æ”¾è¿›å…ƒæ•°æ®
+39.analyze workflow to improve concurrency åˆ†æå·¥ä½œæµä»¥æ”¹å–„å¹¶å‘æ€§
+40.design useing service ç”¨æœåŠ¡è¿›è¡Œè®¾è®¡
+41.always design for concurrency æ€»æ˜¯ä¸ºå¹¶å‘æ€§è¿›è¡Œè®¾è®¡
+42.separate views for modules ä½¿è§†å›¾å’Œæ¨¡å‹åˆ†ç¦»
+43.use blackboards to coordinate workflow ç”¨é»‘æ¿åè°ƒå·¥ä½œæµ
+44.don't program by coincidence ä¸è¦é å·§åˆç¼–ç¨‹
+45.estimate the order of your algorithms ä¼°ç®—ç®—æ³•çš„é˜¶
+46.test your estimates æµ‹è¯•ä½ çš„ä¼°ç®—
+47.refactor early,refactor often æ—©é‡æ„ï¼Œå¸¸é‡æ„ 
+48.design to test ä¸ºæµ‹è¯•è€Œè®¾è®¡
+49.test your software,or your users will æµ‹è¯•ä½ çš„è½¯ä»¶ï¼Œå¦åˆ™ä½ çš„ç”¨æˆ·å°±å¾—æµ‹è¯•
+50.don't use wizard code you don't understand ä¸è¦ä½¿ç”¨ä½ ä¸ç†è§£çš„å‘å¯¼ä»£ç 
+51.don't gather requirements - dig for them ä¸è¦æœé›†éœ€æ±‚ï¼ŒæŒ–æ˜å®ƒä»¬
+52.work with a user to think like a user ä¸ç”¨æˆ·ä¸€åŒå·¥ä½œï¼Œåƒç”¨æˆ·ä¸€æ ·æ€è€ƒ
+53.abstracts live longer than details æŠ½è±¡æ¯”ç»†èŠ‚æ´»çš„æ›´é•¿ä¹…
+54.use a project glossary ä½¿ç”¨é¡¹ç›®è¯æ±‡è¡¨
+55.don't think outside the box - find the box ä¸è¦åœ¨ç›’å­å¤–é¢æ€è€ƒï¼Œæ‰¾åˆ°è¿™ä¸ªç›’å­
+56.listen to nagging doubts - start when you're ready å€¾å¬åå¤å‡ºç°çš„ç–‘è™‘ï¼Œç­‰ä½ å‡†å¤‡å¥½å†å¼€å§‹
+57.some things are better done than described æœ‰äº›äº‹æƒ…å®è·µæ¯”ç†è®ºæ¥çš„æ›´å¥½
+58.don't be a slave to formal methods ä¸è¦åšå½¢å¼æ–¹æ³•çš„å¥´éš¶
+59.exoensive tools don't produce better designs æ˜‚è´µçš„å·¥å…·ä¸ä¸€å®šèƒ½åšå‡ºæ›´å¥½çš„è®¾è®¡
+60.organize around functionality,bot job functions å›´ç»•åŠŸèƒ½è¿›è¡Œç»„ç»‡ï¼Œè€Œä¸æ˜¯å›´ç»•å·¥ä½œèŒåŠ¡
+61.don't use manual procedures ä¸è¦ä½¿ç”¨æ‰‹å·¥æµç¨‹
+62.test early,test often,test automatically æ—©æµ‹è¯• å¸¸æµ‹è¯• è‡ªåŠ¨åŒ–æµ‹è¯•
+63.codeing ain't done till all the test run è¦é€šè¿‡å…¨éƒ¨æµ‹è¯•ï¼Œç¼–ç æ‰ç®—å®Œæˆ 
+64.use saboteurs to test your testing é€šè¿‡è“„æ„ç ´åæ¥æµ‹è¯•ä½ çš„æµ‹è¯•
+65.test state coverage,not codeing coverage æµ‹è¯•çŠ¶æ€è¦†ç›– è€Œä¸æ˜¯ä»£ç è¦†ç›– 
+66.find bug once ä¸€ä¸ªbugåªæŠ“ä¸€æ¬¡
+67.treat English as just another programming language æŠŠè‹±è¯­å½“ä½œåˆä¸€ç§ç¼–ç¨‹è¯­è¨€
+68.build document in,don't bolt it once æŠŠæ–‡æ¡£å»ºåœ¨ç‰ˆæœ¬ä¸­ï¼Œä¸è¦æ‹´åœ¨å¤–é¢
+69.gently exceed your users' exceptations  æ¸©å’Œçš„è¶…å‡ºç”¨æˆ·çš„æœŸæœ›
+70.sign your work åœ¨ä½ çš„ä½œå“ä¸Šç­¾å

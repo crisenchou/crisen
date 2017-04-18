@@ -1,24 +1,24 @@
-vagrantʹ���ĵ�
+vagrant使用心得
 
-ʲô��vagrant
-�����֮��vagrant����һ����������������ļ��Ĺ���
-ΪʲôҪʹ��vagrant
-���������������Ļ����ͻ�֪����������Ҫ�½�һ�����⻷����ʱ������Ҫ�ظ��İ�װ����ϵͳ���Լ�����ϵͳ�ر��Ĺ��ߣ����ÿ���½����⻷����Ҫ�ظ���һ���̣��ǽ������������ϵļ尾������˼������������vagrant�ĳ����Ѿ�����㶨������һ�У�ֻҪ��ӵ��vagrant,git,vitual box(or vmware libservent)���������ɵĽ���vagrant
+什么是vagrant
+简而言之，vagrant就是一个用来管理虚拟机文件的工具
+为什么要使用vagrant
+如果经常玩虚拟机的话，就会知道，当你需要新建一个虚拟环境的时候，总是要重复的安装操作系统，以及操作系统必备的工具，如果每次新建虚拟环境都要重复这一过程，那将不仅是身体上的煎熬，还有思想的舒服，索性vagrant的出现已经帮你搞定好了这一切，只要你拥有vagrant,git,vitual box(or vmware libservent)，就能轻松的接入vagrant
 
-���ʹ��vagrant
+如何使用vagrant
 
-��vagrant�У����е������������Ӧ�ñ���֮Ϊbox����Ȼ��Ҳ���Խ������ӣ������а�Ҳ����ν����Ŀ����Ҫ�������box��ʵ���ǰ����е�������е��ļ������˴�����ѣ����Ե������Ҫʹ��ĳ�ֲ���ϵͳ��ʱ��Ӧ��ȥѡ���Ӧ��box����vagrant�У�����box�ǳ��ļ򵥣�ֻ��Ҫһ������Ϳ����ˣ���������Ҫ��װ��hashicorp/precise64��box����ô�������������
+在vagrant中，所有的虚拟机环境都应该被称之为box，当然你也可以叫做盒子，甚至叫包也无所谓，但目的是要理解这个box其实就是把所有的虚拟机中的文件进行了打包而已，所以当你决定要使用某种操作系统的时候，应该去选择对应的box，在vagrant中，下载box非常的简单，只需要一行命令就可以了，比如我需要安装个hashicorp/precise64的box，那么就用下面的命令
 
 vagrant box add hashicorp/precise64
-������ع���һ�㶼Ҫ�����������ӣ��ڴ��ڼ����ȥС��һ������
+这个下载过程一般都要持续个几分钟，在此期间可以去小酌一杯咖啡
 
-����box֮�󣬾���Ҫ���г�ʼ���ˣ�ʹ��
+添加box之后，就需要进行初始化了，使用
 vagrant init hashicorp/precise64
-��ʼ��box
+初始化box
 
-����ֱ��vagrant up����box���ͻῴ��������Ѿ�����precise64��
+接着直接vagrant up启动box，就会看到虚拟机已经启动precise64了
 
-�ٽ��ž���vagrant ssh��½�������й������棬ʣ�µľ��Ǻ�linux����ϵͳ�ն�һ���ˣ��ǳ���easy
+再接着就是vagrant ssh登陆到命令行管理界面，剩下的就是和linux操作系统终端一样了，非常的easy
 
-vagrant����ʲô����
-vagrant�����ܹ����������֮�⣬���кܶ�ǳ�����˼�Ĺ��ܣ�����˵Ŀ¼ӳ�䣬����ԭ����ͨ���ļ��Ĺ��������������ĳһ��Ŀ¼ӳ�䵽�������ϣ������������������޸��ļ��Ӷ�ͬ��������������ļ���Ч�����Ҿ��������������Ƿǳ���black�����ܹ�������windows�����¿������ܵ�ȴ��linux�ķ���ͬʱ���з���������һ�µ����ԣ��Ŷӿ���������ʡȥ�˲���ftp����Ȼ����Եķ����ˣ���Ϊ����Ա��͵����һ�ֱر���Ʒ�ʣ������Ҳ����vagrant�����Ļ����Ͻ�access to vagrant��
+vagrant还有什么功能
+vagrant除了能够管理虚拟机之外，还有很多非常有意思的功能，比如说目录映射，它的原理是通过文件的共享，把虚拟机的某一个目录映射到宿主机上，可以让你在宿主机修改文件从而同步更新虚拟机中文件的效果，我觉得这个功能真的是非常的black，它能够让你在windows环境下开发，跑的却是linux的服务，同时具有服务器环境一致的属性，团队开发神器，省去了不断ftp代码然后测试的烦恼了，作为程序员，偷懒是一种必备的品质，如果你也觉得vagrant不错的话，赶紧access to vagrant吧

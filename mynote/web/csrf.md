@@ -1,12 +1,12 @@
-ÇÔÈ¡ÓÃ»§µÄcokkieÒÔ¼°sessionÀ´½øÐÐÓÃ»§Éí·ÝµÄÎ±Ôì£¬À´´ïµ½ÈëÇÖµÄÄ¿µÄ
+çªƒå–ç”¨æˆ·çš„cokkieä»¥åŠsessionæ¥è¿›è¡Œç”¨æˆ·èº«ä»½çš„ä¼ªé€ ï¼Œæ¥è¾¾åˆ°å…¥ä¾µçš„ç›®çš„
 
-¹¥»÷Í¨¹ýÔÚÊÚÈ¨ÓÃ»§·ÃÎÊµÄÒ³ÃæÖÐ°üº¬Á´½Ó»òÕß½Å±¾µÄ·½Ê½¹¤×÷¡£Àý
+æ”»å‡»é€šè¿‡åœ¨æŽˆæƒç”¨æˆ·è®¿é—®çš„é¡µé¢ä¸­åŒ…å«é“¾æŽ¥æˆ–è€…è„šæœ¬çš„æ–¹å¼å·¥ä½œã€‚ä¾‹
 
 
-Èç£ºÒ»¸öÍøÕ¾ÓÃ»§Bob¿ÉÄÜÕýÔÚä¯ÀÀÁÄÌìÂÛÌ³£¬¶øÍ¬Ê±ÁíÒ»¸öÓÃ»§AliceÒ²ÔÚ´ËÂÛÌ³ÖÐ£¬²¢ÇÒºóÕß¸Õ¸Õ·¢²¼ÁËÒ»¸ö¾ßÓÐBobÒøÐÐÁ´½ÓµÄÍ¼Æ¬ÏûÏ¢¡£ÉèÏëÒ» ÏÂ£¬Alice±àÐ´ÁËÒ»¸öÔÚBobµÄÒøÐÐÕ¾µãÉÏ½øÐÐÈ¡¿îµÄformÌá½»µÄÁ´½Ó£¬²¢½«´ËÁ´½Ó×÷ÎªÍ¼Æ¬tag¡£Èç¹ûBobµÄÒøÐÐÔÚcookieÖÐ±£´æËûµÄÊÚÈ¨ ÐÅÏ¢£¬²¢ÇÒ´ËcookieÃ»ÓÐ¹ýÆÚ£¬ÄÇÃ´µ±BobµÄä¯ÀÀÆ÷³¢ÊÔ×°ÔØÍ¼Æ¬Ê±½«Ìá½»Õâ¸öÈ¡¿îformºÍËûµÄcookie£¬ÕâÑùÔÚÃ»¾­BobÍ¬ÒâµÄÇé¿öÏÂ±ãÊÚÈ¨ ÁËÕâ´ÎÊÂÎñ¡£
-CSRFÊÇÒ»ÖÖÒÀÀµwebä¯ÀÀÆ÷µÄ¡¢±»»ìÏý¹ýµÄ´úÀíÈË¹¥»÷£¨deputy attack£©¡£ÔÚÉÏÃæÒøÐÐÊ¾ÀýÖÐµÄ´úÀíÈËÊÇBobµÄwebä¯ÀÀÆ÷£¬Ëü±»»ìÏýºóÎó½«BobµÄÊÚÈ¨Ö±½Ó½»¸øÁËAliceÊ¹ÓÃ¡£
-ÏÂÃæÊÇCSRFµÄ³£¼ûÌØÐÔ£º
-ÒÀ¿¿ÓÃ»§±êÊ¶Î£º¦ÍøÕ¾
-ÀûÓÃÍøÕ¾¶ÔÓÃ»§±êÊ¶µÄÐÅÈÎ
-ÆÛÆ­ÓÃ»§µÄä¯ÀÀÆ÷·¢ËÍHTTPÇëÇó¸øÄ¿±êÕ¾µã
-ÁíÍâ¿ÉÒÔÍ¨¹ýIMG±êÇ©»á´¥·¢Ò»¸öGETÇëÇó£¬¿ÉÒÔÀûÓÃËüÀ´ÊµÏÖCSRF¹¥»÷¡£
+å¦‚ï¼šä¸€ä¸ªç½‘ç«™ç”¨æˆ·Bobå¯èƒ½æ­£åœ¨æµè§ˆèŠå¤©è®ºå›ï¼Œè€ŒåŒæ—¶å¦ä¸€ä¸ªç”¨æˆ·Aliceä¹Ÿåœ¨æ­¤è®ºå›ä¸­ï¼Œå¹¶ä¸”åŽè€…åˆšåˆšå‘å¸ƒäº†ä¸€ä¸ªå…·æœ‰Bobé“¶è¡Œé“¾æŽ¥çš„å›¾ç‰‡æ¶ˆæ¯ã€‚è®¾æƒ³ä¸€ ä¸‹ï¼ŒAliceç¼–å†™äº†ä¸€ä¸ªåœ¨Bobçš„é“¶è¡Œç«™ç‚¹ä¸Šè¿›è¡Œå–æ¬¾çš„formæäº¤çš„é“¾æŽ¥ï¼Œå¹¶å°†æ­¤é“¾æŽ¥ä½œä¸ºå›¾ç‰‡tagã€‚å¦‚æžœBobçš„é“¶è¡Œåœ¨cookieä¸­ä¿å­˜ä»–çš„æŽˆæƒ ä¿¡æ¯ï¼Œå¹¶ä¸”æ­¤cookieæ²¡æœ‰è¿‡æœŸï¼Œé‚£ä¹ˆå½“Bobçš„æµè§ˆå™¨å°è¯•è£…è½½å›¾ç‰‡æ—¶å°†æäº¤è¿™ä¸ªå–æ¬¾formå’Œä»–çš„cookieï¼Œè¿™æ ·åœ¨æ²¡ç»BobåŒæ„çš„æƒ…å†µä¸‹ä¾¿æŽˆæƒ äº†è¿™æ¬¡äº‹åŠ¡ã€‚
+CSRFæ˜¯ä¸€ç§ä¾èµ–webæµè§ˆå™¨çš„ã€è¢«æ··æ·†è¿‡çš„ä»£ç†äººæ”»å‡»ï¼ˆdeputy attackï¼‰ã€‚åœ¨ä¸Šé¢é“¶è¡Œç¤ºä¾‹ä¸­çš„ä»£ç†äººæ˜¯Bobçš„webæµè§ˆå™¨ï¼Œå®ƒè¢«æ··æ·†åŽè¯¯å°†Bobçš„æŽˆæƒç›´æŽ¥äº¤ç»™äº†Aliceä½¿ç”¨ã€‚
+ä¸‹é¢æ˜¯CSRFçš„å¸¸è§ç‰¹æ€§ï¼š
+ä¾é ç”¨æˆ·æ ‡è¯†å±å®³ç½‘ç«™
+åˆ©ç”¨ç½‘ç«™å¯¹ç”¨æˆ·æ ‡è¯†çš„ä¿¡ä»»
+æ¬ºéª—ç”¨æˆ·çš„æµè§ˆå™¨å‘é€HTTPè¯·æ±‚ç»™ç›®æ ‡ç«™ç‚¹
+å¦å¤–å¯ä»¥é€šè¿‡IMGæ ‡ç­¾ä¼šè§¦å‘ä¸€ä¸ªGETè¯·æ±‚ï¼Œå¯ä»¥åˆ©ç”¨å®ƒæ¥å®žçŽ°CSRFæ”»å‡»ã€‚

@@ -1,5 +1,5 @@
-一开启opcache
+涓�寮�鍚痮pcache
 
-二升级PHP版本
+浜屽崌绾HP鐗堟湰
 
-三更换PHP引擎  如facebook的hiphop 也就是HHVM 全称是HipHop Virtual Machine
+涓夋洿鎹HP寮曟搸  濡俧acebook鐨刪iphop 涔熷氨鏄疕HVM 鍏ㄧО鏄疕ipHop Virtual Machine

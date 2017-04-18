@@ -1,140 +1,140 @@
 
-1¡¢²é¿´ÓĞ¶àÉÙ¸öIP·ÃÎÊ£º
+1ã€æŸ¥çœ‹æœ‰å¤šå°‘ä¸ªIPè®¿é—®ï¼š
 
-awk '{print $1}' log_file|sort|uniq|wc -l # wc -l ¿´¿´ÓĞ¶àÉÙĞĞ
+awk '{print $1}' log_file|sort|uniq|wc -l # wc -l çœ‹çœ‹æœ‰å¤šå°‘è¡Œ
 
 
-2¡¢²é¿´Ä³Ò»¸öÒ³Ãæ±»·ÃÎÊµÄ´ÎÊı£º
+2ã€æŸ¥çœ‹æŸä¸€ä¸ªé¡µé¢è¢«è®¿é—®çš„æ¬¡æ•°ï¼š
 
 grep "/index.php" log_file | wc -l
 
 
-3¡¢²é¿´Ã¿Ò»¸öIP·ÃÎÊÁË¶àÉÙ¸öÒ³Ãæ£º
+3ã€æŸ¥çœ‹æ¯ä¸€ä¸ªIPè®¿é—®äº†å¤šå°‘ä¸ªé¡µé¢ï¼š
 
-awk '{++S[$1]} END {for (a in S) print a,S[a]}' log_file > log.txtsort -n -t ' ' -k 2 log.txt # ÅäºÏsort½øÒ»²½ÅÅĞò
+awk '{++S[$1]} END {for (a in S) print a,S[a]}' log_file > log.txtsort -n -t ' ' -k 2 log.txt # é…åˆsortè¿›ä¸€æ­¥æ’åº
 
 
-4¡¢½«Ã¿¸öIP·ÃÎÊµÄÒ³ÃæÊı½øĞĞ´ÓĞ¡µ½´óÅÅĞò£º
+4ã€å°†æ¯ä¸ªIPè®¿é—®çš„é¡µé¢æ•°è¿›è¡Œä»å°åˆ°å¤§æ’åºï¼š
 
 awk '{++S[$1]} END {for (a in S) print S[a],a}' log_file | sort -n
 
 
-5¡¢²é¿´Ä³Ò»¸öIP·ÃÎÊÁËÄÄĞ©Ò³Ãæ£º
+5ã€æŸ¥çœ‹æŸä¸€ä¸ªIPè®¿é—®äº†å“ªäº›é¡µé¢ï¼š
 
 grep ^111.111.111.111 log_file| awk '{print $1,$7}'
 
 
-6¡¢È¥µôËÑË÷ÒıÇæÍ³¼ÆµÄÒ³Ãæ£º
+6ã€å»æ‰æœç´¢å¼•æ“ç»Ÿè®¡çš„é¡µé¢ï¼š
 
 awk '{print $12,$1}' log_file | grep ^\"Mozilla | awk '{print $2}' |sort | uniq | wc -l
 
 
-7¡¢²é¿´2015Äê8ÔÂ16ÈÕ14Ê±ÕâÒ»¸öĞ¡Ê±ÄÚÓĞ¶àÉÙIP·ÃÎÊ:
+7ã€æŸ¥çœ‹2015å¹´8æœˆ16æ—¥14æ—¶è¿™ä¸€ä¸ªå°æ—¶å†…æœ‰å¤šå°‘IPè®¿é—®:
 
 awk '{print $4,$1}' log_file | grep 16/Aug/2015:14 | awk '{print $2}'| sort | uniq | wc -l
 
 
-8¡¢²é¿´·ÃÎÊÇ°Ê®¸öipµØÖ·
+8ã€æŸ¥çœ‹è®¿é—®å‰åä¸ªipåœ°å€
 
-awk '{print $1}' |sort|uniq -c|sort -nr |head -10 access_log# uniq -c Ïàµ±ÓÚ·Ö×éÍ³¼Æ²¢°ÑÍ³¼ÆÊı·ÅÔÚ×îÇ°Ãæcat access.log|awk '{print $1}'|sort|uniq -c|sort -nr|head -10 cat access.log|awk '{counts[$(11)]+=1}; END {for(url in counts) print counts[url], url}
+awk '{print $1}' |sort|uniq -c|sort -nr |head -10 access_log# uniq -c ç›¸å½“äºåˆ†ç»„ç»Ÿè®¡å¹¶æŠŠç»Ÿè®¡æ•°æ”¾åœ¨æœ€å‰é¢cat access.log|awk '{print $1}'|sort|uniq -c|sort -nr|head -10 cat access.log|awk '{counts[$(11)]+=1}; END {for(url in counts) print counts[url], url}
 
 
-9¡¢·ÃÎÊ´ÎÊı×î¶àµÄ10¸öÎÄ¼ş»òÒ³Ãæ
+9ã€è®¿é—®æ¬¡æ•°æœ€å¤šçš„10ä¸ªæ–‡ä»¶æˆ–é¡µé¢
 
 cat log_file|awk '{print $11}'|sort|uniq -c|sort -nr | head -10
 
 cat log_file|awk '{print $11}'|sort|uniq -c|sort -nr|head -20
 
-awk '{print $1}' log_file |sort -n -r |uniq -c | sort -n -r | head -20 # ·ÃÎÊÁ¿×î´óµÄÇ°20¸öip
+awk '{print $1}' log_file |sort -n -r |uniq -c | sort -n -r | head -20 # è®¿é—®é‡æœ€å¤§çš„å‰20ä¸ªip
 
 
-10¡¢Í¨¹ı×ÓÓòÃû·ÃÎÊ´ÎÊı£¬ÒÀ¾İrefererÀ´¼ÆËã£¬ÉÔÓĞ²»×¼
+10ã€é€šè¿‡å­åŸŸåè®¿é—®æ¬¡æ•°ï¼Œä¾æ®refereræ¥è®¡ç®—ï¼Œç¨æœ‰ä¸å‡†
 
 cat access.log | awk '{print $11}' | sed -e ' s/http:\/\///' -e ' s/\/.*//' | sort | uniq -c | sort -rn | head -20
 
 
-11¡¢ÁĞ³ö´«Êä´óĞ¡×î´óµÄ¼¸¸öÎÄ¼ş
+11ã€åˆ—å‡ºä¼ è¾“å¤§å°æœ€å¤§çš„å‡ ä¸ªæ–‡ä»¶
 
 cat www.access.log |awk '($7~/\.php/){print $10 " " $1 " " $4 " " $7}'|sort -nr|head -100
 
 
-12¡¢ÁĞ³öÊä³ö´óÓÚ200000byte(Ô¼200kb)µÄÒ³ÃæÒÔ¼°¶ÔÓ¦Ò³Ãæ·¢Éú´ÎÊı
+12ã€åˆ—å‡ºè¾“å‡ºå¤§äº200000byte(çº¦200kb)çš„é¡µé¢ä»¥åŠå¯¹åº”é¡µé¢å‘ç”Ÿæ¬¡æ•°
 
 cat www.access.log |awk '($10 > 200000 && $7~/\.php/){print $7}'|sort -n|uniq -c|sort -nr|head -100
 
 
-13¡¢Èç¹ûÈÕÖ¾×îºóÒ»ÁĞ¼ÇÂ¼µÄÊÇÒ³ÃæÎÄ¼ş´«ÊäÊ±¼ä£¬ÔòÓĞÁĞ³öµ½¿Í»§¶Ë×îºÄÊ±µÄÒ³Ãæ
+13ã€å¦‚æœæ—¥å¿—æœ€åä¸€åˆ—è®°å½•çš„æ˜¯é¡µé¢æ–‡ä»¶ä¼ è¾“æ—¶é—´ï¼Œåˆ™æœ‰åˆ—å‡ºåˆ°å®¢æˆ·ç«¯æœ€è€—æ—¶çš„é¡µé¢
 
 cat www.access.log |awk '($7~/\.php/){print $NF " " $1 " " $4 " " $7}'|sort -nr|head -100
 
 
-14¡¢ÁĞ³ö×î×îºÄÊ±µÄÒ³Ãæ(³¬¹ı60ÃëµÄ)µÄÒÔ¼°¶ÔÓ¦Ò³Ãæ·¢Éú´ÎÊı
+14ã€åˆ—å‡ºæœ€æœ€è€—æ—¶çš„é¡µé¢(è¶…è¿‡60ç§’çš„)çš„ä»¥åŠå¯¹åº”é¡µé¢å‘ç”Ÿæ¬¡æ•°
 
 cat www.access.log |awk '($NF > 60 && $7~/\.php/){print $7}'|sort -n|uniq -c|sort -nr|head -100
 
 
-15¡¢ÁĞ³ö´«ÊäÊ±¼ä³¬¹ı 30 ÃëµÄÎÄ¼ş
+15ã€åˆ—å‡ºä¼ è¾“æ—¶é—´è¶…è¿‡ 30 ç§’çš„æ–‡ä»¶
 
 cat www.access.log |awk '($NF > 30){print $7}'|sort -n|uniq -c|sort -nr|head -20
 
 
-16¡¢ÁĞ³öµ±Ç°·şÎñÆ÷Ã¿Ò»½ø³ÌÔËĞĞµÄÊıÁ¿£¬µ¹ĞòÅÅÁĞ
+16ã€åˆ—å‡ºå½“å‰æœåŠ¡å™¨æ¯ä¸€è¿›ç¨‹è¿è¡Œçš„æ•°é‡ï¼Œå€’åºæ’åˆ—
 
 ps -ef | awk -F ' ' '{print $8 " " $9}' |sort | uniq -c |sort -nr |head -20
 
 
-17¡¢²é¿´apacheµ±Ç°²¢·¢·ÃÎÊÊı
+17ã€æŸ¥çœ‹apacheå½“å‰å¹¶å‘è®¿é—®æ•°
 
-#¶Ô±Èhttpd.confÖĞMaxClientsµÄÊı×Ö²î¾à¶àÉÙ¡£netstat -an | grep ESTABLISHED | wc -l
-
-
-18¡¢¿ÉÒÔÊ¹ÓÃÈçÏÂ²ÎÊı²é¿´Êı¾İ
-
-ps -ef|grep httpd|wc -l#1388#Í³¼Æhttpd½ø³ÌÊı£¬Á¬¸öÇëÇó»áÆô¶¯Ò»¸ö½ø³Ì£¬Ê¹ÓÃÓÚApache·şÎñÆ÷¡£#±íÊ¾ApacheÄÜ¹»´¦Àí1388¸ö²¢·¢ÇëÇó£¬Õâ¸öÖµApache¿É¸ù¾İ¸ºÔØÇé¿ö×Ô¶¯µ÷Õû¡£netstat -nat|grep -i "80"|wc -l#4341#netstat -an»á´òÓ¡ÏµÍ³µ±Ç°ÍøÂçÁ´½Ó×´Ì¬£¬¶øgrep -i "80"ÊÇÓÃÀ´ÌáÈ¡Óë80¶Ë¿ÚÓĞ¹ØµÄÁ¬½ÓµÄ£¬wc -l½øĞĞÁ¬½ÓÊıÍ³¼Æ¡£#×îÖÕ·µ»ØµÄÊı×Ö¾ÍÊÇµ±Ç°ËùÓĞ80¶Ë¿ÚµÄÇëÇó×ÜÊı¡£netstat -na|grep ESTABLISHED|wc -l#376#netstat -an»á´òÓ¡ÏµÍ³µ±Ç°ÍøÂçÁ´½Ó×´Ì¬£¬¶øgrep ESTABLISHED ÌáÈ¡³öÒÑ½¨Á¢Á¬½ÓµÄĞÅÏ¢¡£ È»ºówc -lÍ³¼Æ¡£#×îÖÕ·µ»ØµÄÊı×Ö¾ÍÊÇµ±Ç°ËùÓĞ80¶Ë¿ÚµÄÒÑ½¨Á¢Á¬½ÓµÄ×ÜÊı¡£netstat -nat||grep ESTABLISHED|wc#¿É²é¿´ËùÓĞ½¨Á¢Á¬½ÓµÄÏêÏ¸¼ÇÂ¼
+#å¯¹æ¯”httpd.confä¸­MaxClientsçš„æ•°å­—å·®è·å¤šå°‘ã€‚netstat -an | grep ESTABLISHED | wc -l
 
 
-19¡¢Êä³öÃ¿¸öipµÄÁ¬½ÓÊı£¬ÒÔ¼°×ÜµÄ¸÷¸ö×´Ì¬µÄÁ¬½ÓÊı
+18ã€å¯ä»¥ä½¿ç”¨å¦‚ä¸‹å‚æ•°æŸ¥çœ‹æ•°æ®
+
+ps -ef|grep httpd|wc -l#1388#ç»Ÿè®¡httpdè¿›ç¨‹æ•°ï¼Œè¿ä¸ªè¯·æ±‚ä¼šå¯åŠ¨ä¸€ä¸ªè¿›ç¨‹ï¼Œä½¿ç”¨äºApacheæœåŠ¡å™¨ã€‚#è¡¨ç¤ºApacheèƒ½å¤Ÿå¤„ç†1388ä¸ªå¹¶å‘è¯·æ±‚ï¼Œè¿™ä¸ªå€¼Apacheå¯æ ¹æ®è´Ÿè½½æƒ…å†µè‡ªåŠ¨è°ƒæ•´ã€‚netstat -nat|grep -i "80"|wc -l#4341#netstat -anä¼šæ‰“å°ç³»ç»Ÿå½“å‰ç½‘ç»œé“¾æ¥çŠ¶æ€ï¼Œè€Œgrep -i "80"æ˜¯ç”¨æ¥æå–ä¸80ç«¯å£æœ‰å…³çš„è¿æ¥çš„ï¼Œwc -lè¿›è¡Œè¿æ¥æ•°ç»Ÿè®¡ã€‚#æœ€ç»ˆè¿”å›çš„æ•°å­—å°±æ˜¯å½“å‰æ‰€æœ‰80ç«¯å£çš„è¯·æ±‚æ€»æ•°ã€‚netstat -na|grep ESTABLISHED|wc -l#376#netstat -anä¼šæ‰“å°ç³»ç»Ÿå½“å‰ç½‘ç»œé“¾æ¥çŠ¶æ€ï¼Œè€Œgrep ESTABLISHED æå–å‡ºå·²å»ºç«‹è¿æ¥çš„ä¿¡æ¯ã€‚ ç„¶åwc -lç»Ÿè®¡ã€‚#æœ€ç»ˆè¿”å›çš„æ•°å­—å°±æ˜¯å½“å‰æ‰€æœ‰80ç«¯å£çš„å·²å»ºç«‹è¿æ¥çš„æ€»æ•°ã€‚netstat -nat||grep ESTABLISHED|wc#å¯æŸ¥çœ‹æ‰€æœ‰å»ºç«‹è¿æ¥çš„è¯¦ç»†è®°å½•
+
+
+19ã€è¾“å‡ºæ¯ä¸ªipçš„è¿æ¥æ•°ï¼Œä»¥åŠæ€»çš„å„ä¸ªçŠ¶æ€çš„è¿æ¥æ•°
 
 netstat -n | awk '/^tcp/ {n=split($(NF-1),array,":");if(n<=2)++S[array[(1)]];else++S[array[(4)]];++s[$NF];++N} END {for(a in S){printf("%-20s %s\n", a, S[a]);++I}printf("%-20s %s\n","TOTAL_IP",I);for(a in s) printf("%-20s %s\n",a, s[a]);printf("%-20s %s\n","TOTAL_LINK",N);}'
 
 
-20¡¢ÆäËûµÄÊÕ¼¯
+20ã€å…¶ä»–çš„æ”¶é›†
 
-# ·ÖÎöÈÕÖ¾ÎÄ¼şÏÂ 2012-05-04 ·ÃÎÊÒ³Ãæ×î¸ß µÄÇ°20¸ö URL  ²¢ÅÅĞò cat access.log |grep '04/May/2012'| awk '{print $11}'|sort|uniq -c|sort -nr|head -20 # ²éÑ¯ÊÜ·ÃÎÊÒ³ÃæµÄURLµØÖ·ÖĞ º¬ÓĞ www.abc.com ÍøÖ·µÄ IP µØÖ· cat access_log | awk '($11~/\www.abc.com/){print $1}'|sort|uniq -c|sort -nr
+# åˆ†ææ—¥å¿—æ–‡ä»¶ä¸‹ 2012-05-04 è®¿é—®é¡µé¢æœ€é«˜ çš„å‰20ä¸ª URL  å¹¶æ’åº cat access.log |grep '04/May/2012'| awk '{print $11}'|sort|uniq -c|sort -nr|head -20 # æŸ¥è¯¢å—è®¿é—®é¡µé¢çš„URLåœ°å€ä¸­ å«æœ‰ www.abc.com ç½‘å€çš„ IP åœ°å€ cat access_log | awk '($11~/\www.abc.com/){print $1}'|sort|uniq -c|sort -nr
 
-# »ñÈ¡·ÃÎÊ×î¸ßµÄ10¸öIPµØÖ·  Í¬Ê±Ò²¿ÉÒÔ°´Ê±¼äÀ´²éÑ¯cat linewow-access.log|awk '{print $1}'|sort|uniq -c|sort -nr|head -10  #Ê±¼ä¶Î²éÑ¯ÈÕÖ¾Ê±¼ä¶ÎµÄÇé¿öcat log_file | egrep '15/Aug/2015|16/Aug/2015' |awk '{print $1}'|sort|uniq -c|sort -nr|head -10
+# è·å–è®¿é—®æœ€é«˜çš„10ä¸ªIPåœ°å€  åŒæ—¶ä¹Ÿå¯ä»¥æŒ‰æ—¶é—´æ¥æŸ¥è¯¢cat linewow-access.log|awk '{print $1}'|sort|uniq -c|sort -nr|head -10  #æ—¶é—´æ®µæŸ¥è¯¢æ—¥å¿—æ—¶é—´æ®µçš„æƒ…å†µcat log_file | egrep '15/Aug/2015|16/Aug/2015' |awk '{print $1}'|sort|uniq -c|sort -nr|head -10
 
-# ·ÖÎö2015/8/15 µ½ 2015/8/16 ·ÃÎÊ"/index.php?g=Member&m=Public&a=sendValidCode"µÄIPµ¹ĞòÅÅÁĞcat log_file | egrep '15/Aug/2015|16/Aug/2015' | awk '{if($7 == "/index.php?g=Member&m=Public&a=sendValidCode") print $1,$7}'|sort|uniq -c|sort -nr
+# åˆ†æ2015/8/15 åˆ° 2015/8/16 è®¿é—®"/index.php?g=Member&m=Public&a=sendValidCode"çš„IPå€’åºæ’åˆ—cat log_file | egrep '15/Aug/2015|16/Aug/2015' | awk '{if($7 == "/index.php?g=Member&m=Public&a=sendValidCode") print $1,$7}'|sort|uniq -c|sort -nr
 
-#($7~/\.php/) $7ÀïÃæ°üº¬.phpµÄ¾ÍÊä³ö,±¾¾äµÄÒâË¼ÊÇ×îºÄÊ±µÄÒ»°Ù¸öPHPÒ³Ãæcat log_file |awk '($7~/\.php/){print $NF " " $1 " " $4 " " $7}'|sort -nr|head -100# ÁĞ³ö×î×îºÄÊ±µÄÒ³Ãæ(³¬¹ı60ÃëµÄ)µÄÒÔ¼°¶ÔÓ¦Ò³Ãæ·¢Éú´ÎÊı cat access.log |awk '($NF > 60 && $7~/\.php/){print $7}'|sort -n|uniq -c|sort -nr|head -100 # Í³¼ÆÍøÕ¾Á÷Á¿£¨G) cat access.log |awk '{sum+=$10} END {print sum/1024/1024/1024}' # Í³¼Æ404µÄÁ¬½Ó awk '($9 ~/404/)' access.log | awk '{print $9,$7}' | sort# Í³¼Æhttp status. cat access.log |awk '{counts[$(9)]+=1}; END {for(code in counts) print code, counts[code]}' cat access.log |awk '{print $9}'|sort|uniq -c|sort -rn# Ã¿Ãë²¢·¢£º watch "awk '{if($9~/200|30|404/)COUNT[$4]++}END{for( a in COUNT) print a,COUNT[a]}' log_file|sort -k 2 -nr|head -n10"# ´ø¿íÍ³¼Æ cat apache.log |awk '{if($7~/GET/) count++}END{print "client_request="count}' cat apache.log |awk '{BYTE+=$11}END{print "client_kbyte_out="BYTE/1024"KB"}'# ÕÒ³öÄ³Ìì·ÃÎÊ´ÎÊı×î¶àµÄ10¸öIP cat /tmp/access.log | grep "20/Mar/2011" |awk '{print $3}'|sort |uniq -c|sort -nr|head# µ±ÌìipÁ¬½ÓÊı×î¸ßµÄip¶¼ÔÚ¸ÉĞ©Ê²Ã´: cat access.log | grep "10.0.21.17" | awk '{print $8}' | sort | uniq -c | sort -nr | head -n 10# Ğ¡Ê±µ¥Î»ÀïipÁ¬½ÓÊı×î¶àµÄ10¸öÊ±¶Îawk -vFS="[:]" '{gsub("-.*","",$1);num[$2" "$1]++}END{for(i in num)print i,num[i]}' log_file | sort -n -k 3 -r | head -10# ÕÒ³ö·ÃÎÊ´ÎÊı×î¶àµÄ¼¸¸ö·ÖÖÓ awk '{print $1}' access.log | grep "20/Mar/2011" |cut -c 14-18|sort|uniq -c|sort -nr|head# È¡5·ÖÖÓÈÕÖ¾if [ $DATE_MINUTE != $DATE_END_MINUTE ] ;then #ÔòÅĞ¶Ï¿ªÊ¼Ê±¼ä´ÁÓë½áÊøÊ±¼ä´ÁÊÇ·ñÏàµÈSTART_LINE=`sed -n "/$DATE_MINUTE/=" $APACHE_LOG|head -n1` #Èç¹û²»ÏàµÈ£¬ÔòÈ¡³ö¿ªÊ¼Ê±¼ä´ÁµÄĞĞºÅ£¬Óë½áÊøÊ±¼ä´ÁµÄĞĞºÅ # ²é¿´tcpµÄÁ´½Ó×´Ì¬netstat -nat |awk '{print $6}'|sort|uniq -c|sort -rn
+#($7~/\.php/) $7é‡Œé¢åŒ…å«.phpçš„å°±è¾“å‡º,æœ¬å¥çš„æ„æ€æ˜¯æœ€è€—æ—¶çš„ä¸€ç™¾ä¸ªPHPé¡µé¢cat log_file |awk '($7~/\.php/){print $NF " " $1 " " $4 " " $7}'|sort -nr|head -100# åˆ—å‡ºæœ€æœ€è€—æ—¶çš„é¡µé¢(è¶…è¿‡60ç§’çš„)çš„ä»¥åŠå¯¹åº”é¡µé¢å‘ç”Ÿæ¬¡æ•° cat access.log |awk '($NF > 60 && $7~/\.php/){print $7}'|sort -n|uniq -c|sort -nr|head -100 # ç»Ÿè®¡ç½‘ç«™æµé‡ï¼ˆG) cat access.log |awk '{sum+=$10} END {print sum/1024/1024/1024}' # ç»Ÿè®¡404çš„è¿æ¥ awk '($9 ~/404/)' access.log | awk '{print $9,$7}' | sort# ç»Ÿè®¡http status. cat access.log |awk '{counts[$(9)]+=1}; END {for(code in counts) print code, counts[code]}' cat access.log |awk '{print $9}'|sort|uniq -c|sort -rn# æ¯ç§’å¹¶å‘ï¼š watch "awk '{if($9~/200|30|404/)COUNT[$4]++}END{for( a in COUNT) print a,COUNT[a]}' log_file|sort -k 2 -nr|head -n10"# å¸¦å®½ç»Ÿè®¡ cat apache.log |awk '{if($7~/GET/) count++}END{print "client_request="count}' cat apache.log |awk '{BYTE+=$11}END{print "client_kbyte_out="BYTE/1024"KB"}'# æ‰¾å‡ºæŸå¤©è®¿é—®æ¬¡æ•°æœ€å¤šçš„10ä¸ªIP cat /tmp/access.log | grep "20/Mar/2011" |awk '{print $3}'|sort |uniq -c|sort -nr|head# å½“å¤©ipè¿æ¥æ•°æœ€é«˜çš„ipéƒ½åœ¨å¹²äº›ä»€ä¹ˆ: cat access.log | grep "10.0.21.17" | awk '{print $8}' | sort | uniq -c | sort -nr | head -n 10# å°æ—¶å•ä½é‡Œipè¿æ¥æ•°æœ€å¤šçš„10ä¸ªæ—¶æ®µawk -vFS="[:]" '{gsub("-.*","",$1);num[$2" "$1]++}END{for(i in num)print i,num[i]}' log_file | sort -n -k 3 -r | head -10# æ‰¾å‡ºè®¿é—®æ¬¡æ•°æœ€å¤šçš„å‡ ä¸ªåˆ†é’Ÿ awk '{print $1}' access.log | grep "20/Mar/2011" |cut -c 14-18|sort|uniq -c|sort -nr|head# å–5åˆ†é’Ÿæ—¥å¿—if [ $DATE_MINUTE != $DATE_END_MINUTE ] ;then #åˆ™åˆ¤æ–­å¼€å§‹æ—¶é—´æˆ³ä¸ç»“æŸæ—¶é—´æˆ³æ˜¯å¦ç›¸ç­‰START_LINE=`sed -n "/$DATE_MINUTE/=" $APACHE_LOG|head -n1` #å¦‚æœä¸ç›¸ç­‰ï¼Œåˆ™å–å‡ºå¼€å§‹æ—¶é—´æˆ³çš„è¡Œå·ï¼Œä¸ç»“æŸæ—¶é—´æˆ³çš„è¡Œå· # æŸ¥çœ‹tcpçš„é“¾æ¥çŠ¶æ€netstat -nat |awk '{print $6}'|sort|uniq -c|sort -rn
 
 netstat -n | awk '/^tcp/ {++S[$NF]};END {for(a in S) print a, S[a]}' netstat -n | awk '/^tcp/ {++state[$NF]}; END {for(key in state) print key,"\t",state[key]}' netstat -n | awk '/^tcp/ {++arr[$NF]};END {for(k in arr) print k,"\t",arr[k]}' netstat -n |awk '/^tcp/ {print $NF}'|sort|uniq -c|sort -rn
 
 netstat -ant | awk '{print $NF}' | grep -v '[a-z]' | sort | uniq -c
 netstat -ant|awk '/ip:80/{split($5,ip,":");++S[ip[1]]}END{for (a in S) print S[a],a}' |sort -n
 
-netstat -ant|awk '/:80/{split($5,ip,":");++S[ip[1]]}END{for (a in S) print S[a],a}' |sort -rn|head -n 10 awk 'BEGIN{printf ("http_code\tcount_num\n")}{COUNT[$10]++}END{for (a in COUNT) printf a"\t\t"COUNT[a]"\n"}'#²éÕÒÇëÇóÊıÇ°20¸öIP£¨³£ÓÃÓÚ²éÕÒ¹¥À´Ô´£©£º netstat -anlp|grep 80|grep tcp|awk '{print $5}'|awk -F: '{print $1}'|sort|uniq -c|sort -nr|head -n20 netstat -ant |awk '/:80/{split($5,ip,":");++A[ip[1]]}END{for(i in A) print A[i],i}' |sort -rn|head -n20#ÓÃtcpdumpĞáÌ½80¶Ë¿ÚµÄ·ÃÎÊ¿´¿´Ë­×î¸ß tcpdump -i eth0 -tnn dst port 80 -c 1000 | awk -F"." '{print $1"."$2"."$3"."$4}' | sort | uniq -c | sort -nr |head -20# ²éÕÒ½Ï¶àtime_waitÁ¬½Ó netstat -n|grep TIME_WAIT|awk '{print $5}'|sort|uniq -c|sort -rn|head -n20# ÕÒ²é½Ï¶àµÄSYNÁ¬½Ó netstat -an | grep SYN | awk '{print $5}' | awk -F: '{print $1}' | sort | uniq -c | sort -nr | more# ¸ù¾İ¶Ë¿ÚÁĞ½ø³Ì netstat -ntlp | grep 80 | awk '{print $7}' | cut -d/ -f1# ²é¿´ÁËÁ¬½ÓÊıºÍµ±Ç°µÄÁ¬½ÓÊı netstat -ant | grep $ip:80 | wc -l
+netstat -ant|awk '/:80/{split($5,ip,":");++S[ip[1]]}END{for (a in S) print S[a],a}' |sort -rn|head -n 10 awk 'BEGIN{printf ("http_code\tcount_num\n")}{COUNT[$10]++}END{for (a in COUNT) printf a"\t\t"COUNT[a]"\n"}'#æŸ¥æ‰¾è¯·æ±‚æ•°å‰20ä¸ªIPï¼ˆå¸¸ç”¨äºæŸ¥æ‰¾æ”»æ¥æºï¼‰ï¼š netstat -anlp|grep 80|grep tcp|awk '{print $5}'|awk -F: '{print $1}'|sort|uniq -c|sort -nr|head -n20 netstat -ant |awk '/:80/{split($5,ip,":");++A[ip[1]]}END{for(i in A) print A[i],i}' |sort -rn|head -n20#ç”¨tcpdumpå—…æ¢80ç«¯å£çš„è®¿é—®çœ‹çœ‹è°æœ€é«˜ tcpdump -i eth0 -tnn dst port 80 -c 1000 | awk -F"." '{print $1"."$2"."$3"."$4}' | sort | uniq -c | sort -nr |head -20# æŸ¥æ‰¾è¾ƒå¤štime_waitè¿æ¥ netstat -n|grep TIME_WAIT|awk '{print $5}'|sort|uniq -c|sort -rn|head -n20# æ‰¾æŸ¥è¾ƒå¤šçš„SYNè¿æ¥ netstat -an | grep SYN | awk '{print $5}' | awk -F: '{print $1}' | sort | uniq -c | sort -nr | more# æ ¹æ®ç«¯å£åˆ—è¿›ç¨‹ netstat -ntlp | grep 80 | awk '{print $7}' | cut -d/ -f1# æŸ¥çœ‹äº†è¿æ¥æ•°å’Œå½“å‰çš„è¿æ¥æ•° netstat -ant | grep $ip:80 | wc -l
 netstat -ant | grep $ip:80 | grep EST | wc -l
 
-# ²é¿´IP·ÃÎÊ´ÎÊı netstat -nat|grep ":80"|awk '{print $5}' |awk -F: '{print $1}' | sort| uniq -c|sort -n
+# æŸ¥çœ‹IPè®¿é—®æ¬¡æ•° netstat -nat|grep ":80"|awk '{print $5}' |awk -F: '{print $1}' | sort| uniq -c|sort -n
 
-LinuxÃüÁî·ÖÎöµ±Ç°µÄÁ´½Ó×´¿ö
+Linuxå‘½ä»¤åˆ†æå½“å‰çš„é“¾æ¥çŠ¶å†µ
 
-netstat -n | awk '/^tcp/ {++S[$NF]} END {for(a in S) print a, S[a]}' watch "netstat -n | awk '/^tcp/ {++S[\$NF]} END {for(a in S) print a, S[a]}'"  # Í¨¹ıwatch¿ÉÒÔÒ»Ö±¼à¿Ø
-LAST_ACK 5 #¹Ø±ÕÒ»¸öTCPÁ¬½ÓĞèÒª´ÓÁ½¸ö·½ÏòÉÏ·Ö±ğ½øĞĞ¹Ø±Õ£¬Ë«·½¶¼ÊÇÍ¨¹ı·¢ËÍFINÀ´±íÊ¾µ¥·½ÏòÊı¾İµÄ¹Ø±Õ£¬µ±Í¨ĞÅË«·½·¢ËÍÁË×îºóÒ»¸öFINµÄÊ±ºò£¬·¢ËÍ·½´ËÊ±´¦ÓÚLAST_ACK×´Ì¬£¬µ±·¢ËÍ·½ÊÕµ½¶Ô·½µÄÈ·ÈÏ£¨FinµÄAckÈ·ÈÏ£©ºó²ÅÕæÕı¹Ø±ÕÕû¸öTCPÁ¬½Ó£»SYN_RECV 30  # ±íÊ¾ÕıÔÚµÈ´ı´¦ÀíµÄÇëÇóÊı£»ESTABLISHED 1597 # ±íÊ¾Õı³£Êı¾İ´«Êä×´Ì¬£» FIN_WAIT1 51 # ±íÊ¾server¶ËÖ÷¶¯ÒªÇó¹Ø±ÕtcpÁ¬½Ó£» FIN_WAIT2 504 # ±íÊ¾¿Í»§¶ËÖĞ¶ÏÁ¬½Ó£» TIME_WAIT 1057  # ±íÊ¾´¦ÀíÍê±Ï£¬µÈ´ı³¬Ê±½áÊøµÄÇëÇóÊı£»
+netstat -n | awk '/^tcp/ {++S[$NF]} END {for(a in S) print a, S[a]}' watch "netstat -n | awk '/^tcp/ {++S[\$NF]} END {for(a in S) print a, S[a]}'"  # é€šè¿‡watchå¯ä»¥ä¸€ç›´ç›‘æ§
+LAST_ACK 5 #å…³é—­ä¸€ä¸ªTCPè¿æ¥éœ€è¦ä»ä¸¤ä¸ªæ–¹å‘ä¸Šåˆ†åˆ«è¿›è¡Œå…³é—­ï¼ŒåŒæ–¹éƒ½æ˜¯é€šè¿‡å‘é€FINæ¥è¡¨ç¤ºå•æ–¹å‘æ•°æ®çš„å…³é—­ï¼Œå½“é€šä¿¡åŒæ–¹å‘é€äº†æœ€åä¸€ä¸ªFINçš„æ—¶å€™ï¼Œå‘é€æ–¹æ­¤æ—¶å¤„äºLAST_ACKçŠ¶æ€ï¼Œå½“å‘é€æ–¹æ”¶åˆ°å¯¹æ–¹çš„ç¡®è®¤ï¼ˆFinçš„Ackç¡®è®¤ï¼‰åæ‰çœŸæ­£å…³é—­æ•´ä¸ªTCPè¿æ¥ï¼›SYN_RECV 30  # è¡¨ç¤ºæ­£åœ¨ç­‰å¾…å¤„ç†çš„è¯·æ±‚æ•°ï¼›ESTABLISHED 1597 # è¡¨ç¤ºæ­£å¸¸æ•°æ®ä¼ è¾“çŠ¶æ€ï¼› FIN_WAIT1 51 # è¡¨ç¤ºserverç«¯ä¸»åŠ¨è¦æ±‚å…³é—­tcpè¿æ¥ï¼› FIN_WAIT2 504 # è¡¨ç¤ºå®¢æˆ·ç«¯ä¸­æ–­è¿æ¥ï¼› TIME_WAIT 1057  # è¡¨ç¤ºå¤„ç†å®Œæ¯•ï¼Œç­‰å¾…è¶…æ—¶ç»“æŸçš„è¯·æ±‚æ•°ï¼›
 
-¸½Â¼
+é™„å½•
 
-Ò»ÔÂ  Jan    January
-¶şÔÂ  Feb    February
-ÈıÔÂ  Mar    March
-ËÄÔÂ  Apr    April
-ÎåÔÂ  May    May
-ÁùÔÂ  June    June
-ÆßÔÂ  July    July
-°ËÔÂ  Aug    Aguest
-¾ÅÔÂ  Sept    September
-Ê®ÔÂ  Oct    October
-Ê®Ò»ÔÂ  Nov    November
-Ê®¶şÔÂ  Dec    December
+ä¸€æœˆ  Jan    January
+äºŒæœˆ  Feb    February
+ä¸‰æœˆ  Mar    March
+å››æœˆ  Apr    April
+äº”æœˆ  May    May
+å…­æœˆ  June    June
+ä¸ƒæœˆ  July    July
+å…«æœˆ  Aug    Aguest
+ä¹æœˆ  Sept    September
+åæœˆ  Oct    October
+åä¸€æœˆ  Nov    November
+åäºŒæœˆ  Dec    December
 -------------------------END------------------------- 

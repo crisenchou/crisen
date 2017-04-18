@@ -1,124 +1,124 @@
-JavaScript ÓÉ Brendan Eich ·¢Ã÷¡£ËüÓÚ 1995 Äê³öÏÖÔÚ Netscape ÖÐ£¨¸Ãä¯ÀÀÆ÷ÒÑÍ£Ö¹¸üÐÂ£©£¬²¢ÓÚ 1997 Äê±» ECMA£¨Ò»¸ö±ê×¼Ð­»á£©²ÉÄÉ¡£
+JavaScript ç”± Brendan Eich å‘æ˜Žã€‚å®ƒäºŽ 1995 å¹´å‡ºçŽ°åœ¨ Netscape ä¸­ï¼ˆè¯¥æµè§ˆå™¨å·²åœæ­¢æ›´æ–°ï¼‰ï¼Œå¹¶äºŽ 1997 å¹´è¢« ECMAï¼ˆä¸€ä¸ªæ ‡å‡†åä¼šï¼‰é‡‡çº³ã€‚
 
-JavaScript ¶Ô´óÐ¡Ð´Ãô¸Ð JavaScriptÒÔÍÕ·å·¨ÃüÃû
+JavaScript å¯¹å¤§å°å†™æ•æ„Ÿ JavaScriptä»¥é©¼å³°æ³•å‘½å
 
-JavaScriptºËÐÄ×é³É
-javascript°üÀ¨Èý¸öÖØÒª²¿·Ö£ººËÐÄ£¨ECMAScript£©,ÎÄµµ¶ÔÏóÄ£ÐÍ£¨DOM£©,ä¯ÀÀÆ÷¶ÔÏóÄ£ÐÍ£¨BOM£©¡£
-JavaScriptÈ«¾Ö¶ÔÏó
-navigator ä¯ÀÀÆ÷¶ÔÏó
-     ·µ»Øµ±Ç°Ê¹ÓÃµÄä¯ÀÀÆ÷µÄÏêÏ¸Çé¿ö
-screen ÆÁÄ»¶ÔÏó
-     ·µ»Øµ±Ç°ÓÃ»§µÄÆÁÄ»ÉèÖÃ
-     ¾ßÌåËµÒ»ÏÂ
-     width ÆÁÄ»¿í¶È£¨µ¥Î»ÊÇÏñËØ£©
-     height ÆÁÄ»¸ß¶È
-     availWidth ÆÁÄ»µÄ¿ÉÓÃ¸ß¶È
-     availHeight ÆÁÄ»µÄ¿ÉÓÃ¿í¶È
-     colorDepth   µ±Ç°ÑÕÉ«ËùÕ¼ÓÃµÄÎ»Êý
-window ¶ÔÏó
-     ËûÊÇJavaScriptÖÐ×î´óµÄ¶ÔÏó£¬ËüÃèÊöµÄÊÇÒ»¸öä¯ÀÀÆ÷´°¿Ú¡£Ò»°ãÒªÒýÓÃËüµÄÊôÐÔºÍ·½·¨Ê±£¬²»ÐèÒªÓÃ¡°window.xxx¡±ÕâÖÖÐÎÊ½£¬¶øÖ±½ÓÊ¹ÓÃ¡°xxx¡±¡£Ò»¸ö¿ò¼ÜÒ³ÃæÒ²ÊÇÒ»¸ö´°¿Ú
-     windowµ¯³ö¿òÊÇÓÉwindows¶ÔÏóÀ´¿ØÖÆ£¬ÖØÐ´window¶ÔÏóµÄ alert·½·¨ comfirm·½·¨ prompt·½·¨¿ÉÒÔÉè¼Æ¸öÐÔ»¯µ¯³ö¿òÓë¾¯¸æ¿ò
-     ËùÓÐµÄÈ«¾Ö±äÁ¿¶¼ÊÇwindow¶ÔÏóµÄÊôÐÔ
+JavaScriptæ ¸å¿ƒç»„æˆ
+javascriptåŒ…æ‹¬ä¸‰ä¸ªé‡è¦éƒ¨åˆ†ï¼šæ ¸å¿ƒï¼ˆECMAScriptï¼‰,æ–‡æ¡£å¯¹è±¡æ¨¡åž‹ï¼ˆDOMï¼‰,æµè§ˆå™¨å¯¹è±¡æ¨¡åž‹ï¼ˆBOMï¼‰ã€‚
+JavaScriptå…¨å±€å¯¹è±¡
+navigator æµè§ˆå™¨å¯¹è±¡
+     è¿”å›žå½“å‰ä½¿ç”¨çš„æµè§ˆå™¨çš„è¯¦ç»†æƒ…å†µ
+screen å±å¹•å¯¹è±¡
+     è¿”å›žå½“å‰ç”¨æˆ·çš„å±å¹•è®¾ç½®
+     å…·ä½“è¯´ä¸€ä¸‹
+     width å±å¹•å®½åº¦ï¼ˆå•ä½æ˜¯åƒç´ ï¼‰
+     height å±å¹•é«˜åº¦
+     availWidth å±å¹•çš„å¯ç”¨é«˜åº¦
+     availHeight å±å¹•çš„å¯ç”¨å®½åº¦
+     colorDepth   å½“å‰é¢œè‰²æ‰€å ç”¨çš„ä½æ•°
+window å¯¹è±¡
+     ä»–æ˜¯JavaScriptä¸­æœ€å¤§çš„å¯¹è±¡ï¼Œå®ƒæè¿°çš„æ˜¯ä¸€ä¸ªæµè§ˆå™¨çª—å£ã€‚ä¸€èˆ¬è¦å¼•ç”¨å®ƒçš„å±žæ€§å’Œæ–¹æ³•æ—¶ï¼Œä¸éœ€è¦ç”¨â€œwindow.xxxâ€è¿™ç§å½¢å¼ï¼Œè€Œç›´æŽ¥ä½¿ç”¨â€œxxxâ€ã€‚ä¸€ä¸ªæ¡†æž¶é¡µé¢ä¹Ÿæ˜¯ä¸€ä¸ªçª—å£
+     windowå¼¹å‡ºæ¡†æ˜¯ç”±windowså¯¹è±¡æ¥æŽ§åˆ¶ï¼Œé‡å†™windowå¯¹è±¡çš„ alertæ–¹æ³• comfirmæ–¹æ³• promptæ–¹æ³•å¯ä»¥è®¾è®¡ä¸ªæ€§åŒ–å¼¹å‡ºæ¡†ä¸Žè­¦å‘Šæ¡†
+     æ‰€æœ‰çš„å…¨å±€å˜é‡éƒ½æ˜¯windowå¯¹è±¡çš„å±žæ€§
 
-HistoryÀúÊ·¶ÔÏó
-     back£¬foward£¬go
-     ÆäÖÐgo(x)£¬xÎªÕûÊý£¬µ±Îª-1Ê±Ìø×ªÉÏÒ»¸öÒ³Ãæ£¬1Ê±Ìø×ªºóÒ»¸öÒ³Ãæ£¬µÈÍ¬ÓÚback£¬fowardµÄÇ°½øºóÍËºìÄÜ
-Location µØÖ·¶ÔÏó
-     µØÖ·¶ÔÏó ËüÃèÊöµÄÊÇÄ³Ò»¸ö´°¿Ú¶ÔÏóËù´ò¿ªµÄµØÖ·
-DocumentÎÄµµ¶ÔÏó
-     open£¬write£¬close
+HistoryåŽ†å²å¯¹è±¡
+     backï¼Œfowardï¼Œgo
+     å…¶ä¸­go(x)ï¼Œxä¸ºæ•´æ•°ï¼Œå½“ä¸º-1æ—¶è·³è½¬ä¸Šä¸€ä¸ªé¡µé¢ï¼Œ1æ—¶è·³è½¬åŽä¸€ä¸ªé¡µé¢ï¼Œç­‰åŒäºŽbackï¼Œfowardçš„å‰è¿›åŽé€€çº¢èƒ½
+Location åœ°å€å¯¹è±¡
+     åœ°å€å¯¹è±¡ å®ƒæè¿°çš„æ˜¯æŸä¸€ä¸ªçª—å£å¯¹è±¡æ‰€æ‰“å¼€çš„åœ°å€
+Documentæ–‡æ¡£å¯¹è±¡
+     openï¼Œwriteï¼Œclose
 
 
 
-·½·¨
-indexOf()  ·µ»ØÄ³¸öÖ¸¶¨µÄ×Ö·û´®ÔÚÄ³¸ö×Ö·û´®ÖÐÊ×´Î³öÏÖµÄÎ»ÖÃ
-ÓÃ·¨  stringObject.indexOf(searchvalue,fromindex)
-jsÖÐ×Ö·û´®ÊÇÒ»¸ö¶ÔÏó  ÐèÒªÍ¨¹ý¶ÔÏó.·½·¨µÄÐÎÊ½À´µ÷ÓÃ·½·¨  µÚÒ»¸ö²ÎÊýÊÇÒªËÑË÷µÄ×Ö·û´® µÚ¶þ¸öÊÇ¿ÉÑ¡²ÎÊý ±íÊ¾¿ªÊ¼¼ìË÷µÄÎ»ÖÃ  Ïàµ±ÓëphpÖÐµÄstrposº¯Êý
+æ–¹æ³•
+indexOf()  è¿”å›žæŸä¸ªæŒ‡å®šçš„å­—ç¬¦ä¸²åœ¨æŸä¸ªå­—ç¬¦ä¸²ä¸­é¦–æ¬¡å‡ºçŽ°çš„ä½ç½®
+ç”¨æ³•  stringObject.indexOf(searchvalue,fromindex)
+jsä¸­å­—ç¬¦ä¸²æ˜¯ä¸€ä¸ªå¯¹è±¡  éœ€è¦é€šè¿‡å¯¹è±¡.æ–¹æ³•çš„å½¢å¼æ¥è°ƒç”¨æ–¹æ³•  ç¬¬ä¸€ä¸ªå‚æ•°æ˜¯è¦æœç´¢çš„å­—ç¬¦ä¸² ç¬¬äºŒä¸ªæ˜¯å¯é€‰å‚æ•° è¡¨ç¤ºå¼€å§‹æ£€ç´¢çš„ä½ç½®  ç›¸å½“ä¸Žphpä¸­çš„strposå‡½æ•°
 
-setInterval()  ·½·¨¿É°´ÕÕÖ¸¶¨µÄÖÜÆÚ£¨ÒÔºÁÃë¼Æ£©À´µ÷ÓÃº¯Êý»ò¼ÆËã±í´ïÊ½   Õâ¸ö·½·¨Ê®·ÖÇ¿´ó  °Ñ´úÂë·Åµ½Î´À´Ö´ÐÐ ¿ÉÒÔ´ïµ½¶à½ø³ÌµÄÐ§¹û  clearInterval¿ÉÒÔ¹Ø±Õ¸ÃÐ§¹û  
-³£ÓÃµØ·½ ¼ÆÊ±Æ÷  Ò³ÃæÊÂÊµË¢ÐÂ  ÍøÒ³ÁÄÌìµÈ
+setInterval()  æ–¹æ³•å¯æŒ‰ç…§æŒ‡å®šçš„å‘¨æœŸï¼ˆä»¥æ¯«ç§’è®¡ï¼‰æ¥è°ƒç”¨å‡½æ•°æˆ–è®¡ç®—è¡¨è¾¾å¼   è¿™ä¸ªæ–¹æ³•ååˆ†å¼ºå¤§  æŠŠä»£ç æ”¾åˆ°æœªæ¥æ‰§è¡Œ å¯ä»¥è¾¾åˆ°å¤šè¿›ç¨‹çš„æ•ˆæžœ  clearIntervalå¯ä»¥å…³é—­è¯¥æ•ˆæžœ  
+å¸¸ç”¨åœ°æ–¹ è®¡æ—¶å™¨  é¡µé¢äº‹å®žåˆ·æ–°  ç½‘é¡µèŠå¤©ç­‰
 
-javascript ÐèÒªÉî¿ÌÀí½âµÄÄÚÈÝs
+javascript éœ€è¦æ·±åˆ»ç†è§£çš„å†…å®¹s
 
-1.½éÉÜjsµÄ»ù±¾Êý¾ÝÀàÐÍ
+1.ä»‹ç»jsçš„åŸºæœ¬æ•°æ®ç±»åž‹
 
-Undefined¡¢Null¡¢Boolean¡¢Number¡¢String
-2.jsÓÐÄÄÐ©ÄÚÖÃ¶ÔÏó£¿
+Undefinedã€Nullã€Booleanã€Numberã€String
+2.jsæœ‰å“ªäº›å†…ç½®å¯¹è±¡ï¼Ÿ
 
-Êý¾Ý·â×°Àà¶ÔÏó£ºObject¡¢Array¡¢Boolean¡¢Number ºÍ String
+æ•°æ®å°è£…ç±»å¯¹è±¡ï¼šObjectã€Arrayã€Booleanã€Number å’Œ String
 
-ÆäËû¶ÔÏó£ºFunction¡¢Arguments¡¢Math¡¢Date¡¢RegExp¡¢Error
-3.this¶ÔÏóµÄÀí½â
+å…¶ä»–å¯¹è±¡ï¼šFunctionã€Argumentsã€Mathã€Dateã€RegExpã€Error
+3.thiså¯¹è±¡çš„ç†è§£
 
-this×ÜÊÇÖ¸Ïòº¯ÊýµÄÖ±½Óµ÷ÓÃÕß£¨¶ø·Ç¼ä½Óµ÷ÓÃÕß£©£»
+thisæ€»æ˜¯æŒ‡å‘å‡½æ•°çš„ç›´æŽ¥è°ƒç”¨è€…ï¼ˆè€Œéžé—´æŽ¥è°ƒç”¨è€…ï¼‰ï¼›
 
-Èç¹ûÓÐnew¹Ø¼ü×Ö£¬thisÖ¸Ïònew³öÀ´µÄÄÇ¸ö¶ÔÏó£»
+å¦‚æžœæœ‰newå…³é”®å­—ï¼ŒthisæŒ‡å‘newå‡ºæ¥çš„é‚£ä¸ªå¯¹è±¡ï¼›
 
-ÔÚÊÂ¼þÖÐ£¬thisÖ¸Ïò´¥·¢Õâ¸öÊÂ¼þµÄ¶ÔÏó£¬ÌØÊâµÄÊÇ£¬IEÖÐµÄattachEventÖÐµÄthis×ÜÊÇÖ¸ÏòÈ«¾Ö¶ÔÏóWindow£»
-4.evalÊÇ×öÊ²Ã´µÄ£¿
+åœ¨äº‹ä»¶ä¸­ï¼ŒthisæŒ‡å‘è§¦å‘è¿™ä¸ªäº‹ä»¶çš„å¯¹è±¡ï¼Œç‰¹æ®Šçš„æ˜¯ï¼ŒIEä¸­çš„attachEventä¸­çš„thisæ€»æ˜¯æŒ‡å‘å…¨å±€å¯¹è±¡Windowï¼›
+4.evalæ˜¯åšä»€ä¹ˆçš„ï¼Ÿ
 
-ËüµÄ¹¦ÄÜÊÇ°Ñ¶ÔÓ¦µÄ×Ö·û´®½âÎö³ÉJS´úÂë²¢ÔËÐÐ£»
+å®ƒçš„åŠŸèƒ½æ˜¯æŠŠå¯¹åº”çš„å­—ç¬¦ä¸²è§£æžæˆJSä»£ç å¹¶è¿è¡Œï¼›
 
-Ó¦¸Ã±ÜÃâÊ¹ÓÃeval£¬²»°²È«£¬·Ç³£ºÄÐÔÄÜ£¨2´Î£¬Ò»´Î½âÎö³ÉjsÓï¾ä£¬Ò»´ÎÖ´ÐÐ£©¡£
+åº”è¯¥é¿å…ä½¿ç”¨evalï¼Œä¸å®‰å…¨ï¼Œéžå¸¸è€—æ€§èƒ½ï¼ˆ2æ¬¡ï¼Œä¸€æ¬¡è§£æžæˆjsè¯­å¥ï¼Œä¸€æ¬¡æ‰§è¡Œï¼‰ã€‚
 
-ÓÉJSON×Ö·û´®×ª»»ÎªJSON¶ÔÏóµÄÊ±ºò¿ÉÒÔÓÃeval£¬var obj =eval(¡®(¡®+ str +¡¯)¡¯);
-5.DOMÔõÑùÌí¼Ó¡¢ÒÆ³ý¡¢ÒÆ¶¯¡¢¸´ÖÆ¡¢´´½¨ºÍ²éÕÒ½Úµã
-¸´ÖÆ´úÂë
+ç”±JSONå­—ç¬¦ä¸²è½¬æ¢ä¸ºJSONå¯¹è±¡çš„æ—¶å€™å¯ä»¥ç”¨evalï¼Œvar obj =eval(â€˜(â€˜+ str +â€™)â€™);
+5.DOMæ€Žæ ·æ·»åŠ ã€ç§»é™¤ã€ç§»åŠ¨ã€å¤åˆ¶ã€åˆ›å»ºå’ŒæŸ¥æ‰¾èŠ‚ç‚¹
+å¤åˆ¶ä»£ç 
 
-// ´´½¨ÐÂ½Úµã
-createDocumentFragment() //´´½¨Ò»¸öDOMÆ¬¶Î
-createElement() //´´½¨Ò»¸ö¾ßÌåµÄÔªËØ
-createTextNode() //´´½¨Ò»¸öÎÄ±¾½Úµã
-// Ìí¼Ó¡¢ÒÆ³ý¡¢Ìæ»»¡¢²åÈë
+// åˆ›å»ºæ–°èŠ‚ç‚¹
+createDocumentFragment() //åˆ›å»ºä¸€ä¸ªDOMç‰‡æ®µ
+createElement() //åˆ›å»ºä¸€ä¸ªå…·ä½“çš„å…ƒç´ 
+createTextNode() //åˆ›å»ºä¸€ä¸ªæ–‡æœ¬èŠ‚ç‚¹
+// æ·»åŠ ã€ç§»é™¤ã€æ›¿æ¢ã€æ’å…¥
 appendChild()
 removeChild()
 replaceChild()
-insertBefore() //ÔÚÒÑÓÐµÄ×Ó½ÚµãÇ°²åÈëÒ»¸öÐÂµÄ×Ó½Úµã
-// ²éÕÒ
-getElementsByTagName() //Í¨¹ý±êÇ©Ãû³Æ
-getElementsByName() //Í¨¹ýÔªËØµÄNameÊôÐÔµÄÖµ(IEÈÝ´íÄÜÁ¦½ÏÇ¿£¬»áµÃµ½Ò»¸öÊý×é£¬ÆäÖÐ°üÀ¨idµÈÓÚnameÖµµÄ)
-getElementById() //Í¨¹ýÔªËØId£¬Î¨Ò»ÐÔ
+insertBefore() //åœ¨å·²æœ‰çš„å­èŠ‚ç‚¹å‰æ’å…¥ä¸€ä¸ªæ–°çš„å­èŠ‚ç‚¹
+// æŸ¥æ‰¾
+getElementsByTagName() //é€šè¿‡æ ‡ç­¾åç§°
+getElementsByName() //é€šè¿‡å…ƒç´ çš„Nameå±žæ€§çš„å€¼(IEå®¹é”™èƒ½åŠ›è¾ƒå¼ºï¼Œä¼šå¾—åˆ°ä¸€ä¸ªæ•°ç»„ï¼Œå…¶ä¸­åŒ…æ‹¬idç­‰äºŽnameå€¼çš„)
+getElementById() //é€šè¿‡å…ƒç´ Idï¼Œå”¯ä¸€æ€§
 
-¸´ÖÆ´úÂë
-6.nullºÍundefinedµÄÇø±ð£¿
+å¤åˆ¶ä»£ç 
+6.nullå’Œundefinedçš„åŒºåˆ«ï¼Ÿ
 
-nullÊÇÒ»¸ö±íÊ¾¡±ÎÞ¡±µÄ¶ÔÏó£¬×ªÎªÊýÖµÊ±Îª0£»undefinedÊÇÒ»¸ö±íÊ¾¡±ÎÞ¡±µÄÔ­Ê¼Öµ£¬×ªÎªÊýÖµÊ±ÎªNaN¡£
-undefined£º
+nullæ˜¯ä¸€ä¸ªè¡¨ç¤ºâ€æ— â€çš„å¯¹è±¡ï¼Œè½¬ä¸ºæ•°å€¼æ—¶ä¸º0ï¼›undefinedæ˜¯ä¸€ä¸ªè¡¨ç¤ºâ€æ— â€çš„åŽŸå§‹å€¼ï¼Œè½¬ä¸ºæ•°å€¼æ—¶ä¸ºNaNã€‚
+undefinedï¼š
 
-£¨1£©±äÁ¿±»ÉùÃ÷ÁË£¬µ«Ã»ÓÐ¸³ÖµÊ±£¬¾ÍµÈÓÚundefined¡£
+ï¼ˆ1ï¼‰å˜é‡è¢«å£°æ˜Žäº†ï¼Œä½†æ²¡æœ‰èµ‹å€¼æ—¶ï¼Œå°±ç­‰äºŽundefinedã€‚
 
-£¨2) µ÷ÓÃº¯ÊýÊ±£¬Ó¦¸ÃÌá¹©µÄ²ÎÊýÃ»ÓÐÌá¹©£¬¸Ã²ÎÊýµÈÓÚundefined¡£
+ï¼ˆ2) è°ƒç”¨å‡½æ•°æ—¶ï¼Œåº”è¯¥æä¾›çš„å‚æ•°æ²¡æœ‰æä¾›ï¼Œè¯¥å‚æ•°ç­‰äºŽundefinedã€‚
 
-£¨3£©¶ÔÏóÃ»ÓÐ¸³ÖµµÄÊôÐÔ£¬¸ÃÊôÐÔµÄÖµÎªundefined¡£
+ï¼ˆ3ï¼‰å¯¹è±¡æ²¡æœ‰èµ‹å€¼çš„å±žæ€§ï¼Œè¯¥å±žæ€§çš„å€¼ä¸ºundefinedã€‚
 
-£¨4£©º¯ÊýÃ»ÓÐ·µ»ØÖµÊ±£¬Ä¬ÈÏ·µ»Øundefined¡£
-null£º
+ï¼ˆ4ï¼‰å‡½æ•°æ²¡æœ‰è¿”å›žå€¼æ—¶ï¼Œé»˜è®¤è¿”å›žundefinedã€‚
+nullï¼š
 
-£¨1£© ×÷Îªº¯ÊýµÄ²ÎÊý£¬±íÊ¾¸Ãº¯ÊýµÄ²ÎÊý²»ÊÇ¶ÔÏó¡£
+ï¼ˆ1ï¼‰ ä½œä¸ºå‡½æ•°çš„å‚æ•°ï¼Œè¡¨ç¤ºè¯¥å‡½æ•°çš„å‚æ•°ä¸æ˜¯å¯¹è±¡ã€‚
 
-£¨2£© ×÷Îª¶ÔÏóÔ­ÐÍÁ´µÄÖÕµã¡£
-7.new²Ù×÷·û¾ßÌå¸ÉÁËÊ²Ã´ÄØ?
+ï¼ˆ2ï¼‰ ä½œä¸ºå¯¹è±¡åŽŸåž‹é“¾çš„ç»ˆç‚¹ã€‚
+7.newæ“ä½œç¬¦å…·ä½“å¹²äº†ä»€ä¹ˆå‘¢?
 
-£¨1£©´´½¨Ò»¸ö¿Õ¶ÔÏó£¬²¢ÇÒ this ±äÁ¿ÒýÓÃ¸Ã¶ÔÏó£¬Í¬Ê±»¹¼Ì³ÐÁË¸Ãº¯ÊýµÄÔ­ÐÍ¡£
+ï¼ˆ1ï¼‰åˆ›å»ºä¸€ä¸ªç©ºå¯¹è±¡ï¼Œå¹¶ä¸” this å˜é‡å¼•ç”¨è¯¥å¯¹è±¡ï¼ŒåŒæ—¶è¿˜ç»§æ‰¿äº†è¯¥å‡½æ•°çš„åŽŸåž‹ã€‚
 
-£¨2£©ÊôÐÔºÍ·½·¨±»¼ÓÈëµ½ this ÒýÓÃµÄ¶ÔÏóÖÐ¡£
+ï¼ˆ2ï¼‰å±žæ€§å’Œæ–¹æ³•è¢«åŠ å…¥åˆ° this å¼•ç”¨çš„å¯¹è±¡ä¸­ã€‚
 
-£¨3£©ÐÂ´´½¨µÄ¶ÔÏóÓÉ this ËùÒýÓÃ£¬²¢ÇÒ×îºóÒþÊ½µÄ·µ»Ø this ¡£
-8.JSON µÄÁË½â£¿
+ï¼ˆ3ï¼‰æ–°åˆ›å»ºçš„å¯¹è±¡ç”± this æ‰€å¼•ç”¨ï¼Œå¹¶ä¸”æœ€åŽéšå¼çš„è¿”å›ž this ã€‚
+8.JSON çš„äº†è§£ï¼Ÿ
 
-JSON(JavaScript Object Notation) ÊÇÒ»ÖÖÇáÁ¿¼¶µÄÊý¾Ý½»»»¸ñÊ½¡£ËüÊÇ»ùÓÚJavaScriptµÄÒ»¸ö×Ó¼¯¡£Êý¾Ý¸ñÊ½¼òµ¥, Ò×ÓÚ¶ÁÐ´, Õ¼ÓÃ´ø¿íÐ¡¡£
+JSON(JavaScript Object Notation) æ˜¯ä¸€ç§è½»é‡çº§çš„æ•°æ®äº¤æ¢æ ¼å¼ã€‚å®ƒæ˜¯åŸºäºŽJavaScriptçš„ä¸€ä¸ªå­é›†ã€‚æ•°æ®æ ¼å¼ç®€å•, æ˜“äºŽè¯»å†™, å ç”¨å¸¦å®½å°ã€‚
 
-¸ñÊ½£º²ÉÓÃ¼üÖµ¶Ô£¬ÀýÈç£º{¡®age¡¯:¡¯12¡¯, ¡®name¡¯:¡¯back¡¯}
-9.call() ºÍ apply() µÄÇø±ðºÍ×÷ÓÃ£¿
+æ ¼å¼ï¼šé‡‡ç”¨é”®å€¼å¯¹ï¼Œä¾‹å¦‚ï¼š{â€˜ageâ€™:â€™12â€™, â€˜nameâ€™:â€™backâ€™}
+9.call() å’Œ apply() çš„åŒºåˆ«å’Œä½œç”¨ï¼Ÿ
 
-apply()º¯ÊýÓÐÁ½¸ö²ÎÊý£ºµÚÒ»¸ö²ÎÊýÊÇÉÏÏÂÎÄ£¬µÚ¶þ¸ö²ÎÊýÊÇ²ÎÊý×é³ÉµÄÊý×é¡£Èç¹ûÉÏÏÂÎÄÊÇnull£¬ÔòÊ¹ÓÃÈ«¾Ö¶ÔÏó´úÌæ¡£
+apply()å‡½æ•°æœ‰ä¸¤ä¸ªå‚æ•°ï¼šç¬¬ä¸€ä¸ªå‚æ•°æ˜¯ä¸Šä¸‹æ–‡ï¼Œç¬¬äºŒä¸ªå‚æ•°æ˜¯å‚æ•°ç»„æˆçš„æ•°ç»„ã€‚å¦‚æžœä¸Šä¸‹æ–‡æ˜¯nullï¼Œåˆ™ä½¿ç”¨å…¨å±€å¯¹è±¡ä»£æ›¿ã€‚
 
-Èç£ºfunction.apply(this,[1,2,3]);
+å¦‚ï¼šfunction.apply(this,[1,2,3]);
 
-call()µÄµÚÒ»¸ö²ÎÊýÊÇÉÏÏÂÎÄ£¬ºóÐøÊÇÊµÀý´«ÈëµÄ²ÎÊýÐòÁÐ¡£
+call()çš„ç¬¬ä¸€ä¸ªå‚æ•°æ˜¯ä¸Šä¸‹æ–‡ï¼ŒåŽç»­æ˜¯å®žä¾‹ä¼ å…¥çš„å‚æ•°åºåˆ—ã€‚
 
-Èç£ºfunction.call(this,1,2,3);
-10.ÈçºÎ»ñÈ¡UA£¿
+å¦‚ï¼šfunction.call(this,1,2,3);
+10.å¦‚ä½•èŽ·å–UAï¼Ÿ
 
 function whatBrowser() { 
      document.Browser.Name.value=navigator.appName; 
@@ -128,28 +128,28 @@ function whatBrowser() {
  }
 
 
-1. JavaScript Ñ¹ËõºÍÄ£¿é´ò°ü
+1. JavaScript åŽ‹ç¼©å’Œæ¨¡å—æ‰“åŒ…
 
-2. °´Ðè¼ÓÔØ×ÊÔ´
+2. æŒ‰éœ€åŠ è½½èµ„æº
 
-3. ÔÚÊ¹ÓÃ DOM ²Ù×÷¿âÊ±ÓÃÉÏ array-ids
+3. åœ¨ä½¿ç”¨ DOM æ“ä½œåº“æ—¶ç”¨ä¸Š array-ids
 
-4. »º´æ
+4. ç¼“å­˜
 
-5. ÆôÓÃ HTTP/2
+5. å¯ç”¨ HTTP/2
 
-6. Ó¦ÓÃÐÔÄÜ·ÖÎö
+6. åº”ç”¨æ€§èƒ½åˆ†æž
 
-7. Ê¹ÓÃ¸ºÔØ¾ùºâ·½°¸
+7. ä½¿ç”¨è´Ÿè½½å‡è¡¡æ–¹æ¡ˆ
 
-8. ÎªÁË¸ü¿ìµÄÆô¶¯Ê±¼ä¿¼ÂÇÒ»ÏÂÍ¬¹¹
+8. ä¸ºäº†æ›´å¿«çš„å¯åŠ¨æ—¶é—´è€ƒè™‘ä¸€ä¸‹åŒæž„
 
-9. Ê¹ÓÃË÷Òý¼ÓËÙÊý¾Ý¿â²éÑ¯
+9. ä½¿ç”¨ç´¢å¼•åŠ é€Ÿæ•°æ®åº“æŸ¥è¯¢
 
-10. Ê¹ÓÃ¸ü¿ìµÄ×ªÒë·½°¸
+10. ä½¿ç”¨æ›´å¿«çš„è½¬è¯‘æ–¹æ¡ˆ
 
-11. ±ÜÃâ»ò×îÐ¡»¯ JavaScript ºÍ CSS µÄÊ¹ÓÃ¶ø×èÈûäÖÈ¾
+11. é¿å…æˆ–æœ€å°åŒ– JavaScript å’Œ CSS çš„ä½¿ç”¨è€Œé˜»å¡žæ¸²æŸ“
 
-12. ÓÃÓÚÎ´À´µÄÒ»¸ö½¨Òé£ºÊ¹ÓÃ service workers + Á÷
+12. ç”¨äºŽæœªæ¥çš„ä¸€ä¸ªå»ºè®®ï¼šä½¿ç”¨ service workers + æµ
 
-13. Í¼Æ¬±àÂëÓÅ»¯
+13. å›¾ç‰‡ç¼–ç ä¼˜åŒ–

@@ -1,21 +1,21 @@
 apache ab
 
-½øÈëµ½apacheËùÔÚµÄ°²×°Ä¿Â¼µÄbinÄ¿Â¼ÏÂ  Ö´ĞĞab.exeÃüÁî¿ªÆôÑ¹Á¦²âÊÔ¹¤¾ß
+è¿›å…¥åˆ°apacheæ‰€åœ¨çš„å®‰è£…ç›®å½•çš„binç›®å½•ä¸‹  æ‰§è¡Œab.exeå‘½ä»¤å¼€å¯å‹åŠ›æµ‹è¯•å·¥å…·
 
-abÃüÁîµÄÒ»Ğ©²ÎÊıµÄËµÃ÷
+abå‘½ä»¤çš„ä¸€äº›å‚æ•°çš„è¯´æ˜
 ab -n5000 -c200 url  
 Options are:
-    -n requests     Number of requests to perform ²ÎÊı±íÊ¾ĞèÒªÇëÇóµÄ´ÎÊı 
-    -c concurrency  Number of multiple requests to make at a time ±íÊ¾²¢·¢Á¿ 
-    -t timelimit    Seconds to max. to spend on benchmarking  ×î´óÇëÇóÊ±¼ä ·ÃÎÊn´ÎÇëÇóµÄ×î´óÏŞÖÆÊ±¼ä
+    -n requests     Number of requests to perform å‚æ•°è¡¨ç¤ºéœ€è¦è¯·æ±‚çš„æ¬¡æ•° 
+    -c concurrency  Number of multiple requests to make at a time è¡¨ç¤ºå¹¶å‘é‡ 
+    -t timelimit    Seconds to max. to spend on benchmarking  æœ€å¤§è¯·æ±‚æ—¶é—´ è®¿é—®næ¬¡è¯·æ±‚çš„æœ€å¤§é™åˆ¶æ—¶é—´
                     This implies -n 50000 
-    -s timeout      Seconds to max. wait for each response Ã¿´ÎÇëÇóµÈ´ıÊ±¼ä¼ä¸ô 
-                    Default is 30 seconds ³õÊ¼Ê±¼äÎª30Ãë
-    -b windowsize   Size of TCP send/receive buffer, in bytes  ×î´ó´«Êä×Ö½Ú
-    -B address      Address to bind to when making outgoing connections   °ó¶¨Êä³öµØÖ·
-    -p postfile     File containing data to POST. Remember also to set -T  ĞèÒª´«ÊäµÄpostÊı¾İ
-    -u putfile      File containing data to PUT. Remember also to set -T  ĞèÒª´«ÊäµÄputÊı¾İ
-    -T content-type Content-type header to use for POST/PUT data, eg. ÉèÖÃÍ·²¿ÀàĞÍ
+    -s timeout      Seconds to max. wait for each response æ¯æ¬¡è¯·æ±‚ç­‰å¾…æ—¶é—´é—´éš” 
+                    Default is 30 seconds åˆå§‹æ—¶é—´ä¸º30ç§’
+    -b windowsize   Size of TCP send/receive buffer, in bytes  æœ€å¤§ä¼ è¾“å­—èŠ‚
+    -B address      Address to bind to when making outgoing connections   ç»‘å®šè¾“å‡ºåœ°å€
+    -p postfile     File containing data to POST. Remember also to set -T  éœ€è¦ä¼ è¾“çš„postæ•°æ®
+    -u putfile      File containing data to PUT. Remember also to set -T  éœ€è¦ä¼ è¾“çš„putæ•°æ®
+    -T content-type Content-type header to use for POST/PUT data, eg. è®¾ç½®å¤´éƒ¨ç±»å‹
                     'application/x-www-form-urlencoded'
                     Default is 'text/plain'
     -v verbosity    How much troubleshooting info to print   
@@ -46,27 +46,27 @@ Options are:
     -h              Display usage information (this message)
 
 
-siege  linuxÃüÁîĞĞÏÂ Ö´ĞĞwget »òÕßÊÇ yum apt-getµÈÃüÁîÏÂÔØÔ´Âë  È»ºóÖ´ĞĞ./configure ÒÔ¼°makeÃüÁî°²×°siege
+siege  linuxå‘½ä»¤è¡Œä¸‹ æ‰§è¡Œwget æˆ–è€…æ˜¯ yum apt-getç­‰å‘½ä»¤ä¸‹è½½æºç   ç„¶åæ‰§è¡Œ./configure ä»¥åŠmakeå‘½ä»¤å®‰è£…siege
 
 siege -c100 -r100 url   
 
 
--c 200 Ö¸¶¨²¢·¢Êı200
--r 5 Ö¸¶¨²âÊÔµÄ´ÎÊı5
--f urls.txt ÖÆ¶¨urlµÄÎÄ¼ş
--i internetÏµÍ³£¬Ëæ»ú·¢ËÍurl
--b ÇëÇóÎŞĞèµÈ´ı delay=0
--t 5 ³ÖĞø²âÊÔ5·ÖÖÓ
--H   Ö¸¶¨Í·²¿ÀàĞÍ
+-c 200 æŒ‡å®šå¹¶å‘æ•°200
+-r 5 æŒ‡å®šæµ‹è¯•çš„æ¬¡æ•°5
+-f urls.txt åˆ¶å®šurlçš„æ–‡ä»¶
+-i internetç³»ç»Ÿï¼Œéšæœºå‘é€url
+-b è¯·æ±‚æ— éœ€ç­‰å¾… delay=0
+-t 5 æŒç»­æµ‹è¯•5åˆ†é’Ÿ
+-H   æŒ‡å®šå¤´éƒ¨ç±»å‹
 
-Êä³ö½á¹û
-Transactions: ×Ü¹²²âÊÔ´ÎÊı
-Availability: ³É¹¦´ÎÊı°Ù·Ö±È
-Elapsed time: ×Ü¹²ºÄÊ±¶àÉÙÃë
-Data transferred: ×Ü¹²Êı¾İ´«Êä
-Response time: µÈµ½ÏìÓ¦ºÄÊ±
-Transaction rate: Æ½¾ùÃ¿Ãë´¦ÀíÇëÇóÊı
-Throughput: ÍÌÍÂÂÊ
-Concurrency: ×î¸ß²¢·¢
-Successful transactions: ³É¹¦µÄÇëÇóÊı
-Failed transactions: Ê§°ÜµÄÇëÇóÊı
+è¾“å‡ºç»“æœ
+Transactions: æ€»å…±æµ‹è¯•æ¬¡æ•°
+Availability: æˆåŠŸæ¬¡æ•°ç™¾åˆ†æ¯”
+Elapsed time: æ€»å…±è€—æ—¶å¤šå°‘ç§’
+Data transferred: æ€»å…±æ•°æ®ä¼ è¾“
+Response time: ç­‰åˆ°å“åº”è€—æ—¶
+Transaction rate: å¹³å‡æ¯ç§’å¤„ç†è¯·æ±‚æ•°
+Throughput: ååç‡
+Concurrency: æœ€é«˜å¹¶å‘
+Successful transactions: æˆåŠŸçš„è¯·æ±‚æ•°
+Failed transactions: å¤±è´¥çš„è¯·æ±‚æ•°

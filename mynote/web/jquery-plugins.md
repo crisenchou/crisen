@@ -1,7 +1,7 @@
-jquery插件词典
+jquery鎻掍欢璇嶅吀
 
-1.validate 验证插件
+1.validate 楠岃瘉鎻掍欢
 
-2.form  ajax表单插件
+2.form  ajax琛ㄥ崟鎻掍欢
 
-3.fullcalendar插件
+3.fullcalendar鎻掍欢

@@ -1,5 +1,5 @@
 
-Linuxϵͳ�汾
+Linux发行版
 
 Ubuntu
 Debian gnu/linux

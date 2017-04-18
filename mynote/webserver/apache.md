@@ -1,25 +1,25 @@
-ÈçºÎÅäÖÃapacheÐéÄâÖ÷»ú
-Ê×ÏÈÔÚhttp.confÎÄ¼þÖÐÕÒµ½# Virtual hosts
-°ÑInclude conf/extra/httpd-vhosts.confµÄ×¢ÊÍÈ¥µô
+å¦‚ä½•é…ç½®apacheè™šæ‹Ÿä¸»æœº
+é¦–å…ˆåœ¨http.confæ–‡ä»¶ä¸­æ‰¾åˆ°# Virtual hosts
+æŠŠInclude conf/extra/httpd-vhosts.confçš„æ³¨é‡ŠåŽ»æŽ‰
 
-¿ÉÒÔÑ¡Ôñ¸ü¸ÄÐéÄâÖ÷»úËùÔÚµÄÄ¿Â¼£¬
+å¯ä»¥é€‰æ‹©æ›´æ”¹è™šæ‹Ÿä¸»æœºæ‰€åœ¨çš„ç›®å½•ï¼Œ
 # Virtual hosts
 #Include conf/extra/httpd-vhosts.conf
-¸Ä³ÉInclude conf/extra/vhost/*  ¿ÉÒÔÊÇÈÎÒâÒ»¸öÄ¿Â¼£¬ÕâÑù¾Í¿ÉÒÔ¼ÓÔØ²»Í¬Ä¿Â¼ÏÂËùÓÐµÄÐéÄâÖ÷»úÁË£¬±ãÓÚ²»Í¬ÍøÕ¾µÄ¹ÜÀí
+æ”¹æˆInclude conf/extra/vhost/*  å¯ä»¥æ˜¯ä»»æ„ä¸€ä¸ªç›®å½•ï¼Œè¿™æ ·å°±å¯ä»¥åŠ è½½ä¸åŒç›®å½•ä¸‹æ‰€æœ‰çš„è™šæ‹Ÿä¸»æœºäº†ï¼Œä¾¿äºŽä¸åŒç½‘ç«™çš„ç®¡ç†
 
 
-µ±È»httpd-vhostsÕâ¸öÎÄ¼þÃûÊÇ¿ÉÒÔÐÞ¸ÄµÄ
-È»ºóÐèÒªÔÚhttpd-vhostsÕâ¸öÎÄ¼þÖÐ¼ÓÈëÕâÑùµÄÉèÖÃ
+å½“ç„¶httpd-vhostsè¿™ä¸ªæ–‡ä»¶åæ˜¯å¯ä»¥ä¿®æ”¹çš„
+ç„¶åŽéœ€è¦åœ¨httpd-vhostsè¿™ä¸ªæ–‡ä»¶ä¸­åŠ å…¥è¿™æ ·çš„è®¾ç½®
 <VirtualHost  *:80>
     DocumentRoot D:/wamp/www/test
     ServerName test.test.com
     DirectoryIndex index.php
 </VirtualHost>
-DocumentRoot ´ú±íÄãµÄÍøÕ¾µÄ¾ø¶ÔÂ·¾¶
-ServerName ±íÊ¾·ÃÎÊ¸Ã·þÎñÆ÷µÄÓòÃû
-DirectoryIndex  Â·¾¶³õÊ¼ÎÄ¼þ£¬ÀûÓÃÕâ¸ö¿ÉÒÔÄ¬ÈÏ·ÃÎÊ¸ÃÄ¿Â¼ÏÂµÄindex.php
-Æä´ÎÔÚ<VirtualHost  *:80> </VirtualHost>ÖÐ¼ä¿ÉÒÔÉèÖÃ·ÃÎÊÄ¿Â¼µÄÈ¨ÏÞ
-¼ÓÈëÒÔÏÂÕâÑùµÄ´úÂë
+DocumentRoot ä»£è¡¨ä½ çš„ç½‘ç«™çš„ç»å¯¹è·¯å¾„
+ServerName è¡¨ç¤ºè®¿é—®è¯¥æœåŠ¡å™¨çš„åŸŸå
+DirectoryIndex  è·¯å¾„åˆå§‹æ–‡ä»¶ï¼Œåˆ©ç”¨è¿™ä¸ªå¯ä»¥é»˜è®¤è®¿é—®è¯¥ç›®å½•ä¸‹çš„index.php
+å…¶æ¬¡åœ¨<VirtualHost  *:80> </VirtualHost>ä¸­é—´å¯ä»¥è®¾ç½®è®¿é—®ç›®å½•çš„æƒé™
+åŠ å…¥ä»¥ä¸‹è¿™æ ·çš„ä»£ç 
 <Directory "D:/wamp/www/a">
 Options FollowSymLinks
 AllowOverride All
@@ -27,14 +27,14 @@ Order deny,allow
 deny from all
 allow from 127.0.0.1
 </Directory>
-±íÊ¾Ä¿Â¼·ÃÎÊÈ¨ÏÞ£¬ÒÔÉÏ¾Í±íÊ¾³ýÁË±¾µØ»Ø»·µØÖ·Ö®Íâ£¬ÆäËûËùÓÐµÄµØÖ·¶¼²»¿ÉÒÔ·ÃÎÊ×ÓÄ¿Â¼
+è¡¨ç¤ºç›®å½•è®¿é—®æƒé™ï¼Œä»¥ä¸Šå°±è¡¨ç¤ºé™¤äº†æœ¬åœ°å›žçŽ¯åœ°å€ä¹‹å¤–ï¼Œå…¶ä»–æ‰€æœ‰çš„åœ°å€éƒ½ä¸å¯ä»¥è®¿é—®å­ç›®å½•
 
-Èç¹ûÊÇÔÚ±¾µØ²âÊÔ£¬ÔòÐèÒªÐÞ¸ÄhostsÎÄ¼þÀ´½øÐÐ²âÊÔ£¬Èç¹ûÊÇÏßÉÏµÄ·þÎñÆ÷£¬ÔòÐèÒª½âÎö¶þ¼¶ÓòÃû£¬½«ÓòÃûÓ³Éäµ½Ö÷»úIPµØÖ·²ÅÄÜ²âÊÔ
-
-
-DenyÓëAllow Ñ¡Ïî¿ÉÒÔ¶Ô·ÃÎÊ¸Ã·þÎñÆ÷µÄip½øÐÐÏÞÖÆ£¬½â¾öÁËÍ¬Ò»¾ÖÓòÍøÏÂ£¬¿ÉÒÔÖ±½ÓÊäÈëIP¶Ô·þÎñÆ÷½øÐÐ·ÃÎÊµÄÎÊÌâ
-Documentroot¿ÉÒÔ¶ÔÍøÕ¾µÄÂ·¾¶ÖØÐÂÉè¶¨£¬½â¾öÁË²»Í¬ÏîÄ¿¼äµÄÇÐ»»ÎÊÌâ
+å¦‚æžœæ˜¯åœ¨æœ¬åœ°æµ‹è¯•ï¼Œåˆ™éœ€è¦ä¿®æ”¹hostsæ–‡ä»¶æ¥è¿›è¡Œæµ‹è¯•ï¼Œå¦‚æžœæ˜¯çº¿ä¸Šçš„æœåŠ¡å™¨ï¼Œåˆ™éœ€è¦è§£æžäºŒçº§åŸŸåï¼Œå°†åŸŸåæ˜ å°„åˆ°ä¸»æœºIPåœ°å€æ‰èƒ½æµ‹è¯•
 
 
+Denyä¸ŽAllow é€‰é¡¹å¯ä»¥å¯¹è®¿é—®è¯¥æœåŠ¡å™¨çš„ipè¿›è¡Œé™åˆ¶ï¼Œè§£å†³äº†åŒä¸€å±€åŸŸç½‘ä¸‹ï¼Œå¯ä»¥ç›´æŽ¥è¾“å…¥IPå¯¹æœåŠ¡å™¨è¿›è¡Œè®¿é—®çš„é—®é¢˜
+Documentrootå¯ä»¥å¯¹ç½‘ç«™çš„è·¯å¾„é‡æ–°è®¾å®šï¼Œè§£å†³äº†ä¸åŒé¡¹ç›®é—´çš„åˆ‡æ¢é—®é¢˜
 
--------ÓÐÊ±ºòÎÞ·¨½â¾öµÄÎÊÌâ£¬¾ÍÊÔÊÔµ÷ÕûÒ»ÏÂ·þÎñÆ÷ÅäÖÃ°É
+
+
+-------æœ‰æ—¶å€™æ— æ³•è§£å†³çš„é—®é¢˜ï¼Œå°±è¯•è¯•è°ƒæ•´ä¸€ä¸‹æœåŠ¡å™¨é…ç½®å§

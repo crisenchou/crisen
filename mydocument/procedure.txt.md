@@ -35,7 +35,7 @@ END
 
 
 
-²ÎÊı
+å‚æ•°
 
 
 IN `params` varchar(255), `params_count` int

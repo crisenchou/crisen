@@ -1,32 +1,67 @@
+# windows ä¸‹å®‰è£…mysql
 
-ÊÖ¶¯°²×°mysql
-½âÑ¹mysql°²×°°ü
-½øÈëµ½mysqlµÄbinÄ¿Â¼ ÀûÓÃmysqld install°²×°mysql·şÎñ
-É¾³ımysql·şÎñ Ê¹ÓÃ mysqld  removes
-ÀûÓÃnet start mysql Æô¶¯mysql·şÎñ
-×îºó¾Í¿ÉÒÔÀûÓÃmysqlÃüÁî½øÈëµÄmysqlÁË
+---
 
 
 
-ps -ef | grep mysqld   ¼ì²émysqlÊÇ·ñÆô¶¯
+> å®‰è£…è¿‡ç¨‹
+
+~~~
+æ‰‹åŠ¨å®‰è£…mysql
+è§£å‹mysqlå®‰è£…åŒ…
+è¿›å…¥åˆ°mysqlçš„binç›®å½• åˆ©ç”¨mysqld installå®‰è£…mysqlæœåŠ¡
+åˆ é™¤mysqlæœåŠ¡ ä½¿ç”¨ mysqld  removes
+åˆ©ç”¨net start mysql å¯åŠ¨mysqlæœåŠ¡
+æœ€åå°±å¯ä»¥åˆ©ç”¨mysqlå‘½ä»¤è¿›å…¥çš„mysqläº†
+
+~~~
+
+
+
+> å¯åŠ¨è¿‡ç¨‹
+
+----
+
+~~~
+ps -ef | grep mysqld   æ£€æŸ¥mysqlæ˜¯å¦å¯åŠ¨
+
 cd /usr/bin
-./mysqld_safe & Æô¶¯mysql
+
+./mysqld_safe & å¯åŠ¨mysql
+
 ./mysqladmin -u root -p shutdown
-ENTER password:*****  ¹Ø±Õmysql
+
+ENTER password:*  å…³é—­mysql
+
 mysql -uroot -p
-ENTER password:*****  Á´½Ómysql·şÎñÆ÷
-show engines;ÏÔÊ¾Êı¾İ¿â´æ´¢ÒıÇæ
-use database; Ê¹ÓÃÊı¾İ¿â
-FLUSH PRIVILEGES ÖØĞÂÔØÈëÊÚÈ¨±í
-set names utf-8;ÉèÖÃ×Ö·û¼¯
-show tables;ÏÔÊ¾Êı¾İ±í
-show columns from tables;ÏÔÊ¾Êı¾İ±íµÄÁĞÃû
 
-source filepath/filename µ¼ÈëÊı¾İµ½Êı¾İ¿â
-mysqldump   µ¼³öÊı¾İ  
-mysqldump -uroot -p (-d Ö»µ¼³ö±í½á¹¹) dbname (tablename  ¿ÉÒÔÖ¸¶¨±íÃû)> tablename.sql 
+ENTER password:*  é“¾æ¥mysqlæœåŠ¡å™¨
 
-show create table tablename; »ñÈ¡Êı¾İ±íÍêÕû½á¹¹
-insert into table(column1,...) from select (column1,...) from table; ¸´ÖÆ±í
+show engines;æ˜¾ç¤ºæ•°æ®åº“å­˜å‚¨å¼•æ“
+
+use database; ä½¿ç”¨æ•°æ®åº“
+
+FLUSH PRIVILEGES é‡æ–°è½½å…¥æˆæƒè¡¨
+
+set names utf-8;è®¾ç½®å­—ç¬¦é›†
+
+show tables;æ˜¾ç¤ºæ•°æ®è¡¨
+
+show columns from tables;æ˜¾ç¤ºæ•°æ®è¡¨çš„åˆ—å
+
+source filepath/filename å¯¼å…¥æ•°æ®åˆ°æ•°æ®åº“
+
+mysqldump   å¯¼å‡ºæ•°æ®  
+
+mysqldump -uroot -p (-d åªå¯¼å‡ºè¡¨ç»“æ„) dbname (tablename  å¯ä»¥æŒ‡å®šè¡¨å)> tablename.sql 
+
+show create table tablename; è·å–æ•°æ®è¡¨å®Œæ•´ç»“æ„
+
+insert into table(column1,...) from select (column1,...) from table; å¤åˆ¶è¡¨
+~~~
+
+
+
+
 
 

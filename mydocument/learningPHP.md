@@ -1,68 +1,68 @@
-�����Ҷ�PHP�����⣬PHP���������ѧϰ�׶Σ���Ȼ��һ��׼ȷ������Ӧ��������������Ҫѧϰ���߼���Ͷ��PHP��ҵ��ͯЬ���Բο�һ�������ѧϰ·�ߣ����Լ�����һ��ѧϰ�ƻ���δ����·;�ܼ��ѣ��������
-��һ�׶�(����ƪ)
-1.PHP ��װ
-2.PHP �﷨
-3.PHP ����
-4.PHP ��� Echo / Print / var_dump
-5.PHP ��������
-6.PHP �ַ���
-7.PHP ����
-8.PHP �����
-9.PHP ѭ��
-10.PHP ����
-11.PHP ����
-12.PHP ����
-13.PHP ����
-14.PHP ȫ�ֱ���
+按照我对PHP的理解，PHP大概有六个学习阶段，虽然不一定准确，但是应该有所帮主，想要学习或者即将投身PHP事业的童鞋可以参考一下下面的学习路线，给自己定制一个学习计划，未来的路途很艰难，与君共勉
+第一阶段(入门篇)
+1.PHP 安装
+2.PHP 语法
+3.PHP 变量
+4.PHP 输出 Echo / Print / var_dump
+5.PHP 数据类型
+6.PHP 字符串
+7.PHP 常量
+8.PHP 运算符
+9.PHP 循环
+10.PHP 函数
+11.PHP 数组
+12.PHP 日期
+13.PHP 排序
+14.PHP 全局变量
 
-����������֪ʶ֮��Ϳ��Կ��ǽ�һ����ѧϰ�ˣ�
-�ڶ��׶�(����ƪ)
-1.PHP �ļ��Լ�Ŀ¼����
-2.PHP ����������֤
-3.PHP �ļ��ϴ��Լ�����
-4.PHP �쳣����
-5.PHP ��ȫ����
-6.PHP �ʼ��շ�
-7.PHP �������ʽ
+掌握了入门知识之后就可以考虑进一步的学习了，
+第二阶段(进阶篇)
+1.PHP 文件以及目录操作
+2.PHP 表单极其验证
+3.PHP 文件上传以及处理
+4.PHP 异常处理
+5.PHP 安全过滤
+6.PHP 邮件收发
+7.PHP 正则表达式
 
-������PHP�Ļ���֪ʶ���Ϳ���ת�����Ӧ����
-�����׶�(Ӧ��ƪ)
-1. ���������
-2. MySQL���ݿ�
-3. MySQL���Ż�ϸ��
-4. HTTPЭ�� TCP/IPЭ��
-5. ���ݿ���(mysql mysqli pdo)
-6. MySQL��չ�⡢MySQLI��չ���PDO��ʽ
-7. MVC����ģʽ
-8. cookie��session
-9. PHP��ͼ����(GD��)
+掌握了PHP的基础知识，就可以转向基础应用了
+第三阶段(应用篇)
+1. 面向对象编程
+2. MySQL数据库
+3. MySQL的优化细节
+4. HTTP协议 TCP/IP协议
+5. 数据库编程(mysql mysqli pdo)
+6. MySQL扩展库、MySQLI扩展库和PDO方式
+7. MVC开发模式
+8. cookie和session
+9. PHP绘图技术(GD库)
 
-��Ȼǰ����Щ�������ˣ����������ǲ��ò��Ӵ�������ô���޷��ܿ���֪ʶ��
-���Ľ׶�(ʵսƪ)
-1. PHP��XML���
-2. Smartyģ�弼��
+既然前面那些都掌握了，接下来就是不得不接触到你怎么都无法避开的知识了
+第四阶段(实战篇)
+1. PHP的XML编程
+2. Smarty模板技术
 3. Javascript
 4. Ajax
 5. JQuery
-6. Linux(LAMP),���á�
-7. �汾���� svn/git��
-8. �����Ż���վ�Ż����ļ���
-9. ҳ�澲̬��
-10. Memcached/Redis���漼��
-11. MySql���ݿ�����Ż�
+6. Linux(LAMP),配置。
+7. 版本控制 svn/git等
+8. 大型门户网站优化核心技术
+9. 页面静态化
+10. Memcached/Redis缓存技术
+11. MySql数据库深度优化
 
-����������еĶ����㶼���յķǳ�͸������ô����˵���Ѿ��Ѳ���
-����׶�(�߼�Ӧ��ƪ��)
-1.��������ϵͳ(����shopex�����ecshop)
-2. CMS���ݹ���ϵͳ(����DEDECMS���ο���),֯�����ݹ���ϵͳ(DedeCms) ����PHP+MySQL�ļ����ܹ�
+如果上面所有的东西你都掌握的非常透彻，那么可以说你已经脱菜了
+第五阶段(高级应用篇章)
+1.电子商务系统(基于shopex或基于ecshop)
+2. CMS内容管理系统(基于DEDECMS二次开发),织梦内容管理系统(DedeCms) 基于PHP+MySQL的技术架构
 
-����������һ���������Լ�����������һ���о�����ļ���
-�����׶�(��ҵӦ��ƪ)
+如果你想更进一步的提升自己，不妨尝试一下研究下面的技术
+第六阶段(企业应用篇)
 1. Mongodb
-2. ȫ����������Sphinx
-3. Mysql���ݿ��д���뼼��
-4. �ǶԳƼ���������ǩ��
-5. Nginx���������Ⱥ����(���ؾ��⣬���������)
+2. 全文索引引擎Sphinx
+3. Mysql数据库读写分离技术
+4. 非对称加密与数字签名
+5. Nginx与服务器集群技术(负载均衡，反向代理等)
 
 
 
@@ -71,4 +71,4 @@
 
 
 
-����������Щ�㶼�Ѿ�ѧ���ˣ����㻹���Ը���һ���������Լ���ʹ��C���Ա�дһ��PHP����չ�ɣ�ΪPHP�ķ����׳��Լ����ౡ֮��������˵������ֻص���C���ԣ���豹����ˣ�
+倘若所有这些你都已经学会了，那你还可以更进一步的提升自己，使用C语言编写一个PHP的扩展吧，为PHP的发扬献出自己的绵薄之力，所以说你最后又回到了C语言，返璞归真了！

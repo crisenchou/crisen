@@ -1,11 +1,11 @@
-nginx¶Ôwindows²»ÊÇºÜÓÑºÃ µ«ÊÇ´ó¶àÊı¹¦ÄÜ»¹ÊÇ±È½ÏÍêÉÆµÄ   
+nginxå¯¹windowsä¸æ˜¯å¾ˆå‹å¥½ ä½†æ˜¯å¤§å¤šæ•°åŠŸèƒ½è¿˜æ˜¯æ¯”è¾ƒå®Œå–„çš„   
 
-nginx²»ÄÜ½âÎöphp ĞèÒªÊ¹ÓÃphpcgi
+nginxä¸èƒ½è§£æphp éœ€è¦ä½¿ç”¨phpcgi
 
-nginx³öÏÖ input file not specfiried×ÖÑù Çë¼ì²éphpcgiµÄÅäÖÃ
+nginxå‡ºç° input file not specfiriedå­—æ · è¯·æ£€æŸ¥phpcgiçš„é…ç½®
 
-nginxÅäÖÃyiiµÄÃÀ»¯url  
-¿ÉÒÔÓÃ!-f request_fileÀ´¼ì²â  Ò²¿ÉÒÔÓÃtry_files
+nginxé…ç½®yiiçš„ç¾åŒ–url  
+å¯ä»¥ç”¨!-f request_fileæ¥æ£€æµ‹  ä¹Ÿå¯ä»¥ç”¨try_files
 try_files $url $url/ /index.php?$args;
 
 

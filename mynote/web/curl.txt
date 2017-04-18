@@ -1,1 +1,0 @@
-1.使用curl上传图片、语音、视频这些多媒体文件时，应该向curl的CURLOPT_POSTFIELDS传递数组参数，而不是字符串参数。鱼渔做了测试，结论是如 果传递数组参数，HTTP头发送的Content-Type自动被curl设置成multipart/form-data，适合上传二进制文件；如果传递 字符串参数，HTTP头发送的Content-Type是application/x-www-form-urlencoded，是form提交表单默认 的方式，并不适合上传文件。如果需要把数组变成字符串传递，可用http_build_query函数。

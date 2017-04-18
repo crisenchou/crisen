@@ -1,0 +1,5 @@
+Cookie就是cookie，它不属于任何一种语言，它只属于浏览器客户端，大多数需要都能操作cookie，但是它们只是发送命令给浏览器，进而让浏览器进行操作，而session存储在服务器，但是session的id却是保存在cookie中的，所以劫持了cookie，就等于拿到了session，也就等于拿到了权限，如果禁用了cookie，那么服务器就没有办法拿到sessionid，会导致session失效，想要解决这个问题可以采用用url的形式来传递session
+
+在浏览器中cookie是以字符串的形式进行存储的，而在js中可以用
+document.cookie获取到这个字符串，然后可以用以下函数对cookie进行操作
+该网址有详细教程 http://www.w3school.com.cn/js/js_cookies.asp

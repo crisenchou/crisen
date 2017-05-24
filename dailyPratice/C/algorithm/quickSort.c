@@ -37,7 +37,7 @@ int mtrand(int *a, int max){
     int i;
     srand((unsigned) time(NULL)); //用时间做种，每次产生随机数不一样
     for(i=0;i<L;i++){
-        a[i] = rand() % max;
+        a[i] = rand() % max; 
     }
 }
 

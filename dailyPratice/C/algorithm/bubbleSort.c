@@ -21,7 +21,6 @@ int BubbleSort(int a[], int length){
 	}
 }
 
-
 int main(){
 	int i,a[N];
 	printf("please enter 5 number,divide by \\n \n");

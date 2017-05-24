@@ -1,24 +1,33 @@
 #include <stdio.h>
-#define N 10
+#define N 5
 
 
-int main(){
-	int i,j,a[N],t;
-	printf("请给数组赋值 \n");
-	for(i=0;i<N;i++)
-		scanf("%d",&a[i]);
-	for(i=1;i<=N-1;i++){
-		for(j=0;j<N-i;j++){
-		    if(a[j] > a[j+1]){
-			    t=a[j];
-				a[j]=a[j+1];
-				a[j+1]=t;
+void printArray(int a[], int length){
+	int i;
+	for(i=0;i<length;i++)
+		printf("%3d",a[i]);
+}
+
+int BubbleSort(int a[], int length){
+	int i,j;
+	for(i=0;i<length;i++){
+		for(j=i+1;j<length;j++){
+			if(a[i]>a[j]){
+				a[i] = a[i]^a[j];
+				a[j] = a[i]^a[j];
+				a[i] = a[i]^a[j];
 			}
 		}
 	}
-	
-	printf("请给数组赋值 \n");
-	for(t=0;t<N;t++){
-		printf("%d\n",a[t]);
-	}
+}
+
+
+int main(){
+	int i,a[N];
+	printf("please enter 5 number,divide by \\n \n");
+	for(i=0;i<N;i++)
+		scanf("%d",&a[i]);
+	BubbleSort(a, N);
+	printArray(a, N);
+	getche();
 }

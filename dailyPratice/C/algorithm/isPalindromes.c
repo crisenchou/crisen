@@ -40,6 +40,8 @@ int isPalindromes(int n){
 
 
 
+
+
 int main(){
 	int n;
 	start:

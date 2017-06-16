@@ -83,11 +83,45 @@
 
 辅助工具
 
-​	mysql,nginx,redis,apache,memcache
+​	mysql 在5.3以前遵循GPL协议开发的关系型数据库管理工具
+
+​	nginx  强大的轻量级web服务器，拥有强大的反向代理功能
+
+​	redis   NOSQL的一种，拥有丰富的数据库结构，key=>value类型的内存数据库
+
+  	apache  最流行的强大的web服务器 apache软件基金会发布
+
+​	memcache  和redis类似 一种内存型数据库，有比较大的缺陷
 
 常用工具
 
-​	git,composer,siege,vim,chrome,fiddler,phpstorm
+​	git 分布式版本控制工具
+
+​	composer php包管理工具(ps:compose对于php来说，
+
+​			就像nnpm于node，
+
+​			gem于ruby，
+
+​			maven于java，
+
+​			pip于python，
+
+​			yum于centos，
+
+​			apt于ubuntu， 
+
+​			恩，是一种灵魂)
+
+​		siege linux平台下一款压力测试工具
+
+​		vim linux下一款强大的编辑器，能够达到强大的IDE效果
+
+​		chrome/forefox: web浏览器
+
+​		fiddler http抓包工具，类似的还有wireshark
+
+​		phpstorm. 强大的PHPIDE
 
 爱逛的网站
 

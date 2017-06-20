@@ -112,6 +112,38 @@
     //        var close;
     //    }
 
+
+    function astar(close) {
+        //int times = 0;
+        var queue = new Array(100);
+        close[srcX][srcY].vis = 1;
+        queue.push(close[0][0]);
+
+        while (queue.length) {    //times++;
+            p = queue.shift();
+            var curX = p.cur.x;
+            var curY = p.cur.y;
+            if (!p.H) {
+                return 0;
+            }
+            for (i = 0; i < 4; i++) {
+                if (!(p.cur.sur && (1 << i))) {
+                    continue;
+                }
+                var surX = curX + dir[i].x;
+                var surY = curY + dir[i].y;
+                if (!close[surX][surY].vis) {
+                    close[surX][surY].vis = 1;
+                    close[surX][surY].from = p;
+                    surG = p.G + sqrt((curX - surX) * (curX - surX) + (curY - surY) * (curY - surY));
+                    queue.push(close[surX][surY]);
+                }
+            }
+        }
+        return 2;
+    }
+
+
     function bfs() {
 
     }

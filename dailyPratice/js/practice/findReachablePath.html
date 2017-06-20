@@ -17,33 +17,13 @@
 <div>
     <input type="button" value="设置障碍"/>
     <input type="button" value="设置起点/终点"/>
-    <input type="button" value="开始寻路"/>
+    <input id="run" type="button" value="开始寻路" onclick="run()"/>
 </div>
 </body>
 <script>
 
-    function Map(canvas) {
-        this.canvas = document.getElementById(canvas);
-        this.brush = new Draw(canvas);
-        this.init = function () {
-            //this.brush.drawDot(0, 0, 'red', this.canvas.offsetHeight, this.canvas.offsetWidth);//初始化画布
-        }
-    }
 
-    function Draw(canvas) {
-        this.cxt = document.getElementById(canvas).getContext("2d");
-        this.drawDot = function (x, y, color, length, size) {
-            length = length || 10;
-            size = size || 10;
-            this.cxt.fillStyle = color;
-            this.cxt.fillRect(x, y, length, size);
-        }
-    }
-
-    var map = new Map('map');
-    map.init();
-
-
+    //寻路方向
     var direction = [
         [0, 1], //east
         [1, 0],//south
@@ -51,15 +31,9 @@
         [-1, 0]//north
     ];
 
-    //point is in map
+    //判断边界
     function inMap(x, y) {
         return (x >= 0 && y >= 0 && x < 10 && y < 10)
-    }
-
-    //坐标
-    function Point(x, y) {
-        this.x = x;
-        this.y = y;
     }
 
     //地图结点
@@ -71,7 +45,7 @@
         this.value = value;
     }
 
-
+    //初始化图
     function initGraph(table) {
         var g = new Array(10);
         var i, j;
@@ -107,7 +81,6 @@
         var close = [];
         open.push(graph[startX][startY]);
         var times = 0;
-
         while (open.length) {
             var p = open.shift();
             var curX = p.x;
@@ -124,20 +97,15 @@
             for (var i = 0; i < 4; i++) {
                 surX = curX + direction[i][0];
                 surY = curY + direction[i][1];
-
                 if (!inMap(surX, surY)) {
                     continue;
                 }
-
                 if (nodeExist(graph[surX][surY], open)) {
                     continue;
                 }
-
                 if (nodeExist(graph[surX][surY], close)) {
                     continue;
                 }
-
-
                 if (graph[surX][surY].reachable) {
                     graph[surX][surY].sur = p;
                     open.push(graph[surX][surY]);
@@ -146,7 +114,6 @@
             }
             close.push(p);
         }
-        console.log(times)
         return graph;
     }
 
@@ -167,55 +134,59 @@
     ];
 
 
-    var graph = initGraph(table);
+    function Map(canvas) {
+        this.canvas = document.getElementById(canvas);
+        this.brush = new Draw(canvas);
+        this.init = function (table) {
+            this.drawMap(table);
+            //this.brush.drawDot(0, 0, 'red', this.canvas.offsetHeight, this.canvas.offsetWidth);//初始化画布
+        }
 
-    //console.log(graph);
+        this.drawMap = function (table) {
+            //console.log(table);
 
-    graph = dijkstra(graph, 0, 0, 8, 8);
+            var colorSet = ['white', 'black', 'green', 'blue', 'red']
 
-    var dest = graph[8][8];
-    //console.log(graph);
-    //console.log(dest);
-
-    while (dest.sur != null) {
-        //console.log(dest.x, dest.y);
-        dest = dest.sur;
-        table[dest.x][dest.y] = 2;
-    }
-
-    console.log(table);
-
-    //console.log(table);
-    for (var i = 0; i < 10; i++) {
-        for (var j = 0; j < 10; j++) {
-            var x = i * 15;
-            var y = j * 15;
-            var crlorful = "red";
-            if (table[i][j] == 2) {
-                crlorful = "blue";
+            for (var i = 0; i < 10; i++) {
+                for (var j = 0; j < 10; j++) {
+                    var x = i * 15;
+                    var y = j * 15;
+                    var crlorful = colorSet[table[i][j]];
+                    this.brush.drawDot(y, x, crlorful, 10, 5)
+                }
             }
-            if (table[i][j] == 1) {
-                crlorful = "black";
+        }
+
+        this.run = function (table) {
+            var graph = initGraph(table);
+            graph = dijkstra(graph, 0, 0, 8, 8);
+            var dest = graph[8][8];
+            while (dest.sur != null) {
+                //console.log(dest.x, dest.y);
+                dest = dest.sur;
+                table[dest.x][dest.y] = 2;
             }
-            map.brush.drawDot(y, x, crlorful, 10, 5)
+            this.drawMap(table);
         }
     }
 
+    function Draw(canvas) {
+        this.cxt = document.getElementById(canvas).getContext("2d");
+        this.drawDot = function (x, y, color, length, size) {
+            length = length || 10;
+            size = size || 10;
+            this.cxt.fillStyle = color;
+            //this.cxt.strokeRect(x, y, length, size);
+            this.cxt.fillRect(x, y, length, size);
+        }
+    }
 
-    //f第一步创建一个图
-    // console.log(graph);
+    var map = new Map('map');
+    map.init(table);
+    function run() {
+        map.run(table);
+    }
 
-
-    //第二步 对图使用dijkstra算法 采用open close的方法
-
-    // 找到终点链表  寻找ij 对map进行着色
-
-
-    //console.log(d);
-    //console.log(path);
-
-    //var start = [0, 0];
-    //var end = [8, 8];
 
 </script>
 </html>

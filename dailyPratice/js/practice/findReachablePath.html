@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>寻找最短可行路径</title>
+    <style>
+        #map {
+            height: 400px;
+            width: 400px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <canvas id="map"></canvas>
+</div>
+<div>
+    <input type="button" value="设置障碍"/>
+    <input type="button" value="设置起点/终点"/>
+    <input type="button" value="开始寻路"/>
+</div>
+</body>
+<script>
+
+    function Map(canvas) {
+        this.canvas = document.getElementById(canvas);
+        this.brush = new Draw(canvas);
+        this.init = function () {
+            this.brush.drawDot(0, 0, 'red', this.canvas.offsetHeight, this.canvas.offsetWidth);//初始化画布
+        }
+    }
+
+
+    function Draw(canvas) {
+        this.cxt = document.getElementById(canvas).getContext("2d");
+        this.drawDot = function (x, y, color, length, size) {
+            length = length || 10;
+            size = size || 10;
+            this.cxt.fillStyle = color;
+            this.cxt.fillRect(x, y, length, size);
+        }
+    }
+
+    var map = new Map('map');
+    map.init();
+
+    var derection = [
+        [0, 1], //east
+        [1, 0],//south
+        [0, -1],//west
+        [-1, 0]//north
+    ];
+
+    //point is in map
+    function inMap(x, y) {
+        return (x >= 0 && y >= 0 && x < 10 && y < 10)
+    }
+
+    //坐标
+    function Point(x, y) {
+        this.x = x;
+        this.y = y;
+    }
+
+    //地图结点
+    function MapNode(x, y, reachable, sur, value) {
+        this.x = x;
+        this.y = y;
+        this.reachable = reachable;
+        this.sur = sur;
+        this.value = value;
+    }
+
+    function Close(node, visit, from, f, g, h) {
+        this.node = node;
+        this.visit = visit;
+        this.from = from;
+        this.f = f;
+        this.g = g;
+        this.h = h;
+    }
+
+    function Open(length, close) {
+        this.length = length;
+        this.close = close;
+    }
+
+    //    var table = [
+    //        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+    //        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+    //        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+    //        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+    //        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+    //        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+    //        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+    //        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+    //        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+    //        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+    //    ];
+
+
+    //console.log(d);
+    //console.log(path);
+
+    //var start = [0, 0];
+    //var end = [8, 8];
+
+    //    function astar() {
+    //        var i, curX, curY, surX, surY;
+    //        var surG;
+    //        var open;
+    //        var close;
+    //    }
+
+    function bfs() {
+
+    }
+
+</script>
+</html>

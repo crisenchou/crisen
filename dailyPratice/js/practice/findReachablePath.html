@@ -26,10 +26,9 @@
         this.canvas = document.getElementById(canvas);
         this.brush = new Draw(canvas);
         this.init = function () {
-            this.brush.drawDot(0, 0, 'red', this.canvas.offsetHeight, this.canvas.offsetWidth);//初始化画布
+            //this.brush.drawDot(0, 0, 'red', this.canvas.offsetHeight, this.canvas.offsetWidth);//初始化画布
         }
     }
-
 
     function Draw(canvas) {
         this.cxt = document.getElementById(canvas).getContext("2d");
@@ -44,7 +43,8 @@
     var map = new Map('map');
     map.init();
 
-    var derection = [
+
+    var direction = [
         [0, 1], //east
         [1, 0],//south
         [0, -1],//west
@@ -63,40 +63,152 @@
     }
 
     //地图结点
-    function MapNode(x, y, reachable, sur, value) {
+    function MapNode(x, y, reachable, value) {
         this.x = x;
         this.y = y;
         this.reachable = reachable;
-        this.sur = sur;
+        this.sur = null;
         this.value = value;
     }
 
-    function Close(node, visit, from, f, g, h) {
-        this.node = node;
-        this.visit = visit;
-        this.from = from;
-        this.f = f;
-        this.g = g;
-        this.h = h;
+
+    function initGraph(table) {
+        var g = new Array(10);
+        var i, j;
+        for (i = 0; i < 10; i++) {
+            g[i] = new Array(10);
+            for (j = 0; j < 10; j++) {
+                var node = new MapNode(i, j, 0, 0);
+                node.value = table[i][j];
+                if (table[i][j] == 0) {
+                    node.reachable = 1;
+                }
+                g[i][j] = node;
+            }
+        }
+        return g;
     }
 
-    function Open(length, close) {
-        this.length = length;
-        this.close = close;
+
+    function nodeExist(p, close) {
+        if (close.length) {
+            for (var i in close) {
+                if (close[i].x == p.x && close[i].y == p.y) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
-    //    var table = [
-    //        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-    //        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-    //        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-    //        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-    //        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-    //        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-    //        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-    //        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-    //        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-    //        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-    //    ];
+
+    function dijkstra(graph, startX, startY, endX, endY) {
+        var open = [];
+        var close = [];
+        open.push(graph[startX][startY]);
+        var times = 0;
+
+        while (open.length) {
+            var p = open.shift();
+            var curX = p.x;
+            var curY = p.y;
+            var surX, surY;
+            if (nodeExist(p, close)) {
+                continue;
+            }
+
+            if (p.x == endX && p.y == endY) {
+                break;
+            }
+
+            for (var i = 0; i < 4; i++) {
+                surX = curX + direction[i][0];
+                surY = curY + direction[i][1];
+
+                if (!inMap(surX, surY)) {
+                    continue;
+                }
+
+                if (nodeExist(graph[surX][surY], open)) {
+                    continue;
+                }
+
+                if (nodeExist(graph[surX][surY], close)) {
+                    continue;
+                }
+
+
+                if (graph[surX][surY].reachable) {
+                    graph[surX][surY].sur = p;
+                    open.push(graph[surX][surY]);
+                    times++;
+                }
+            }
+            close.push(p);
+        }
+        console.log(times)
+        return graph;
+    }
+
+
+    // 0 能访问  1 障碍  2 路径点  3 起点  4 终点
+
+    var table = [
+        [0, 0, 1, 0, 1, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
+        [0, 0, 0, 1, 0, 0, 0, 0, 0, 0],
+        [0, 0, 1, 1, 1, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    ];
+
+
+    var graph = initGraph(table);
+
+    //console.log(graph);
+
+    graph = dijkstra(graph, 0, 0, 8, 8);
+
+    var dest = graph[8][8];
+    //console.log(graph);
+    //console.log(dest);
+
+    while (dest.sur != null) {
+        //console.log(dest.x, dest.y);
+        dest = dest.sur;
+        table[dest.x][dest.y] = 2;
+    }
+
+    console.log(table);
+
+    //console.log(table);
+    for (var i = 0; i < 10; i++) {
+        for (var j = 0; j < 10; j++) {
+            var x = i * 15;
+            var y = j * 15;
+            var crlorful = "red";
+            if (table[i][j] == 2) {
+                crlorful = "blue";
+            }
+            if (table[i][j] == 1) {
+                crlorful = "black";
+            }
+            map.brush.drawDot(y, x, crlorful, 10, 5)
+        }
+    }
+
+
+    //f第一步创建一个图
+    // console.log(graph);
+
+
+    //第二步 对图使用dijkstra算法 采用open close的方法
+
+    // 找到终点链表  寻找ij 对map进行着色
 
 
     //console.log(d);
@@ -104,49 +216,6 @@
 
     //var start = [0, 0];
     //var end = [8, 8];
-
-    //    function astar() {
-    //        var i, curX, curY, surX, surY;
-    //        var surG;
-    //        var open;
-    //        var close;
-    //    }
-
-
-    function astar(close) {
-        //int times = 0;
-        var queue = new Array(100);
-        close[srcX][srcY].vis = 1;
-        queue.push(close[0][0]);
-
-        while (queue.length) {    //times++;
-            p = queue.shift();
-            var curX = p.cur.x;
-            var curY = p.cur.y;
-            if (!p.H) {
-                return 0;
-            }
-            for (i = 0; i < 4; i++) {
-                if (!(p.cur.sur && (1 << i))) {
-                    continue;
-                }
-                var surX = curX + dir[i].x;
-                var surY = curY + dir[i].y;
-                if (!close[surX][surY].vis) {
-                    close[surX][surY].vis = 1;
-                    close[surX][surY].from = p;
-                    surG = p.G + sqrt((curX - surX) * (curX - surX) + (curY - surY) * (curY - surY));
-                    queue.push(close[surX][surY]);
-                }
-            }
-        }
-        return 2;
-    }
-
-
-    function bfs() {
-
-    }
 
 </script>
 </html>

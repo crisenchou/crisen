@@ -335,14 +335,14 @@
     }
 
     function run() {
+
         if (!map.isRun) {
-            map.run();
             map.isRun = 1;
         } else {
             map.init();
-            map.isRun = 0;
+            //map.isRun = 0;
         }
-
+        map.run();
         console.log(map.map);
         //console.log(map.graph);
     }

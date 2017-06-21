@@ -3,24 +3,21 @@
 <head>
     <meta charset="utf-8">
     <title>寻找最短可行路径</title>
-    <style>
-        #map {
-            height: 600px;
-            width: 600px;
-        }
-    </style>
 </head>
 <body>
 <div>
-    <canvas id="map"></canvas>
+    <canvas id="map" style="height:400px;width:800px;" onclick="getPosition()"></canvas>
 </div>
 <div>
-    <input type="button" value="设置障碍"/>
-    <input type="button" value="设置起点/终点"/>
+    <input type="button" value="设置障碍" onclick="setObstacle()"/>
+    <input type="button" value="设置起点" onclick="setStart()"/>
+    <input type="button" value="设置终点" onclick="setEnd()"/>
     <input id="run" type="button" value="开始寻路" onclick="run()"/>
 </div>
 </body>
 <script>
+
+
     //地图结点
     function MapNode(x, y, reachable, value) {
         this.x = x;
@@ -32,14 +29,17 @@
 
     //地图
     function Map(canvas) {
-        this.canvas = document.getElementById(canvas);
+        //this.canvas = document.getElementById(canvas);
         this.brush = new Draw(canvas);
+        this.isRun = 0;
         this.length = 10;
         this.width = 10;
-        this.startX = 0
+        this.cubeSize = 10;
+        this.startX = 0;
         this.startY = 0;
         this.endX = 8;
         this.endY = 8;
+        this.type = 1;
         this.graph = null;
         this.close = [];
         this.open = [];
@@ -47,17 +47,19 @@
 
         // 0 能访问  1 障碍  2 路径点  3 起点  4 终点
         this.map = [
-            [0, 0, 1, 0, 1, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
-            [0, 0, 0, 1, 0, 0, 0, 0, 0, 0],
-            [0, 0, 1, 1, 1, 0, 0, 0, 0, 0],
-            [0, 0, 1, 0, 1, 0, 0, 0, 0, 0],
-            [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [3, 0, 0, 0, 0, 0, 0, 0, 0, 0],
             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 4, 0],
             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
         ];
+
+        this.colorSet = ['yellow', 'black', 'green', 'blue', 'red'];
 
         //寻路方向
         this.direction = [
@@ -67,56 +69,125 @@
             [-1, 0]//north
         ];
 
+        this.setMap = function (x, y) {
+            var i = this.positionToIndex(x);
+            var j = this.positionToIndex(y);
+
+            if (!this.inMap(i, j)) {
+                return false;
+            }
+
+            switch (map.type) {
+                case 1 :
+                    this.setObstacle(i, j);
+                    break;
+                case 3 :
+                    this.setStart(i, j);
+                    break;
+                case 4 :
+                    this.setEnd(i, j);
+                    break;
+                default :
+                    this.setObstacle(i, j);
+            }
+        };
+
+        this.setObstacle = function (i, j) {
+            if (this.map[i][j] == 1) {
+                this.map[i][j] = 0;
+            } else {
+                this.map[i][j] = 1;
+            }
+            console.log(this.map[i][j]);
+            this.drawCube(i, j, this.colorSet[this.map[i][j]]);
+
+        };
+
+        this.setStart = function (i, j) {
+            if (i == this.startX && j == this.startY) {
+                return;
+            }
+            this.map[this.startX][this.startY] = 0;
+            this.drawCube(this.startX, this.startY, this.colorSet[0]);
+            this.startX = i;
+            this.startY = j;
+            this.map[i][j] = 3;
+            console.log('draw start');
+            this.drawCube(i, j, this.colorSet[3]);
+        };
+
+        this.setEnd = function (i, j) {
+            if (i == this.endX && j == this.endY) {
+                return;
+            }
+            this.map[this.endX][this.endY] = 0;
+            this.drawCube(this.endX, this.endY, this.colorSet[0]);
+            this.endX = i;
+            this.endY = j;
+            this.map[i][j] = 3;
+            console.log('draw end');
+            this.drawCube(i, j, this.colorSet[4]);
+        };
+
+        this.positionToIndex = function (position) {
+            return parseInt(position / 30);
+        };
+
+        this.indexToPosition = function (index) {
+            return index * this.cubeSize;
+        };
+
+        this.drawCube = function (i, j, color) {
+            var positionX = this.indexToPosition(i);
+            var positionY = this.indexToPosition(j);
+            this.brush.drawCube(positionX, positionY, color, this.cubeSize)
+        };
+
+        this.drawCubeStrokeRect = function (i, j) {
+            var positionX = this.indexToPosition(i);
+            var positionY = this.indexToPosition(j);
+            this.brush.drawStrokeCube(positionX, positionY, this.cubeSize)
+        };
 
         this.init = function () {
-            this.drawMap(this.map);
-            //this.drawGrid();
-            //this.brush.drawDot(0, 0, 'red', this.canvas.offsetHeight, this.canvas.offsetWidth);//初始化画布
-        }
+            for (var i = 0; i < 10; i++) {
+                for (var j = 0; j < 10; j++) {
+                    if (this.map[i][j] == 2) {
+                        this.map[i][j] = 0;
+                    }
+                }
+            }
+            // this.map[this.startX][this.startY] = 3;
+            //this.map[this.endX][this.endY] = 4;
+            this.open = [];
+            this.close = [];
+            this.drawMap();
+        };
 
         this.drawMap = function () {
             this.clearMap();
-            var colorSet = ['white', 'black', 'green', 'blue', 'red']
             var map = this.map;
             for (var i = 0; i < 10; i++) {
                 for (var j = 0; j < 10; j++) {
-                    var x = i * 15;
-                    var y = j * 15;
-                    var color = colorSet[map[i][j]];
-                    if (map[i][j] == 0) {
-                        this.brush.cxt.strokeRect(x, y, 10, 5);
-                        continue;
-                    }
-                    this.brush.drawDot(x, y, color, 10, 5)
+                    var color = this.colorSet[map[i][j]];
+                    this.drawCube(i, j, color);
                 }
             }
-        }
-
-//        this.drawGrid = function () {
-//            this.clearMap();
-//            var map = this.map;
-//            for (var i = 0; i < 10; i++) {
-//                for (var j = 0; j < 10; j++) {
-//                    var x = i * 15;
-//                    var y = j * 15;
-//                    this.brush.cxt.strokeRect(x, y, 10, 5);
-//                }
-//            }
-//        }
+        };
 
 
         this.clearMap = function () {
-            this.brush.drawDot(0, 0, 'white', this.length * 15, this.width * 15)
-        }
+            this.brush.drawCube(0, 0, 'white', this.length * this.cubeSize)
+        };
 
 
         this.getStart = function () {
             return this.graph[this.startX][this.startY];
-        }
+        };
 
         this.getEnd = function () {
             return this.graph[this.endX][this.endY];
-        }
+        };
 
         this.run = function () {
             this.initGraph();
@@ -126,14 +197,16 @@
                 destination = destination.sur;
                 this.map[destination.x][destination.y] = 2;
             }
+            this.map[this.startX][this.startY] = 3;
+            this.map[this.endX][this.endY] = 4;
             this.drawMap();
-        }
+        };
 
 
         //判断边界
         this.inMap = function (x, y) {
             return (x >= 0 && y >= 0 && x < this.length && y < this.width)
-        }
+        };
 
         //初始化图
         this.initGraph = function () {
@@ -144,7 +217,7 @@
                 for (j = 0; j < this.width; j++) {
                     var node = new MapNode(i, j, 0, 0);
                     node.value = this.map[i][j];
-                    if (this.map[i][j] == 0) {
+                    if (this.map[i][j] != 1) {
                         node.reachable = 1;
                     }
                     g[i][j] = node;
@@ -152,7 +225,7 @@
             }
             this.graph = g;
             return this.graph;
-        }
+        };
 
         //判断是否在close中
         this.inClose = function (p) {
@@ -164,7 +237,7 @@
                 }
             }
             return false;
-        }
+        };
 
 
         //判断是够在open表中
@@ -177,11 +250,11 @@
                 }
             }
             return false;
-        }
+        };
 
         this.isEnd = function (p) {
             return p.x == this.endX && p.y == this.endY;
-        }
+        };
 
         //dijkstra算法
         this.dijkstra = function () {
@@ -223,19 +296,25 @@
                 close.push(p);
             }
         }
-
-
     }
+
 
     //画图工具
     function Draw(canvas) {
         this.cxt = document.getElementById(canvas).getContext("2d");
         this.drawDot = function (x, y, color, length, size) {
-            length = length || 10;
-            size = size || 10;
             this.cxt.fillStyle = color;
             //this.cxt.strokeRect(x, y, length, size);
             this.cxt.fillRect(x, y, length, size);
+        };
+
+        this.drawCube = function (x, y, color, size) {
+            this.cxt.fillStyle = color;
+            this.cxt.fillRect(x, y, size, size);
+        };
+
+        this.drawStrokeCube = function (x, y, size) {
+            this.cxt.strokeRect(x, y, size, size)
         }
     }
 
@@ -243,21 +322,37 @@
     map.init();
 
 
-    function setStart(x, y) {
-        map.startX = x;
-        map.startY = y;
+    function setStart() {
+        map.type = 3;
     }
 
     function setEnd(x, y) {
-        map.endX = x;
-        map.endY = y;
+        map.type = 4;
+    }
+
+    function setObstacle() {
+        map.type = 1;
     }
 
     function run() {
-        //map.init();
-        map.run();
+        if (!map.isRun) {
+            map.run();
+            map.isRun = 1;
+        } else {
+            map.init();
+            map.isRun = 0;
+        }
+
+        console.log(map.map);
+        //console.log(map.graph);
     }
 
+    function getPosition() {
+        var event = window.event;
+        var x = event.clientX;
+        var y = event.clientY;
+        map.setMap(x, y, 1);
+    }
 
 </script>
 </html>

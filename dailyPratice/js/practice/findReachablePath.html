@@ -5,8 +5,8 @@
     <title>寻找最短可行路径</title>
     <style>
         #map {
-            height: 400px;
-            width: 400px;
+            height: 600px;
+            width: 600px;
         }
     </style>
 </head>
@@ -21,21 +21,6 @@
 </div>
 </body>
 <script>
-
-
-    //寻路方向
-    var direction = [
-        [0, 1], //east
-        [1, 0],//south
-        [0, -1],//west
-        [-1, 0]//north
-    ];
-
-    //判断边界
-    function inMap(x, y) {
-        return (x >= 0 && y >= 0 && x < 10 && y < 10)
-    }
-
     //地图结点
     function MapNode(x, y, reachable, value) {
         this.x = x;
@@ -45,131 +30,204 @@
         this.value = value;
     }
 
-    //初始化图
-    function initGraph(table) {
-        var g = new Array(10);
-        var i, j;
-        for (i = 0; i < 10; i++) {
-            g[i] = new Array(10);
-            for (j = 0; j < 10; j++) {
-                var node = new MapNode(i, j, 0, 0);
-                node.value = table[i][j];
-                if (table[i][j] == 0) {
-                    node.reachable = 1;
-                }
-                g[i][j] = node;
-            }
-        }
-        return g;
-    }
-
-
-    function nodeExist(p, close) {
-        if (close.length) {
-            for (var i in close) {
-                if (close[i].x == p.x && close[i].y == p.y) {
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
-
-
-    function dijkstra(graph, startX, startY, endX, endY) {
-        var open = [];
-        var close = [];
-        open.push(graph[startX][startY]);
-        var times = 0;
-        while (open.length) {
-            var p = open.shift();
-            var curX = p.x;
-            var curY = p.y;
-            var surX, surY;
-            if (nodeExist(p, close)) {
-                continue;
-            }
-
-            if (p.x == endX && p.y == endY) {
-                break;
-            }
-
-            for (var i = 0; i < 4; i++) {
-                surX = curX + direction[i][0];
-                surY = curY + direction[i][1];
-                if (!inMap(surX, surY)) {
-                    continue;
-                }
-                if (nodeExist(graph[surX][surY], open)) {
-                    continue;
-                }
-                if (nodeExist(graph[surX][surY], close)) {
-                    continue;
-                }
-                if (graph[surX][surY].reachable) {
-                    graph[surX][surY].sur = p;
-                    open.push(graph[surX][surY]);
-                    times++;
-                }
-            }
-            close.push(p);
-        }
-        return graph;
-    }
-
-
-    // 0 能访问  1 障碍  2 路径点  3 起点  4 终点
-
-    var table = [
-        [0, 0, 1, 0, 1, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
-        [0, 0, 0, 1, 0, 0, 0, 0, 0, 0],
-        [0, 0, 1, 1, 1, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-    ];
-
-
+    //地图
     function Map(canvas) {
         this.canvas = document.getElementById(canvas);
         this.brush = new Draw(canvas);
-        this.init = function (table) {
-            this.drawMap(table);
+        this.length = 10;
+        this.width = 10;
+        this.startX = 0
+        this.startY = 0;
+        this.endX = 8;
+        this.endY = 8;
+        this.graph = null;
+        this.close = [];
+        this.open = [];
+        this.times = 0;//执行次数
+
+        // 0 能访问  1 障碍  2 路径点  3 起点  4 终点
+        this.map = [
+            [0, 0, 1, 0, 1, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
+            [0, 0, 0, 1, 0, 0, 0, 0, 0, 0],
+            [0, 0, 1, 1, 1, 0, 0, 0, 0, 0],
+            [0, 0, 1, 0, 1, 0, 0, 0, 0, 0],
+            [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        ];
+
+        //寻路方向
+        this.direction = [
+            [0, 1], //east
+            [1, 0],//south
+            [0, -1],//west
+            [-1, 0]//north
+        ];
+
+
+        this.init = function () {
+            this.drawMap(this.map);
+            //this.drawGrid();
             //this.brush.drawDot(0, 0, 'red', this.canvas.offsetHeight, this.canvas.offsetWidth);//初始化画布
         }
 
-        this.drawMap = function (table) {
-            //console.log(table);
-
+        this.drawMap = function () {
+            this.clearMap();
             var colorSet = ['white', 'black', 'green', 'blue', 'red']
-
+            var map = this.map;
             for (var i = 0; i < 10; i++) {
                 for (var j = 0; j < 10; j++) {
                     var x = i * 15;
                     var y = j * 15;
-                    var crlorful = colorSet[table[i][j]];
-                    this.brush.drawDot(y, x, crlorful, 10, 5)
+                    var color = colorSet[map[i][j]];
+                    if (map[i][j] == 0) {
+                        this.brush.cxt.strokeRect(x, y, 10, 5);
+                        continue;
+                    }
+                    this.brush.drawDot(x, y, color, 10, 5)
                 }
             }
         }
 
-        this.run = function (table) {
-            var graph = initGraph(table);
-            graph = dijkstra(graph, 0, 0, 8, 8);
-            var dest = graph[8][8];
-            while (dest.sur != null) {
-                //console.log(dest.x, dest.y);
-                dest = dest.sur;
-                table[dest.x][dest.y] = 2;
-            }
-            this.drawMap(table);
+//        this.drawGrid = function () {
+//            this.clearMap();
+//            var map = this.map;
+//            for (var i = 0; i < 10; i++) {
+//                for (var j = 0; j < 10; j++) {
+//                    var x = i * 15;
+//                    var y = j * 15;
+//                    this.brush.cxt.strokeRect(x, y, 10, 5);
+//                }
+//            }
+//        }
+
+
+        this.clearMap = function () {
+            this.brush.drawDot(0, 0, 'white', this.length * 15, this.width * 15)
         }
+
+
+        this.getStart = function () {
+            return this.graph[this.startX][this.startY];
+        }
+
+        this.getEnd = function () {
+            return this.graph[this.endX][this.endY];
+        }
+
+        this.run = function () {
+            this.initGraph();
+            this.dijkstra();
+            var destination = this.getEnd();
+            while (destination.sur != null) {
+                destination = destination.sur;
+                this.map[destination.x][destination.y] = 2;
+            }
+            this.drawMap();
+        }
+
+
+        //判断边界
+        this.inMap = function (x, y) {
+            return (x >= 0 && y >= 0 && x < this.length && y < this.width)
+        }
+
+        //初始化图
+        this.initGraph = function () {
+            var g = new Array(this.length);
+            var i, j;
+            for (i = 0; i < this.length; i++) {
+                g[i] = new Array(this.width);
+                for (j = 0; j < this.width; j++) {
+                    var node = new MapNode(i, j, 0, 0);
+                    node.value = this.map[i][j];
+                    if (this.map[i][j] == 0) {
+                        node.reachable = 1;
+                    }
+                    g[i][j] = node;
+                }
+            }
+            this.graph = g;
+            return this.graph;
+        }
+
+        //判断是否在close中
+        this.inClose = function (p) {
+            if (this.close.length) {
+                for (var i in this.close) {
+                    if (this.close[i].x == p.x && this.close[i].y == p.y) {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+
+
+        //判断是够在open表中
+        this.inOpen = function (p) {
+            if (this.open.length) {
+                for (var i in this.open) {
+                    if (this.open[i].x == p.x && this.open[i].y == p.y) {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+
+        this.isEnd = function (p) {
+            return p.x == this.endX && p.y == this.endY;
+        }
+
+        //dijkstra算法
+        this.dijkstra = function () {
+            var open = this.open;
+            var close = this.close;
+            var start = this.getStart();
+            open.push(start);
+            while (open.length) {
+                var p = open.shift();
+                var curX = p.x;
+                var curY = p.y;
+                var surX, surY;
+                if (this.inClose(p)) {
+                    continue;
+                }
+
+                if (this.isEnd(p)) {
+                    break;
+                }
+
+                for (var i = 0; i < 4; i++) {
+                    surX = curX + this.direction[i][0];
+                    surY = curY + this.direction[i][1];
+                    if (!this.inMap(surX, surY)) {
+                        continue;
+                    }
+                    if (this.inOpen(this.graph[surX][surY])) {
+                        continue;
+                    }
+                    if (this.inClose(this.graph[surX][surY])) {
+                        continue;
+                    }
+                    if (this.graph[surX][surY].reachable) {
+                        this.graph[surX][surY].sur = p;
+                        open.push(this.graph[surX][surY]);
+                        this.times++;
+                    }
+                }
+                close.push(p);
+            }
+        }
+
+
     }
 
+    //画图工具
     function Draw(canvas) {
         this.cxt = document.getElementById(canvas).getContext("2d");
         this.drawDot = function (x, y, color, length, size) {
@@ -182,9 +240,22 @@
     }
 
     var map = new Map('map');
-    map.init(table);
+    map.init();
+
+
+    function setStart(x, y) {
+        map.startX = x;
+        map.startY = y;
+    }
+
+    function setEnd(x, y) {
+        map.endX = x;
+        map.endY = y;
+    }
+
     function run() {
-        map.run(table);
+        //map.init();
+        map.run();
     }
 
 

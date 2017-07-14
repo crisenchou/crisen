@@ -5,25 +5,14 @@
 
 
 char* longestCommonPrefix(char** strs, int strsSize) {
-    char *first = strs[0];
-    int i,j,length = strlen(first);
-    char temp;
+    int i=0,j;
     char *prefix;
+    char temp;
     
-    printf("%d,%d",length,strsSize);
-    
-    for(i=0;i<length;i++){
-        temp = first[0];
-        printf("%c",temp);
-        for(j=0;j<strsSize;j++){
-            //if(temp != strs[j][i]){
-                //break;
-            //}
-        }
-        //prefix[0] = temp;
+    while(i<strsSize){
+       //to do
     }
-    prefix[0] = 'a';
-    //printf("%c",prefix);
+    
     return prefix;
 }
 

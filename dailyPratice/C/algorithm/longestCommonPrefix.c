@@ -5,14 +5,19 @@
 
 
 char* longestCommonPrefix(char** strs, int strsSize) {
-    int i=0,j;
+    int i,j;
+	int flag=0;
     char *prefix;
-    char temp;
-    
-    while(i<strsSize){
-       //to do
-    }
-    
+    for(i=0;i<3;i++){
+		for(j=0;j<3;j++){
+			if(strncmp(strs[j],strs[j+1],i) != 0){
+				break;
+			}
+		}
+		prefix = strncpy(prefix,strs[0],i);
+	}
+	
+	printf("this dstring is %s",prefix);
     return prefix;
 }
 
@@ -22,5 +27,5 @@ int main(){
     char *prefix;
     prefix = longestCommonPrefix(sting,SIZE);
 	//printf("the prefix is %s",prefix);
-	getche();
+	//getche();
 }

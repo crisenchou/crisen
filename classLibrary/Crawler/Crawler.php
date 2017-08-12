@@ -118,6 +118,11 @@ class Crawler{
         if($url == "#" || strpos($url,'javascript:') !== false || strpos($url,'http://') !== false){
             return false;
         }
+        
+        if(!strpos($url,SELF::getinstance()->baseUrl)){
+            return false;
+        }
+        
         return true;
     }
     
@@ -128,19 +133,28 @@ class Crawler{
         $urls = $instance->getUrls($content);
         if(count($urls)){
             foreach($urls as $url){
+                $url = $instance->fixPath($url);
                 if($instance->isUrl($url)){
-                    $url = $instance->fixPath($url);
                     array_push($instance->target,$url);
                 }
+                
             }
         }
         
         $css = $instance->getCsss($content);
+        if(is_array($css)){
+            $instance->css = array_unique(array_merge($instance->css,$css));
+        }
+        
         $js = $instance->getJss($content);
+        if(is_array($js)){
+            $instance->js = array_unique(array_merge($instance->js,$js));
+        }
+        
         $images = $instance->getImages($content);
-        $instance->js = array_unique(array_merge($instance->js,$js));
-        $instance->css = array_unique(array_merge($instance->css,$css));
-        $instance->images = array_unique(array_merge($instance->images,$images));
+        if(is_array($images)){
+            $instance->images = array_unique(array_merge($instance->images,$images));
+        }
     }
     
     //³ÌÐòÆô¶¯
@@ -164,7 +178,7 @@ class Crawler{
     public function downloadSource($sources){
         $instance = self::getinstance();
         if(!empty($sources)){
-            foreach($sourcesas as $source){
+            foreach($sources as $source){
                 $content = @file_get_contents($source);
                 $instance->saveFile($source, $content);
             }

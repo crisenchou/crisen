@@ -33,9 +33,7 @@ int* twoSum(int* nums, int numsSize, int target) {
             if(nums[i]+nums[j] == target){
                 *p=i;
                 *(p+1)=j;
-                
                 return p;
-                free(p);
             }
         }
     return NULL; 

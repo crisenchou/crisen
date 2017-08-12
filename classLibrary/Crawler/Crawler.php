@@ -12,12 +12,12 @@ function makeFullDir($dir){
 
 class Crawler{
     public static $instance;
-    public $targetUrl;
     public $baseUrl;
-    public $css;
-    public $js;
-    public $html;
-    public $images;
+    public $target = [];
+    public $css= [];
+    public $js = [];
+    public $images= [];
+    public $complete = [];
     public $url;
     public $source;
     
@@ -41,20 +41,18 @@ class Crawler{
     //初始化需要抓取的url
     public static function init($targetUrl, $baseUrl='')
     {
-        SELF::getinstance()->targetUrl = $targetUrl;
+        array_push(SELF::getinstance()->target,$targetUrl);
         if($baseUrl){
             SELF::getinstance()->baseUrl = $baseUrl;
         }else{
             SELF::getinstance()->baseUrl = $targetUrl;
         }
-       
-        
     }
     
     //获取页面内容
-    public function getUrlContent()
+    public function getUrlContent($url)
     {
-        $handle = fopen(SELF::getinstance()->targetUrl, "r");
+        $handle = @fopen($url, "r");
         if($handle){
             $content = stream_get_contents($handle, 1024*1024);
             return $content;
@@ -107,9 +105,6 @@ class Crawler{
         if(strpos($url, "https")!==false || strpos($url, "http") !==false){
             return $url;
         }
-        if($url == "#" || strpos($url,'javascript:') !== false){
-            $url = '';
-        }
         return SELF::getinstance()->baseUrl.'/'.trim($url, "/");
     }
     
@@ -118,53 +113,86 @@ class Crawler{
         //do something
     }
     
+    
+    public function isUrl($url){
+        if($url == "#" || strpos($url,'javascript:') !== false || strpos($url,'http://') !== false){
+            return false;
+        }
+        return true;
+    }
+    
+    public function crawl($url){
+        $instance = self::getinstance();
+        $content = $instance->getUrlContent($url);
+        $instance->saveFile($url, $content);
+        $urls = $instance->getUrls($content);
+        if(count($urls)){
+            foreach($urls as $url){
+                if($instance->isUrl($url)){
+                    $url = $instance->fixPath($url);
+                    array_push($instance->target,$url);
+                }
+            }
+        }
+        
+        $css = $instance->getCsss($content);
+        $js = $instance->getJss($content);
+        $images = $instance->getImages($content);
+        $instance->js = array_unique(array_merge($instance->js,$js));
+        $instance->css = array_unique(array_merge($instance->css,$css));
+        $instance->images = array_unique(array_merge($instance->images,$images));
+    }
+    
     //程序启动
     public static function run()
     {
         $instance = self::getinstance();
-        $content = $instance->getUrlContent();
-        $url = array_unique($instance->getUrls($content));
-        $css = $instance->getCsss($content);
-        $js = $instance->getJss($content);
-        $images = $instance->getImages($content);
-        $arr = array_unique(array_merge($url,$css,$js,$images));
-        foreach($arr as &$val){
-            $val = $instance->fixPath($val);
+        while(!empty($instance->target)){
+            $url = array_shift($instance->target);
+            if(!in_array($url, $instance->complete)){
+                array_push($instance->complete,$url);
+                $instance->crawl($url);
+            }
         }
-        $instance->source = array_unique($arr);
-        $instance->downloadSource();
+        
+        $sources = array_merge($instance->js,$instance->css,$instance->images);
+        $instance->downloadSource($sources);
     }
     
     
     //下载资源
-    public function downloadSource(){
+    public function downloadSource($sources){
         $instance = self::getinstance();
-        if(!empty($instance->source)){
-            foreach($instance->source as $source){
+        if(!empty($sources)){
+            foreach($sourcesas as $source){
                 $content = @file_get_contents($source);
-                $parse = parse_url($source);
-                if(!isset($parse['path'])){
-                    continue;
-                }
-                $filename = $parse['path'];
-                $dir =  ltrim(dirname($filename),'/');
-                if(!file_exists($dir)){
-                    makeFullDir($dir);
-                }
-                if($filename == '/'){
-                    continue;
-                }
-                $filename = ltrim($filename, '/');
-                echo $filename.PHP_EOL;
-                if(!file_put_contents($filename, $content)){
-                    echo $filename.'write fail';
-                }else{
-                    echo $filename.'write success';
-                }
-                ob_flush();
-                flush();
+                $instance->saveFile($source, $content);
             }
         }
+    }
+    
+    
+    public function saveFile($source, $content){
+        $parse = parse_url($source);
+        if(!isset($parse['path'])){
+            return false;
+        }
+        $filename = $parse['path'];
+        $dir =  ltrim(dirname($filename),'/');
+        if(!file_exists($dir)){
+            makeFullDir($dir);
+        }
+        if($filename == '/'){
+            return false;
+        }
+        $filename = ltrim($filename, '/');
+        if(!file_put_contents($filename, $content)){
+            echo $filename.'write fail'.PHP_EOL;
+        }else{
+            echo $filename.'write success'.PHP_EOL;
+        }
+        ob_flush();
+        flush();
     }
 }
 
@@ -173,5 +201,6 @@ ob_start();
 $url = "https://vesteraalens.no/hjem";
 Crawler::init($url, "https://vesteraalens.no");
 Crawler::run();
+$instance = Crawler::getinstance();
 echo "ok";
 ob_end_flush();

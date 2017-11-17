@@ -59,5 +59,5 @@ int main(){
     quickSort(a, 0, L-1);
     printf("the sort data is bellow:\n");
     printArray(a, L);
-    //getche();
+    getche();
 }

@@ -27,11 +27,12 @@ void printArr(int* nums, int numsSize){
 }
 
 void rotate(int* nums, int numsSize, int k) {
-    if(k>=numsSize){
+    if(numsSize < 2){
         return ;
     }
-    reverse(nums,0,k-1);
-    reverse(nums,k,numsSize-1);
+    k = k % numsSize;
+    reverse(nums,0,numsSize-k-1);
+    reverse(nums,numsSize-k,numsSize-1);
     reverse(nums,0,numsSize-1);
 }
 void reverse(int* nums, int start, int end){
@@ -44,3 +45,5 @@ void reverse(int* nums, int start, int end){
         end--;
     }
 }
+
+

@@ -16,7 +16,7 @@ int main(){
 
 int countPrimes(int n) {
     int i,count=0;
-    if(i<2){
+    if(i<=2){
         return 0;
     }
     for(i=2;i<n;i++){

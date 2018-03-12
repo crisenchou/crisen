@@ -11,7 +11,8 @@ typedef struct BiTNode{
 CreateBitree(BiTree *T){
     char c;
     scanf("%c",&c);
-    if(c == ' ')  *T = NULL;
+    if(c == ' ')
+        *T = NULL;
     else{
         *T = (BiTNode * )malloc(sizeof(BiTNode));
         (*T)->data = c;

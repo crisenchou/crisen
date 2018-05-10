@@ -41,11 +41,6 @@ tail命令可以返回文件的最后多少行 tail -n 100 file
 w3m命令可以查看网页
 screen命令可以管理屏幕
 
-
-
 linux下访问windows的共享文件
 
 sudo mount -t cifs -o username=xxx,password=xxx   //ip address/filename  /mnt/win/
-
-
-

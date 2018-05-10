@@ -1,8 +1,13 @@
+#Linux distributuion
 
-Linux发行版
+## redhat
 
-Ubuntu
-Debian gnu/linux
-Red hat
-Centos
-Fedora core
+- redhat
+- centos
+- fedora
+
+## debian
+
+- debian
+- ubuntu
+- deepin
